@@ -1,3 +1,3 @@
-# PCTO_STORIA - SCOPERTE GEOGRAFICHE
+# STORIA - Sito Web SCOPERTE GEOGRAFICHE 
 
 Sito web di: Casillo, Mereu, Grossato e Consiglio
