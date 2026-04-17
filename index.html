@@ -3,11 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PCTO_STORIA</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    
+<header>
+    <h1>BARTOLOMEO DIAZ</h1>
+    <nav class="navbar">
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Biografia</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Scoperte</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Contatti</a></li>
+        </ul>
+    </nav>
+</header>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+</script>
 </body>
 </html>
