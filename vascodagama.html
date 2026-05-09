@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasco da Gama - Il Navigatore che Unì i Mondi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="vasco-dagama.css">
+</head>
+<body>
+    <header>
+        <h1>SCOPERTE GEOGRAFICHE</h1>
+        <nav class="navbar">
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi siamo</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="vdg-hero">
+        <h1>Vasco da Gama</h1>
+        <p class="vdg-subtitle">Il primo europeo a raggiungere l'India via mare</p>
+        <div class="vdg-portrait">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Vascodagama.jpg/440px-Vascodagama.jpg" 
+                 alt="Ritratto di Vasco da Gama">
+        </div>
+        <p style="font-size: 18px; max-width: 600px; margin: 20px auto;">
+            1469 - 1524 | Esploratore portoghese che aprì la rotta delle spezie
+        </p>
+    </section>
+
+    <!-- Stats -->
+    <div class="timeline-section">
+        <h2>I Numeri dell'Impresa</h2>
+        <div class="vdg-stats">
+            <div class="vdg-stat-card" onclick="alert('4 navi: São Gabriel, São Rafael, Berrio e nave di rifornimento')">
+                <span class="vdg-stat-number">4</span>
+                <div class="vdg-stat-label">Navi nel primo viaggio</div>
+            </div>
+            <div class="vdg-stat-card" onclick="alert('Circa 150 uomini tra marinai, soldati e sacerdoti')">
+                <span class="vdg-stat-number">150</span>
+                <div class="vdg-stat-label">Uomini dell'equipaggio</div>
+            </div>
+            <div class="vdg-stat-card" onclick="alert('Il viaggio durò circa 2 anni: 1497-1499')">
+                <span class="vdg-stat-number">2</span>
+                <div class="vdg-stat-label">Anni per il primo viaggio</div>
+            </div>
+            <div class="vdg-stat-card" onclick="alert('Solo 54 uomini sopravvissero. Molti morirono di scorbuto!')">
+                <span class="vdg-stat-number">54</span>
+                <div class="vdg-stat-label">Sopravvissuti al ritorno</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Viaggi -->
+    <div class="timeline-section">
+        <h2>I Tre Grandi Viaggi</h2>
+
+        <div class="vdg-voyage">
+            <span class="vdg-year">1497-1499</span>
+            <h3>🚢 La Scoperta della Rotta</h3>
+            <p>Partenza dal Portogallo con 4 navi e 150 uomini. Dopo aver superato il pericoloso 
+            <strong>Capo di Buona Speranza</strong>, arrivò nel 1498 a Calicut (India).</p>
+            
+            <button class="vdg-deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+            <div class="vdg-deep-content">
+                <h4>Perché il Capo di Buona Speranza era pericoloso?</h4>
+                <ul>
+                    <li><strong>Tempeste violente:</strong> venti fortissimi e onde alte</li>
+                    <li><strong>Correnti pericolose:</strong> mareggiate imprevedibili</li>
+                    <li><strong>Scogli affioranti:</strong> molte navi affondate</li>
+                </ul>
+                <p><strong>Obiettivo:</strong> Controllo del commercio delle spezie senza intermediari.</p>
+                <p><strong>Rajà:</strong> Titolo nobiliare indiano che significa "re" o "principe".</p>
+            </div>
+        </div>
+
+        <div class="vdg-voyage">
+            <span class="vdg-year">1502</span>
+            <h3>⚔️ La Conquista Commerciale</h3>
+            <p>Tornò con una flotta armata di cannoni. Impose la presenza portoghese con la forza, 
+            sconfiggendo il rajà Samudri in battaglia navale.</p>
+            
+            <button class="vdg-deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+            <div class="vdg-deep-content">
+                <p>Portò 20 navi armate, bombardò Calicut e fondò basi commerciali fortificate. 
+                Rientrò con un enorme carico di spezie.</p>
+            </div>
+        </div>
+
+        <div class="vdg-voyage">
+            <span class="vdg-year">1524</span>
+            <h3>👑 L'Ultimo Viaggio</h3>
+            <p>Partì come <strong>Viceré</strong> per riorganizzare i territori portoghesi, 
+            ma morì poco dopo l'arrivo a Cochin.</p>
+            
+            <button class="vdg-deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+            <div class="vdg-deep-content">
+                <p>Morì probabilmente di malaria dopo 3 mesi. Le sue spoglie furono riportate in Portogallo nel 1539.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mappa -->
+    <div class="vdg-map-box">
+        <h2>🗺️ La Rotta Scoperta</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Vasco_da_Gama%27s_route_to_India.svg/800px-Vasco_da_Gama%27s_route_to_India.svg.png" 
+             alt="Mappa della rotta">
+        
+        <div class="vdg-highlight">
+            <h3>Come fu scoperta?</h3>
+            <p>Vasco da Gama completò il lavoro di Bartolomeo Diaz attraversando l'Oceano Indiano 
+            direttamente dall'Africa all'India. La rotta permetteva di commerciare spezie 
+            <em>senza intermediari</em> arabi e veneziani, rendendo il Portogallo una superpotenza.</p>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="timeline-section">
+        <h2>Curiosità</h2>
+        <div class="vdg-tabs">
+            <button class="vdg-tab-btn active" onclick="openTab(event, 'curiosita')">Curiosità</button>
+            <button class="vdg-tab-btn" onclick="openTab(event, 'personaggi')">Personaggi</button>
+            <button class="vdg-tab-btn" onclick="openTab(event, 'eredita')">Eredità</button>
+        </div>
+
+        <div id="curiosita" class="vdg-tab-content active">
+            <ul>
+                <li>La sua nave ammiraglia si chiamava São Gabriel</li>
+                <li>Per attraversare l'Oceano Indiano impiegò 23 giorni</li>
+                <li>Al ritorno, solo 2 delle 4 navi sopravvissero</li>
+            </ul>
+        </div>
+
+        <div id="personaggi" class="vdg-tab-content">
+            <p><strong>Paulo da Gama:</strong> Fratello di Vasco, comandava la São Rafael.</p>
+            <p><strong>Zamorin:</strong> Il potente sovrano di Calicut.</p>
+        </div>
+
+        <div id="eredita" class="vdg-tab-content">
+            <p>L'impresa cambiò il mondo: iniziò l'era del colonialismo europeo in Asia e 
+            spostò il centro del commercio dal Mediterraneo all'Atlantico.</p>
+        </div>
+    </div>
+
+    <!-- Quiz -->
+    <div class="vdg-quiz">
+        <h2>🎯 Mettiti alla Prova!</h2>
+        
+        <div class="vdg-quiz-question">1. Qual era l'obiettivo principale?</div>
+        <div class="vdg-quiz-options">
+            <button onclick="checkAnswer(this, false)">Scoprire nuove terre</button>
+            <button onclick="checkAnswer(this, true)">Trovare una rotta per le spezie</button>
+            <button onclick="checkAnswer(this, false)">Convertire gli indiani</button>
+        </div>
+        <div class="vdg-quiz-feedback"></div>
+
+        <div class="vdg-quiz-question" style="margin-top: 30px;">2. Cosa significa "Rajà"?</div>
+        <div class="vdg-quiz-options">
+            <button onclick="checkAnswer(this, false)">Una spezia</button>
+            <button onclick="checkAnswer(this, true)">Un titolo nobiliare (re)</button>
+            <button onclick="checkAnswer(this, false)">Una nave</button>
+        </div>
+        <div class="vdg-quiz-feedback"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Scoperte Geografiche - Progetto scolastico</p>
+    </footer>
+
+    <script>
+        // Menu hamburger
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Approfondimenti
+        function toggleDeepDive(btn) {
+            const content = btn.nextElementSibling;
+            content.classList.toggle('open');
+            btn.textContent = content.classList.contains('open') ? '🔼 Chiudi' : '🔍 Approfondisci';
+        }
+
+        // Tabs
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('vdg-tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            const tabBtns = document.getElementsByClassName('vdg-tab-btn');
+            for (let i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove('active');
+            }
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Quiz
+        function checkAnswer(btn, isCorrect) {
+            const feedback = btn.parentElement.nextElementSibling;
+            const allButtons = btn.parentElement.getElementsByTagName('button');
+            for (let button of allButtons) {
+                button.disabled = true;
+                button.style.cursor = 'not-allowed';
+            }
+            if (isCorrect) {
+                btn.style.background = '#28a745';
+                btn.style.color = 'white';
+                feedback.className = 'vdg-quiz-feedback correct';
+                feedback.innerHTML = '<strong>✅ Corretto!</strong>';
+            } else {
+                btn.style.background = '#dc3545';
+                btn.style.color = 'white';
+                feedback.className = 'vdg-quiz-feedback wrong';
+                feedback.innerHTML = '<strong>❌ Sbagliato.</strong>';
+                for (let button of allButtons) {
+                    if (button.getAttribute('onclick').includes('true')) {
+                        button.style.background = '#28a745';
+                        button.style.color = 'white';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
