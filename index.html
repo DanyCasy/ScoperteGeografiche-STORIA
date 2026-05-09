@@ -1,66 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME_scoperte_geografiche</title>
+    <title>Scoperte Geografiche - Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <h1 align="center">SCOPERTE GEOGRAFICHE</h1>
-    <nav class="navbar">
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <ul class="nav-menu">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
-            <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi siamo</a></li>
-            <li class="nav-item"><a href="vascodagama.html" class="nav-link">Vasco Da Gama</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <button id="theme-toggle" class="theme-btn" aria-label="Cambia tema">
+            <span class="sun-icon">☀️</span>
+            <span class="moon-icon">🌙</span>
+        </button>
+        <h1>SCOPERTE GEOGRAFICHE</h1>
+        <nav class="navbar">
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi siamo</a></li>
+                <li class="nav-item"><a href="vascodagama.html" class="nav-link">Vasco Da Gama</a></li>
+                <li class="nav-item"><a href="mongoli.html" class="nav-link">Mongoli</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section class="timeline-section">
-    <h2>Linea del tempo</h2>
-    <div class="timeline">
-        <div class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-content">
-                <div class="timeline-date">1492</div>
-                <h3>Cristoforo Colombo</h3>
-                <p>Partenza per le Americhe: scoperta del Nuovo Mondo e inizio di una nuova era geografica.</p>
+    <main>
+        <section class="timeline-section reveal">
+            <h2>Linea del tempo</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-marker"></span>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1492</div>
+                        <h3>Cristoforo Colombo</h3>
+                        <p>Partenza per le Americhe: scoperta del Nuovo Mondo e inizio di una nuova era geografica.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-marker"></span>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1519-1522</div>
+                        <h3>Ferdinando Magellano</h3>
+                        <p>Prima circumnavigazione del globo, dimostrando che il mondo è connesso e circolare.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-marker"></span>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1770</div>
+                        <h3>James Cook</h3>
+                        <p>Esplorazioni nel Pacifico e nuove mappe, con nuove terre e rotte scoperte.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-content">
-                <div class="timeline-date">1519-1522</div>
-                <h3>Ferdinando Magellano</h3>
-                <p>Prima circumnavigazione del globo, dimostrando che il mondo è connesso e circolare.</p>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-content">
-                <div class="timeline-date">1770</div>
-                <h3>James Cook</h3>
-                <p>Esplorazioni nel Pacifico e nuove mappe, con nuove terre e rotte scoperte.</p>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+    </main>
 
-<script>
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-</script>
+    <footer>
+        <p>&copy; 2026 Scoperte Geografiche - Progetto scolastico</p>
+        <button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hamburger Menu
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Chiudi menu al click su un link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+
+            // Reveal on Scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealOnScroll = () => {
+                revealElements.forEach(el => {
+                    const elementTop = el.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (elementTop < windowHeight - 100) {
+                        el.classList.add('active');
+                    }
+                });
+            };
+            
+            // Trigger iniziale + scroll
+            revealOnScroll();
+            window.addEventListener('scroll', revealOnScroll);
+
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+                
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Dark Mode Toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const root = document.documentElement;
+            
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                root.setAttribute('data-theme', 'dark');
+            }
+            
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const currentTheme = root.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    
+                    root.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                });
+            }
+        });
+    </script>
 </body>
-</html>>
+</html>

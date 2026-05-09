@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Mongoli - Scoperte Geografiche</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* MONGOLI - STILI SPECIFICI */
+        .mongoli-hero {
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+            color: white; padding: 60px 20px; text-align: center;
+            border-radius: 0 0 30px 30px; margin-bottom: 40px;
+        }
+        [data-theme="dark"] .mongoli-hero {
+            background: linear-gradient(135deg, #3d2817 0%, #4a3020 100%);
+        }
+        .mongoli-hero h1 { font-size: 42px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .mongoli-subtitle { font-size: 20px; opacity: 0.95; }
+        .mongoli-portrait {
+            max-width: 280px; margin: 25px auto; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 4px solid white;
+        }
+        .mongoli-portrait img { width: 100%; height: auto; display: block; }
+        
+        .mongoli-stats {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px; margin: 25px 0;
+        }
+        .mongoli-stat-card {
+            background: var(--bg-card); padding: 20px; border-radius: 12px;
+            text-align: center; border: 2px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;
+        }
+        .mongoli-stat-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px var(--shadow-color); }
+        .mongoli-stat-number { font-size: 32px; font-weight: bold; color: #8B4513; display: block; }
+        [data-theme="dark"] .mongoli-stat-number { color: #c9a97e; }
+        .mongoli-stat-label { color: var(--text-secondary); margin-top: 5px; font-size: 14px; }
+        
+        .mongoli-voyage {
+            background: var(--bg-card); border-radius: 12px; padding: 25px;
+            margin: 20px 0; box-shadow: 0 4px 15px var(--shadow-color);
+            border-left: 4px solid #8B4513; transition: all 0.3s ease;
+        }
+        [data-theme="dark"] .mongoli-voyage { border-left-color: #c9a97e; }
+        .mongoli-voyage:hover { box-shadow: 0 8px 25px var(--shadow-color); }
+        .mongoli-year {
+            background: #8B4513; color: white; display: inline-block;
+            padding: 4px 12px; border-radius: 18px; font-weight: 600; margin-bottom: 12px; font-size: 14px;
+        }
+        [data-theme="dark"] .mongoli-year { background: #a06a42; }
+        .mongoli-voyage h3 { color: var(--text-primary); font-size: 22px; margin: 10px 0; }
+        .mongoli-voyage p { color: var(--text-secondary); line-height: 1.6; }
+        
+        .mongoli-deep-btn {
+            background: #8B4513; color: white; border: none; padding: 8px 18px;
+            border-radius: 22px; cursor: pointer; margin-top: 12px; font-size: 14px;
+            transition: all 0.3s;
+        }
+        .mongoli-deep-btn:hover { background: #a0522d; transform: scale(1.05); }
+        .mongoli-deep-content {
+            max-height: 0; overflow: hidden; transition: max-height 0.5s ease;
+            background: var(--bg-card); padding: 0 15px; border-radius: 8px; margin-top: 12px;
+            border: 1px solid var(--border-color);
+        }
+        .mongoli-deep-content.open { max-height: 600px; padding: 15px; }
+        .mongoli-deep-content h4 { color: #8B4513; margin: 10px 0; font-size: 16px; }
+        [data-theme="dark"] .mongoli-deep-content h4 { color: #c9a97e; }
+        .mongoli-deep-content ul { padding-left: 20px; margin: 10px 0; }
+        .mongoli-deep-content li { color: var(--text-secondary); margin: 5px 0; }
+        
+        .mongoli-map-box {
+            background: var(--bg-card); padding: 25px; border-radius: 12px;
+            margin: 30px 0; text-align: center; border: 1px solid var(--border-color);
+        }
+        .mongoli-map-box img {
+            max-width: 100%; border-radius: 10px; box-shadow: 0 5px 15px var(--shadow-color);
+            margin: 15px 0; border: 1px solid var(--border-color);
+        }
+        .mongoli-highlight {
+            background: linear-gradient(135deg, rgba(218,165,32,0.15) 0%, transparent 100%);
+            border-left: 4px solid #DAA520; padding: 15px; margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        [data-theme="dark"] .mongoli-highlight {
+            background: linear-gradient(135deg, rgba(218,165,32,0.08) 0%, transparent 100%);
+        }
+        
+        .mongoli-tabs { display: flex; gap: 8px; margin: 20px 0; flex-wrap: wrap; }
+        .mongoli-tab-btn {
+            flex: 1; min-width: 120px; padding: 12px; background: var(--bg-card);
+            border: 2px solid #8B4513; border-radius: 8px; cursor: pointer;
+            font-weight: 600; color: #8B4513; transition: all 0.3s;
+        }
+        [data-theme="dark"] .mongoli-tab-btn { border-color: #c9a97e; color: #c9a97e; }
+        .mongoli-tab-btn:hover { background: #8B4513; color: white; }
+        [data-theme="dark"] .mongoli-tab-btn:hover { background: #a0522d; }
+        .mongoli-tab-btn.active { background: #8B4513; color: white; }
+        [data-theme="dark"] .mongoli-tab-btn.active { background: #a0522d; }
+        .mongoli-tab-content {
+            display: none; padding: 20px; background: var(--bg-card);
+            border-radius: 10px; border: 1px solid var(--border-color);
+            animation: fadeIn 0.4s;
+        }
+        .mongoli-tab-content.active { display: block; }
+        .mongoli-tab-content ul { padding-left: 20px; }
+        .mongoli-tab-content li { color: var(--text-secondary); margin: 6px 0; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .mongoli-quiz {
+            background: var(--bg-card); padding: 25px; border-radius: 12px;
+            margin: 30px 0; box-shadow: 0 4px 15px var(--shadow-color);
+        }
+        .mongoli-quiz-question { font-weight: 600; color: var(--text-primary); margin-bottom: 12px; font-size: 17px; }
+        .mongoli-quiz-options button {
+            display: block; width: 100%; padding: 10px; margin: 6px 0;
+            background: var(--bg-card); border: 2px solid var(--border-color);
+            border-radius: 8px; cursor: pointer; text-align: left;
+            color: var(--text-primary); transition: all 0.3s;
+        }
+        .mongoli-quiz-options button:hover { background: #8B4513; color: white; border-color: #8B4513; }
+        [data-theme="dark"] .mongoli-quiz-options button:hover { background: #a0522d; }
+        .mongoli-quiz-feedback {
+            margin-top: 12px; padding: 12px; border-radius: 8px; display: none; font-weight: 500;
+        }
+        .mongoli-quiz-feedback.correct { background: #d4edda; color: #155724; display: block; }
+        .mongoli-quiz-feedback.wrong { background: #f8d7da; color: #721c24; display: block; }
+        [data-theme="dark"] .mongoli-quiz-feedback.correct { background: #1e4620; color: #90ee90; }
+        [data-theme="dark"] .mongoli-quiz-feedback.wrong { background: #4a1e1e; color: #ffb3b3; }
+        
+        @media (max-width: 768px) {
+            .mongoli-hero h1 { font-size: 32px; }
+            .mongoli-subtitle { font-size: 18px; }
+            .mongoli-stats { grid-template-columns: 1fr 1fr; }
+            .mongoli-tabs { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button id="theme-toggle" class="theme-btn" aria-label="Cambia tema">
+            <span class="sun-icon">☀️</span>
+            <span class="moon-icon">🌙</span>
+        </button>
+        <h1>SCOPERTE GEOGRAFICHE</h1>
+        <nav class="navbar">
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi siamo</a></li>
+                <li class="nav-item"><a href="vascodagama.html" class="nav-link">Vasco Da Gama</a></li>
+                <li class="nav-item"><a href="mongoli.html" class="nav-link">Mongoli</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="mongoli-hero">
+        <h1>I Mongoli</h1>
+        <p class="mongoli-subtitle">Il popolo nomade che creò il più grande impero terrestre della storia</p>
+        <div class="mongoli-portrait">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Genghis_Khan_portrait.jpg/440px-Genghis_Khan_portrait.jpg" alt="Ritratto di Gengis Khan">
+        </div>
+        <p style="font-size: 17px; max-width: 550px; margin: 18px auto; opacity: 0.95;">
+            XIII secolo | Dalle steppe dell'Asia alla conquista di tre continenti
+        </p>
+    </section>
+
+    <div class="timeline-section reveal">
+        <h2>I Numeri dell'Impero</h2>
+        <div class="mongoli-stats">
+            <div class="mongoli-stat-card" onclick="alert('Le yurte erano tende circolari smontabili in 30 minuti, perfette per la vita nomade!')">
+                <span class="mongoli-stat-number">∞</span>
+                <div class="mongoli-stat-label">Yurte trasportabili</div>
+            </div>
+            <div class="mongoli-stat-card" onclick="alert('L\'impero raggiunse circa 24 milioni di km²: il più vasto impero contiguous della storia!')">
+                <span class="mongoli-stat-number">24M km²</span>
+                <div class="mongoli-stat-label">Estensione massima</div>
+            </div>
+            <div class="mongoli-stat-card" onclick="alert('I corrieri a cavallo potevano percorrere fino a 300 km al giorno cambiando cavallo alle stazioni di posta!')">
+                <span class="mongoli-stat-number">300 km/giorno</span>
+                <div class="mongoli-stat-label">Posta imperiale</div>
+            </div>
+            <div class="mongoli-stat-card" onclick="alert('4 khanati: Gran Khan (Cina), Orda d\'Oro (Russia), Ilkhan (Persia), Chagatai (Asia centrale)')">
+                <span class="mongoli-stat-number">4</span>
+                <div class="mongoli-stat-label">Khanati dopo la divisione</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-section reveal">
+        <h2>Le Grandi Fasi dell'Espansione</h2>
+
+        <div class="mongoli-voyage">
+            <span class="mongoli-year">1206</span>
+            <h3>🏹 L'Unificazione di Gengis Khan</h3>
+            <p>Temujin viene proclamato <strong>Gengis Khan</strong> ("Sovrano Universale") e unifica le tribù mongole. Trasforma i guerrieri nomadi in un esercito disciplinato di abilissimi cavalieri arcieri.</p>
+            <button class="mongoli-deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+            <div class="mongoli-deep-content">
+                <h4>Perché l'esercito mongolo era così efficace?</h4>
+                <ul>
+                    <li><strong>Cavalleria leggera:</strong> velocità e mobilità senza pari</li>
+                    <li><strong>Arco composito:</strong> potente e preciso anche a cavallo</li>
+                    <li><strong>Tattiche innovative:</strong> finte ritirate, accerchiamenti, guerra psicologica</li>
+                    <li><strong>Disciplina ferrea:</strong> punizioni severe per chi disobbediva</li>
+                </ul>
+                <p><strong>Yurta:</strong> Tenda circolare di feltro, facile da smontare e trasportare, abitazione tradizionale dei nomadi delle steppe.</p>
+            </div>
+        </div>
+
+        <div class="mongoli-voyage">
+            <span class="mongoli-year">1215-1227</span>
+            <h3>🗡️ Le Conquiste in Asia</h3>
+            <p>I mongoli superano la Grande Muraglia e conquistano la Cina settentrionale, prendendo Pechino nel 1215. L'impero si espande verso l'Asia centrale fino al Mar Caspio.</p>
+            <button class="mongoli-deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+            <div class="mongoli-deep-content">
+                <p>Gengis Khan creò un efficiente <strong>sistema postale</strong> con stazioni di cambio cavalli ogni 30-40 km. Questo permetteva di trasmettere ordini in tutto l'impero in tempi record, fondamentale per governare territori così vasti.</p>
+            </div>
+        </div>
+
+        <div class="mongoli-voyage">
+            <span class="mongoli-year">1227-1271</span>
+            <h3>🌍 L'Espansione in Europa e la Dinastia Yuan</h3>
+            <p>Dopo Gengis Khan, il figlio <strong>Ogodai</strong> invade Persia, Russia ed Europa orientale. In Cina, il nipote <strong>Kublai Khan</strong> fonda la Dinastia Yuan nel 1271.</p>
+            <button class="mongoli-deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+            <div class="mongoli-deep-content">
+                <p>Kublai Khan governò con l'aiuto di funzionari cinesi esperti, adottando usanze locali per amministrare meglio. Fu sotto il suo regno che Marco Polo visitò la Cina e raccontò le meraviglie dell'Oriente in Europa.</p>
+            </div>
+        </div>
+
+        <div class="mongoli-voyage">
+            <span class="mongoli-year">Dopo il 1294</span>
+            <h3>🔄 La Divisione in Khanati</h3>
+            <p>L'impero, troppo vasto per un solo sovrano, si divide in quattro stati indipendenti: Gran Khan (Cina), Orda d'Oro (Russia), Ilkhan (Persia), Chagatai (Asia centrale).</p>
+            <button class="mongoli-deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+            <div class="mongoli-deep-content">
+                <p>Nonostante la divisione politica, i khanati mantennero buoni rapporti e continuarono a proteggere le rotte commerciali, favorendo gli scambi tra Oriente e Occidente.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mongoli-map-box reveal">
+        <h2>🗺️ L'Impero Mongolo al Massimo</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Mongol_Empire_map.gif/800px-Mongol_Empire_map.gif" alt="Mappa dell'Impero Mongolo">
+        <div class="mongoli-highlight">
+            <h3>Come gestivano un impero così vasto?</h3>
+            <p>I mongoli crearono un sistema di comunicazione veloce, tolleranza religiosa per i popoli conquistati, e protezione delle vie commerciali. Questo permise la <strong>"Pace Mongolica"</strong>: un periodo di stabilità che favorì viaggi, commerci e scambi culturali lungo la Via della Seta.</p>
+        </div>
+    </div>
+
+    <div class="timeline-section reveal">
+        <h2>Curiosità</h2>
+        <div class="mongoli-tabs">
+            <button class="mongoli-tab-btn active" onclick="openTab(event, 'curiosita')">Curiosità</button>
+            <button class="mongoli-tab-btn" onclick="openTab(event, 'personaggi')">Personaggi</button>
+            <button class="mongoli-tab-btn" onclick="openTab(event, 'eredita')">Eredità</button>
+        </div>
+        <div id="curiosita" class="mongoli-tab-content active">
+            <ul>
+                <li>I guerrieri mongoli bevevano sangue di cavallo misto a latte per resistere durante le lunghe marce</li>
+                <li>Ogni cavaliere aveva 3-4 cavalli di riserva per cambiare montatura e mantenere la velocità</li>
+                <li>La "Pace Mongolica" permise a Marco Polo di viaggiare in sicurezza dalla Venezia alla Cina</li>
+            </ul>
+        </div>
+        <div id="personaggi" class="mongoli-tab-content">
+            <p><strong>Gengis Khan (Temujin):</strong> Fondatore dell'impero, genio militare e politico.</p>
+            <p><strong>Kublai Khan:</strong> Nipote di Gengis, fondò la Dinastia Yuan in Cina e ospitò Marco Polo.</p>
+            <p><strong>Ogodai:</strong> Figlio di Gengis, continuò le conquiste in Europa orientale.</p>
+        </div>
+        <div id="eredita" class="mongoli-tab-content">
+            <p>L'impero mongolo collegò per la prima volta Oriente e Occidente in modo stabile, favorendo scambi di merci, tecnologie (come la polvere da sparo) e idee. La Via della Seta divenne sicura, accelerando la globalizzazione medievale.</p>
+        </div>
+    </div>
+
+    <div class="mongoli-quiz reveal">
+        <h2>🎯 Mettiti alla Prova!</h2>
+        <div class="mongoli-quiz-question">1. Qual era l'abitazione tradizionale dei mongoli?</div>
+        <div class="mongoli-quiz-options">
+            <button onclick="checkAnswer(this, false)">Castelli di pietra</button>
+            <button onclick="checkAnswer(this, true)">Yurte (tende mobili)</button>
+            <button onclick="checkAnswer(this, false)">Caverne scavate</button>
+        </div>
+        <div class="mongoli-quiz-feedback"></div>
+
+        <div class="mongoli-quiz-question" style="margin-top: 25px;">2. Cosa significa "Pace Mongolica"?</div>
+        <div class="mongoli-quiz-options">
+            <button onclick="checkAnswer(this, false)">Un trattato di pace con la Cina</button>
+            <button onclick="checkAnswer(this, true)">Periodo di stabilità che favorì i commerci</button>
+            <button onclick="checkAnswer(this, false)">La fine delle conquiste mongole</button>
+        </div>
+        <div class="mongoli-quiz-feedback"></div>
+
+        <div class="mongoli-quiz-question" style="margin-top: 25px;">3. Chi fondò la Dinastia Yuan in Cina?</div>
+        <div class="mongoli-quiz-options">
+            <button onclick="checkAnswer(this, false)">Gengis Khan</button>
+            <button onclick="checkAnswer(this, false)">Ogodai</button>
+            <button onclick="checkAnswer(this, true)">Kublai Khan</button>
+        </div>
+        <div class="mongoli-quiz-feedback"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Scoperte Geografiche - Progetto scolastico</p>
+        <button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hamburger Menu
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+
+            // Reveal on Scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                revealElements.forEach(el => {
+                    const elementTop = el.getBoundingClientRect().top;
+                    if (elementTop < window.innerHeight - 100) el.classList.add('active');
+                });
+            };
+            revealOnScroll();
+            window.addEventListener('scroll', revealOnScroll);
+
+            // Back to Top
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    backToTopBtn.classList.toggle('visible', window.scrollY > 300);
+                });
+                backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            }
+
+            // Dark Mode
+            const themeToggle = document.getElementById('theme-toggle');
+            const root = document.documentElement;
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) root.setAttribute('data-theme', 'dark');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                    root.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                });
+            }
+
+            // Page-specific functions
+            window.toggleDeepDive = function(btn) {
+                const content = btn.nextElementSibling;
+                content.classList.toggle('open');
+                btn.textContent = content.classList.contains('open') ? '🔼 Chiudi' : '🔍 Approfondisci';
+            };
+            window.openTab = function(evt, tabName) {
+                document.querySelectorAll('.mongoli-tab-content').forEach(c => c.classList.remove('active'));
+                document.querySelectorAll('.mongoli-tab-btn').forEach(b => b.classList.remove('active'));
+                document.getElementById(tabName).classList.add('active');
+                evt.currentTarget.classList.add('active');
+            };
+            window.checkAnswer = function(btn, isCorrect) {
+                const feedback = btn.parentElement.nextElementSibling;
+                const buttons = btn.parentElement.getElementsByTagName('button');
+                Array.from(buttons).forEach(b => { b.disabled = true; b.style.cursor = 'not-allowed'; });
+                if (isCorrect) {
+                    btn.style.background = '#28a745'; btn.style.color = 'white';
+                    feedback.className = 'mongoli-quiz-feedback correct';
+                    feedback.innerHTML = '<strong>✅ Corretto!</strong>';
+                } else {
+                    btn.style.background = '#dc3545'; btn.style.color = 'white';
+                    feedback.className = 'mongoli-quiz-feedback wrong';
+                    feedback.innerHTML = '<strong>❌ Sbagliato.</strong>';
+                    Array.from(buttons).forEach(b => {
+                        if (b.getAttribute('onclick')?.includes('true')) {
+                            b.style.background = '#28a745'; b.style.color = 'white';
+                        }
+                    });
+                }
+            };
+        });
+    </script>
+</body>
+</html>

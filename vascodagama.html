@@ -3,43 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vasco da Gama - Il Navigatore che Unì i Mondi</title>
+    <title>Vasco da Gama - Scoperte Geografiche</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="vasco-dagama.css">
+    <style>
+        /* VASCO DA GAMA - STILI SPECIFICI */
+        .vdg-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 40px;
+        }
+        [data-theme="dark"] .vdg-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        .vdg-hero h1 { font-size: 42px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .vdg-subtitle { font-size: 20px; opacity: 0.95; }
+        .vdg-portrait {
+            max-width: 280px; margin: 25px auto; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 4px solid white;
+        }
+        .vdg-portrait img { width: 100%; height: auto; display: block; }
+        
+        .vdg-stats {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px; margin: 25px 0;
+        }
+        .vdg-stat-card {
+            background: var(--bg-card); padding: 20px; border-radius: 12px;
+            text-align: center; border: 2px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;
+        }
+        .vdg-stat-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px var(--shadow-color); }
+        .vdg-stat-number { font-size: 32px; font-weight: bold; color: var(--accent-color); display: block; }
+        .vdg-stat-label { color: var(--text-secondary); margin-top: 5px; font-size: 14px; }
+        
+        .vdg-voyage {
+            background: var(--bg-card); border-radius: 12px; padding: 25px;
+            margin: 20px 0; box-shadow: 0 4px 15px var(--shadow-color);
+            border-left: 4px solid var(--accent-color); transition: all 0.3s ease;
+        }
+        .vdg-voyage:hover { box-shadow: 0 8px 25px var(--shadow-color); }
+        .vdg-year {
+            background: var(--accent-color); color: white; display: inline-block;
+            padding: 4px 12px; border-radius: 18px; font-weight: 600; margin-bottom: 12px; font-size: 14px;
+        }
+        .vdg-voyage h3 { color: var(--text-primary); font-size: 22px; margin: 10px 0; }
+        .vdg-voyage p { color: var(--text-secondary); line-height: 1.6; }
+        
+        .vdg-deep-btn {
+            background: var(--accent-color); color: white; border: none; padding: 8px 18px;
+            border-radius: 22px; cursor: pointer; margin-top: 12px; font-size: 14px;
+            transition: all 0.3s;
+        }
+        .vdg-deep-btn:hover { background: var(--accent-hover); transform: scale(1.05); }
+        .vdg-deep-content {
+            max-height: 0; overflow: hidden; transition: max-height 0.5s ease;
+            background: var(--bg-card); padding: 0 15px; border-radius: 8px; margin-top: 12px;
+            border: 1px solid var(--border-color);
+        }
+        .vdg-deep-content.open { max-height: 500px; padding: 15px; }
+        .vdg-deep-content h4 { color: var(--accent-color); margin: 10px 0; font-size: 16px; }
+        .vdg-deep-content ul { padding-left: 20px; margin: 10px 0; }
+        .vdg-deep-content li { color: var(--text-secondary); margin: 5px 0; }
+        
+        .vdg-map-box {
+            background: var(--bg-card); padding: 25px; border-radius: 12px;
+            margin: 30px 0; text-align: center; border: 1px solid var(--border-color);
+        }
+        .vdg-map-box img {
+            max-width: 100%; border-radius: 10px; box-shadow: 0 5px 15px var(--shadow-color);
+            margin: 15px 0; border: 1px solid var(--border-color);
+        }
+        .vdg-highlight {
+            background: linear-gradient(135deg, rgba(255,204,0,0.15) 0%, transparent 100%);
+            border-left: 4px solid #ffcc00; padding: 15px; margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        [data-theme="dark"] .vdg-highlight {
+            background: linear-gradient(135deg, rgba(255,204,0,0.08) 0%, transparent 100%);
+        }
+        
+        .vdg-tabs { display: flex; gap: 8px; margin: 20px 0; flex-wrap: wrap; }
+        .vdg-tab-btn {
+            flex: 1; min-width: 120px; padding: 12px; background: var(--bg-card);
+            border: 2px solid var(--accent-color); border-radius: 8px; cursor: pointer;
+            font-weight: 600; color: var(--accent-color); transition: all 0.3s;
+        }
+        .vdg-tab-btn:hover { background: var(--accent-color); color: white; }
+        .vdg-tab-btn.active { background: var(--accent-color); color: white; }
+        .vdg-tab-content {
+            display: none; padding: 20px; background: var(--bg-card);
+            border-radius: 10px; border: 1px solid var(--border-color);
+            animation: fadeIn 0.4s;
+        }
+        .vdg-tab-content.active { display: block; }
+        .vdg-tab-content ul { padding-left: 20px; }
+        .vdg-tab-content li { color: var(--text-secondary); margin: 6px 0; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .vdg-quiz {
+            background: var(--bg-card); padding: 25px; border-radius: 12px;
+            margin: 30px 0; box-shadow: 0 4px 15px var(--shadow-color);
+        }
+        .vdg-quiz-question { font-weight: 600; color: var(--text-primary); margin-bottom: 12px; font-size: 17px; }
+        .vdg-quiz-options button {
+            display: block; width: 100%; padding: 10px; margin: 6px 0;
+            background: var(--bg-card); border: 2px solid var(--border-color);
+            border-radius: 8px; cursor: pointer; text-align: left;
+            color: var(--text-primary); transition: all 0.3s;
+        }
+        .vdg-quiz-options button:hover { background: var(--accent-color); color: white; border-color: var(--accent-color); }
+        .vdg-quiz-feedback {
+            margin-top: 12px; padding: 12px; border-radius: 8px; display: none; font-weight: 500;
+        }
+        .vdg-quiz-feedback.correct { background: #d4edda; color: #155724; display: block; }
+        .vdg-quiz-feedback.wrong { background: #f8d7da; color: #721c24; display: block; }
+        [data-theme="dark"] .vdg-quiz-feedback.correct { background: #1e4620; color: #90ee90; }
+        [data-theme="dark"] .vdg-quiz-feedback.wrong { background: #4a1e1e; color: #ffb3b3; }
+        
+        @media (max-width: 768px) {
+            .vdg-hero h1 { font-size: 32px; }
+            .vdg-subtitle { font-size: 18px; }
+            .vdg-stats { grid-template-columns: 1fr 1fr; }
+            .vdg-tabs { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
     <header>
+        <button id="theme-toggle" class="theme-btn" aria-label="Cambia tema">
+            <span class="sun-icon">☀️</span>
+            <span class="moon-icon">🌙</span>
+        </button>
         <h1>SCOPERTE GEOGRAFICHE</h1>
         <nav class="navbar">
-            <div class="hamburger">
+            <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
                 <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi siamo</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contatti</a></li>
+                <li class="nav-item"><a href="vascodagama.html" class="nav-link">Vasco Da Gama</a></li>
+                <li class="nav-item"><a href="mongoli.html" class="nav-link">Mongoli</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="vdg-hero">
         <h1>Vasco da Gama</h1>
         <p class="vdg-subtitle">Il primo europeo a raggiungere l'India via mare</p>
         <div class="vdg-portrait">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Vascodagama.jpg/440px-Vascodagama.jpg" 
-                 alt="Ritratto di Vasco da Gama">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Vascodagama.jpg/440px-Vascodagama.jpg" alt="Ritratto di Vasco da Gama">
         </div>
-        <p style="font-size: 18px; max-width: 600px; margin: 20px auto;">
+        <p style="font-size: 17px; max-width: 550px; margin: 18px auto; opacity: 0.95;">
             1469 - 1524 | Esploratore portoghese che aprì la rotta delle spezie
         </p>
     </section>
 
-    <!-- Stats -->
-    <div class="timeline-section">
+    <div class="timeline-section reveal">
         <h2>I Numeri dell'Impresa</h2>
         <div class="vdg-stats">
             <div class="vdg-stat-card" onclick="alert('4 navi: São Gabriel, São Rafael, Berrio e nave di rifornimento')">
@@ -61,16 +187,13 @@
         </div>
     </div>
 
-    <!-- Viaggi -->
-    <div class="timeline-section">
+    <div class="timeline-section reveal">
         <h2>I Tre Grandi Viaggi</h2>
 
         <div class="vdg-voyage">
             <span class="vdg-year">1497-1499</span>
             <h3>🚢 La Scoperta della Rotta</h3>
-            <p>Partenza dal Portogallo con 4 navi e 150 uomini. Dopo aver superato il pericoloso 
-            <strong>Capo di Buona Speranza</strong>, arrivò nel 1498 a Calicut (India).</p>
-            
+            <p>Partenza dal Portogallo con 4 navi e 150 uomini. Dopo aver superato il pericoloso <strong>Capo di Buona Speranza</strong>, arrivò nel 1498 a Calicut (India).</p>
             <button class="vdg-deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
             <div class="vdg-deep-content">
                 <h4>Perché il Capo di Buona Speranza era pericoloso?</h4>
@@ -87,22 +210,17 @@
         <div class="vdg-voyage">
             <span class="vdg-year">1502</span>
             <h3>⚔️ La Conquista Commerciale</h3>
-            <p>Tornò con una flotta armata di cannoni. Impose la presenza portoghese con la forza, 
-            sconfiggendo il rajà Samudri in battaglia navale.</p>
-            
+            <p>Tornò con una flotta armata di cannoni. Impose la presenza portoghese con la forza, sconfiggendo il rajà Samudri in battaglia navale.</p>
             <button class="vdg-deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
             <div class="vdg-deep-content">
-                <p>Portò 20 navi armate, bombardò Calicut e fondò basi commerciali fortificate. 
-                Rientrò con un enorme carico di spezie.</p>
+                <p>Portò 20 navi armate, bombardò Calicut e fondò basi commerciali fortificate. Rientrò con un enorme carico di spezie.</p>
             </div>
         </div>
 
         <div class="vdg-voyage">
             <span class="vdg-year">1524</span>
             <h3>👑 L'Ultimo Viaggio</h3>
-            <p>Partì come <strong>Viceré</strong> per riorganizzare i territori portoghesi, 
-            ma morì poco dopo l'arrivo a Cochin.</p>
-            
+            <p>Partì come <strong>Viceré</strong> per riorganizzare i territori portoghesi, ma morì poco dopo l'arrivo a Cochin.</p>
             <button class="vdg-deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
             <div class="vdg-deep-content">
                 <p>Morì probabilmente di malaria dopo 3 mesi. Le sue spoglie furono riportate in Portogallo nel 1539.</p>
@@ -110,29 +228,22 @@
         </div>
     </div>
 
-    <!-- Mappa -->
-    <div class="vdg-map-box">
+    <div class="vdg-map-box reveal">
         <h2>🗺️ La Rotta Scoperta</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Vasco_da_Gama%27s_route_to_India.svg/800px-Vasco_da_Gama%27s_route_to_India.svg.png" 
-             alt="Mappa della rotta">
-        
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Vasco_da_Gama%27s_route_to_India.svg/800px-Vasco_da_Gama%27s_route_to_India.svg.png" alt="Mappa della rotta">
         <div class="vdg-highlight">
             <h3>Come fu scoperta?</h3>
-            <p>Vasco da Gama completò il lavoro di Bartolomeo Diaz attraversando l'Oceano Indiano 
-            direttamente dall'Africa all'India. La rotta permetteva di commerciare spezie 
-            <em>senza intermediari</em> arabi e veneziani, rendendo il Portogallo una superpotenza.</p>
+            <p>Vasco da Gama completò il lavoro di Bartolomeo Diaz attraversando l'Oceano Indiano direttamente dall'Africa all'India. La rotta permetteva di commerciare spezie <em>senza intermediari</em> arabi e veneziani, rendendo il Portogallo una superpotenza.</p>
         </div>
     </div>
 
-    <!-- Tabs -->
-    <div class="timeline-section">
+    <div class="timeline-section reveal">
         <h2>Curiosità</h2>
         <div class="vdg-tabs">
             <button class="vdg-tab-btn active" onclick="openTab(event, 'curiosita')">Curiosità</button>
             <button class="vdg-tab-btn" onclick="openTab(event, 'personaggi')">Personaggi</button>
             <button class="vdg-tab-btn" onclick="openTab(event, 'eredita')">Eredità</button>
         </div>
-
         <div id="curiosita" class="vdg-tab-content active">
             <ul>
                 <li>La sua nave ammiraglia si chiamava São Gabriel</li>
@@ -140,22 +251,17 @@
                 <li>Al ritorno, solo 2 delle 4 navi sopravvissero</li>
             </ul>
         </div>
-
         <div id="personaggi" class="vdg-tab-content">
             <p><strong>Paulo da Gama:</strong> Fratello di Vasco, comandava la São Rafael.</p>
             <p><strong>Zamorin:</strong> Il potente sovrano di Calicut.</p>
         </div>
-
         <div id="eredita" class="vdg-tab-content">
-            <p>L'impresa cambiò il mondo: iniziò l'era del colonialismo europeo in Asia e 
-            spostò il centro del commercio dal Mediterraneo all'Atlantico.</p>
+            <p>L'impresa cambiò il mondo: iniziò l'era del colonialismo europeo in Asia e spostò il centro del commercio dal Mediterraneo all'Atlantico.</p>
         </div>
     </div>
 
-    <!-- Quiz -->
-    <div class="vdg-quiz">
+    <div class="vdg-quiz reveal">
         <h2>🎯 Mettiti alla Prova!</h2>
-        
         <div class="vdg-quiz-question">1. Qual era l'obiettivo principale?</div>
         <div class="vdg-quiz-options">
             <button onclick="checkAnswer(this, false)">Scoprire nuove terre</button>
@@ -164,7 +270,7 @@
         </div>
         <div class="vdg-quiz-feedback"></div>
 
-        <div class="vdg-quiz-question" style="margin-top: 30px;">2. Cosa significa "Rajà"?</div>
+        <div class="vdg-quiz-question" style="margin-top: 25px;">2. Cosa significa "Rajà"?</div>
         <div class="vdg-quiz-options">
             <button onclick="checkAnswer(this, false)">Una spezia</button>
             <button onclick="checkAnswer(this, true)">Un titolo nobiliare (re)</button>
@@ -175,64 +281,93 @@
 
     <footer>
         <p>&copy; 2026 Scoperte Geografiche - Progetto scolastico</p>
+        <button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
     </footer>
 
     <script>
-        // Menu hamburger
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Approfondimenti
-        function toggleDeepDive(btn) {
-            const content = btn.nextElementSibling;
-            content.classList.toggle('open');
-            btn.textContent = content.classList.contains('open') ? '🔼 Chiudi' : '🔍 Approfondisci';
-        }
-
-        // Tabs
-        function openTab(evt, tabName) {
-            const tabContents = document.getElementsByClassName('vdg-tab-content');
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove('active');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hamburger Menu
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
             }
-            const tabBtns = document.getElementsByClassName('vdg-tab-btn');
-            for (let i = 0; i < tabBtns.length; i++) {
-                tabBtns[i].classList.remove('active');
-            }
-            document.getElementById(tabName).classList.add('active');
-            evt.currentTarget.classList.add('active');
-        }
 
-        // Quiz
-        function checkAnswer(btn, isCorrect) {
-            const feedback = btn.parentElement.nextElementSibling;
-            const allButtons = btn.parentElement.getElementsByTagName('button');
-            for (let button of allButtons) {
-                button.disabled = true;
-                button.style.cursor = 'not-allowed';
+            // Reveal on Scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                revealElements.forEach(el => {
+                    const elementTop = el.getBoundingClientRect().top;
+                    if (elementTop < window.innerHeight - 100) el.classList.add('active');
+                });
+            };
+            revealOnScroll();
+            window.addEventListener('scroll', revealOnScroll);
+
+            // Back to Top
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    backToTopBtn.classList.toggle('visible', window.scrollY > 300);
+                });
+                backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
             }
-            if (isCorrect) {
-                btn.style.background = '#28a745';
-                btn.style.color = 'white';
-                feedback.className = 'vdg-quiz-feedback correct';
-                feedback.innerHTML = '<strong>✅ Corretto!</strong>';
-            } else {
-                btn.style.background = '#dc3545';
-                btn.style.color = 'white';
-                feedback.className = 'vdg-quiz-feedback wrong';
-                feedback.innerHTML = '<strong>❌ Sbagliato.</strong>';
-                for (let button of allButtons) {
-                    if (button.getAttribute('onclick').includes('true')) {
-                        button.style.background = '#28a745';
-                        button.style.color = 'white';
-                    }
+
+            // Dark Mode
+            const themeToggle = document.getElementById('theme-toggle');
+            const root = document.documentElement;
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) root.setAttribute('data-theme', 'dark');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                    root.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                });
+            }
+
+            // Page-specific functions
+            window.toggleDeepDive = function(btn) {
+                const content = btn.nextElementSibling;
+                content.classList.toggle('open');
+                btn.textContent = content.classList.contains('open') ? '🔼 Chiudi' : '🔍 Approfondisci';
+            };
+            window.openTab = function(evt, tabName) {
+                document.querySelectorAll('.vdg-tab-content').forEach(c => c.classList.remove('active'));
+                document.querySelectorAll('.vdg-tab-btn').forEach(b => b.classList.remove('active'));
+                document.getElementById(tabName).classList.add('active');
+                evt.currentTarget.classList.add('active');
+            };
+            window.checkAnswer = function(btn, isCorrect) {
+                const feedback = btn.parentElement.nextElementSibling;
+                const buttons = btn.parentElement.getElementsByTagName('button');
+                Array.from(buttons).forEach(b => { b.disabled = true; b.style.cursor = 'not-allowed'; });
+                if (isCorrect) {
+                    btn.style.background = '#28a745'; btn.style.color = 'white';
+                    feedback.className = 'vdg-quiz-feedback correct';
+                    feedback.innerHTML = '<strong>✅ Corretto!</strong>';
+                } else {
+                    btn.style.background = '#dc3545'; btn.style.color = 'white';
+                    feedback.className = 'vdg-quiz-feedback wrong';
+                    feedback.innerHTML = '<strong>❌ Sbagliato.</strong>';
+                    Array.from(buttons).forEach(b => {
+                        if (b.getAttribute('onclick')?.includes('true')) {
+                            b.style.background = '#28a745'; b.style.color = 'white';
+                        }
+                    });
                 }
-            }
-        }
+            };
+        });
     </script>
 </body>
 </html>
