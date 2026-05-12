@@ -3,146 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>I Mongoli - Scoperte Geografiche</title>
+    
     <link rel="stylesheet" href="style.css">
+    
+    <!-- STILI SOLO PER QUESTA PAGINA -->
     <style>
-        /* MONGOLI - STILI SPECIFICI */
+        /* ===== HERO SECTION: parte colorata in alto con titolo e ritratto ===== */
         .mongoli-hero {
+            /* gradiente marrone che richiama le steppe mongole */
             background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
-            color: white; padding: 60px 20px; text-align: center;
-            border-radius: 0 0 30px 30px; margin-bottom: 40px;
+            color: white; 
+            padding: 60px 20px; 
+            text-align: center;
+            border-radius: 0 0 30px 30px; 
+            margin-bottom: 40px;
         }
+        
+        /* DARK MODE: quando JavaScript aggiunge data-theme="dark" il CSS usa automaticamente questi colori più scuri */
         [data-theme="dark"] .mongoli-hero {
             background: linear-gradient(135deg, #3d2817 0%, #4a3020 100%);
         }
-        .mongoli-hero h1 { font-size: 42px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        .mongoli-subtitle { font-size: 20px; opacity: 0.95; }
-        .mongoli-portrait {
-            max-width: 280px; margin: 25px auto; border-radius: 15px; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 4px solid white;
-        }
-        .mongoli-portrait img { width: 100%; height: auto; display: block; }
         
+        .mongoli-hero h1 { 
+            font-size: 42px; 
+            margin-bottom: 10px; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
+        }
+        
+        /* ===== GRID STATISTICHE: layoutcon CSS Grid ===== */
         .mongoli-stats {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px; margin: 25px 0;
+            /* auto-fit + minmax, ossia le card si adattano automaticamente allo schermo */
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px; 
+            margin: 25px 0;
         }
+        
         .mongoli-stat-card {
-            background: var(--bg-card); padding: 20px; border-radius: 12px;
-            text-align: center; border: 2px solid var(--border-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;
+            background: var(--bg-card); /* usa variabile CSS: cambia colore con dark mode */
+            padding: 20px; 
+            border-radius: 12px;
+            text-align: center; 
+            border: 2px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            cursor: pointer;
         }
-        .mongoli-stat-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px var(--shadow-color); }
-        .mongoli-stat-number { font-size: 32px; font-weight: bold; color: #8B4513; display: block; }
-        [data-theme="dark"] .mongoli-stat-number { color: #c9a97e; }
-        .mongoli-stat-label { color: var(--text-secondary); margin-top: 5px; font-size: 14px; }
         
+        /* Effetto hover: la card si alza leggermente */
+        .mongoli-stat-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 12px 30px var(--shadow-color); 
+        }
+        
+        /* ===== CARD VIAGGI: stile con bordo colorato a sinistra ===== */
         .mongoli-voyage {
-            background: var(--bg-card); border-radius: 12px; padding: 25px;
-            margin: 20px 0; box-shadow: 0 4px 15px var(--shadow-color);
-            border-left: 4px solid #8B4513; transition: all 0.3s ease;
+            background: var(--bg-card); 
+            border-radius: 12px; 
+            padding: 25px;
+            margin: 20px 0; 
+            box-shadow: 0 4px 15px var(--shadow-color);
+            border-left: 4px solid #8B4513; /* linea colorata per evidenziare */
+            transition: all 0.3s ease;
         }
-        [data-theme="dark"] .mongoli-voyage { border-left-color: #c9a97e; }
-        .mongoli-voyage:hover { box-shadow: 0 8px 25px var(--shadow-color); }
-        .mongoli-year {
-            background: #8B4513; color: white; display: inline-block;
-            padding: 4px 12px; border-radius: 18px; font-weight: 600; margin-bottom: 12px; font-size: 14px;
-        }
-        [data-theme="dark"] .mongoli-year { background: #a06a42; }
-        .mongoli-voyage h3 { color: var(--text-primary); font-size: 22px; margin: 10px 0; }
-        .mongoli-voyage p { color: var(--text-secondary); line-height: 1.6; }
         
+        /* ===== PULSANTE "APPROFONDISCI": apre/chiuso contenuto nascosto ===== */
         .mongoli-deep-btn {
-            background: #8B4513; color: white; border: none; padding: 8px 18px;
-            border-radius: 22px; cursor: pointer; margin-top: 12px; font-size: 14px;
+            background: #8B4513; 
+            color: white; 
+            border: none; 
+            padding: 8px 18px;
+            border-radius: 22px; 
+            cursor: pointer; 
+            margin-top: 12px; 
+            font-size: 14px;
             transition: all 0.3s;
         }
-        .mongoli-deep-btn:hover { background: #a0522d; transform: scale(1.05); }
+        
+        /* Contenuto nascosto: altezza 0 = invisibile, overflow: hidden = non si vede ciò che "esce" */
         .mongoli-deep-content {
-            max-height: 0; overflow: hidden; transition: max-height 0.5s ease;
-            background: var(--bg-card); padding: 0 15px; border-radius: 8px; margin-top: 12px;
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.5s ease; /* Animazione fluida apertura/chiusura */
+            background: var(--bg-card); 
+            padding: 0 15px; 
+            border-radius: 8px; 
+            margin-top: 12px;
             border: 1px solid var(--border-color);
         }
-        .mongoli-deep-content.open { max-height: 600px; padding: 15px; }
-        .mongoli-deep-content h4 { color: #8B4513; margin: 10px 0; font-size: 16px; }
-        [data-theme="dark"] .mongoli-deep-content h4 { color: #c9a97e; }
-        .mongoli-deep-content ul { padding-left: 20px; margin: 10px 0; }
-        .mongoli-deep-content li { color: var(--text-secondary); margin: 5px 0; }
         
-        .mongoli-map-box {
-            background: var(--bg-card); padding: 25px; border-radius: 12px;
-            margin: 30px 0; text-align: center; border: 1px solid var(--border-color);
-        }
-        .mongoli-map-box img {
-            max-width: 100%; border-radius: 10px; box-shadow: 0 5px 15px var(--shadow-color);
-            margin: 15px 0; border: 1px solid var(--border-color);
-        }
-        .mongoli-highlight {
-            background: linear-gradient(135deg, rgba(218,165,32,0.15) 0%, transparent 100%);
-            border-left: 4px solid #DAA520; padding: 15px; margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        [data-theme="dark"] .mongoli-highlight {
-            background: linear-gradient(135deg, rgba(218,165,32,0.08) 0%, transparent 100%);
+        /* Quando JavaScript aggiunge la classe "open" mostra il contenuto */
+        .mongoli-deep-content.open { 
+            max-height: 600px; /* atezza sufficiente per il testo */
+            padding: 15px; 
         }
         
-        .mongoli-tabs { display: flex; gap: 8px; margin: 20px 0; flex-wrap: wrap; }
+        /* ===== TABS: schede cliccabili per Curiosità/Personaggi/Eredità ===== */
+        .mongoli-tabs { 
+            display: flex; 
+            gap: 8px; 
+            margin: 20px 0; 
+            flex-wrap: wrap; 
+        }
+        
         .mongoli-tab-btn {
-            flex: 1; min-width: 120px; padding: 12px; background: var(--bg-card);
-            border: 2px solid #8B4513; border-radius: 8px; cursor: pointer;
-            font-weight: 600; color: #8B4513; transition: all 0.3s;
+            flex: 1; 
+            min-width: 120px; 
+            padding: 12px; 
+            background: var(--bg-card);
+            border: 2px solid #8B4513; 
+            border-radius: 8px; 
+            cursor: pointer;
+            font-weight: 600; 
+            color: #8B4513; 
+            transition: all 0.3s;
         }
-        [data-theme="dark"] .mongoli-tab-btn { border-color: #c9a97e; color: #c9a97e; }
-        .mongoli-tab-btn:hover { background: #8B4513; color: white; }
-        [data-theme="dark"] .mongoli-tab-btn:hover { background: #a0522d; }
-        .mongoli-tab-btn.active { background: #8B4513; color: white; }
-        [data-theme="dark"] .mongoli-tab-btn.active { background: #a0522d; }
+        
+        /* contenuto tab: nascosto di default, mostrato solo se ha classe "active" */
         .mongoli-tab-content {
-            display: none; padding: 20px; background: var(--bg-card);
-            border-radius: 10px; border: 1px solid var(--border-color);
-            animation: fadeIn 0.4s;
+            display: none; 
+            padding: 20px; 
+            background: var(--bg-card);
+            border-radius: 10px; 
+            border: 1px solid var(--border-color);
+            animation: fadeIn 0.4s; /* Animazione di comparsa */
         }
-        .mongoli-tab-content.active { display: block; }
-        .mongoli-tab-content ul { padding-left: 20px; }
-        .mongoli-tab-content li { color: var(--text-secondary); margin: 6px 0; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
         
+        .mongoli-tab-content.active { 
+            display: block; /* JavaScript aggiunge "active" per mostrare la tab selezionata */
+        }
+        
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(8px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        
+        /* ===== QUIZ: pulsanti con feedback (verde/rosso) ===== */
         .mongoli-quiz {
-            background: var(--bg-card); padding: 25px; border-radius: 12px;
-            margin: 30px 0; box-shadow: 0 4px 15px var(--shadow-color);
+            background: var(--bg-card); 
+            padding: 25px; 
+            border-radius: 12px;
+            margin: 30px 0; 
+            box-shadow: 0 4px 15px var(--shadow-color);
         }
-        .mongoli-quiz-question { font-weight: 600; color: var(--text-primary); margin-bottom: 12px; font-size: 17px; }
-        .mongoli-quiz-options button {
-            display: block; width: 100%; padding: 10px; margin: 6px 0;
-            background: var(--bg-card); border: 2px solid var(--border-color);
-            border-radius: 8px; cursor: pointer; text-align: left;
-            color: var(--text-primary); transition: all 0.3s;
-        }
-        .mongoli-quiz-options button:hover { background: #8B4513; color: white; border-color: #8B4513; }
-        [data-theme="dark"] .mongoli-quiz-options button:hover { background: #a0522d; }
-        .mongoli-quiz-feedback {
-            margin-top: 12px; padding: 12px; border-radius: 8px; display: none; font-weight: 500;
-        }
-        .mongoli-quiz-feedback.correct { background: #d4edda; color: #155724; display: block; }
-        .mongoli-quiz-feedback.wrong { background: #f8d7da; color: #721c24; display: block; }
-        [data-theme="dark"] .mongoli-quiz-feedback.correct { background: #1e4620; color: #90ee90; }
-        [data-theme="dark"] .mongoli-quiz-feedback.wrong { background: #4a1e1e; color: #ffb3b3; }
         
+        .mongoli-quiz-options button {
+            display: block; 
+            width: 100%; 
+            padding: 10px; 
+            margin: 6px 0;
+            background: var(--bg-card); 
+            border: 2px solid var(--border-color);
+            border-radius: 8px; 
+            cursor: pointer; 
+            text-align: left;
+            color: var(--text-primary); 
+            transition: all 0.3s;
+        }
+        
+        /* feedback: classi .correct e .wrong mostrate da JavaScript dopo la risposta */
+        .mongoli-quiz-feedback {
+            margin-top: 12px; 
+            padding: 12px; 
+            border-radius: 8px; 
+            display: none; 
+            font-weight: 500;
+        }
+        .mongoli-quiz-feedback.correct { 
+            background: #d4edda; 
+            color: #155724; 
+            display: block; 
+        }
+        .mongoli-quiz-feedback.wrong { 
+            background: #f8d7da; 
+            color: #721c24; 
+            display: block; 
+        }
+        
+        /* ===== RESPONSIVE: adattamento per cellulari (gli schermi ≤ 768px) ===== */
         @media (max-width: 768px) {
             .mongoli-hero h1 { font-size: 32px; }
             .mongoli-subtitle { font-size: 18px; }
+            /* su mobile: statistiche su 2 colonne invece di 4 */
             .mongoli-stats { grid-template-columns: 1fr 1fr; }
+            /* su mobile: tabs uno sotto l'altro invece che in fila */
             .mongoli-tabs { flex-direction: column; }
         }
     </style>
 </head>
 <body>
+    <!-- Header: contiene logo, pulsante dark mode e menu di navigazione -->
     <header>
+        <!-- PULSANTE DARK MODE: JavaScript gestisce il cambio tema -->
         <button id="theme-toggle" class="theme-btn" aria-label="Cambia tema">
             <span class="sun-icon">☀️</span>
             <span class="moon-icon">🌙</span>
         </button>
+        
         <h1>SCOPERTE GEOGRAFICHE</h1>
+        
+        <!-- Menu hamburger: su mobile diventa un'icona ☰ che apre il menu laterale -->
         <nav class="navbar">
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
@@ -161,20 +222,23 @@
         </nav>
     </header>
 
+    <!-- Hero: titolo, sottotitolo e ritratto di Gengis Khan -->
     <section class="mongoli-hero">
         <h1>I Mongoli</h1>
         <p class="mongoli-subtitle">Il popolo nomade che creò il più grande impero terrestre della storia</p>
         <div class="mongoli-portrait">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Genghis_Khan_portrait.jpg/440px-Genghis_Khan_portrait.jpg" alt="Ritratto di Gengis Khan">
+            <img src="gengis.jpg" alt="Gengis Khan">
         </div>
         <p style="font-size: 17px; max-width: 550px; margin: 18px auto; opacity: 0.95;">
             XIII secolo | Dalle steppe dell'Asia alla conquista di tre continenti
         </p>
     </section>
 
+    <!-- Sezione statistiche: 4 card cliccabili con curiosità -->
     <div class="timeline-section reveal">
         <h2>I Numeri dell'Impero</h2>
         <div class="mongoli-stats">
+            <!-- onclick="alert(...)" mostra un popup con info extra al click -->
             <div class="mongoli-stat-card" onclick="alert('Le yurte erano tende circolari smontabili in 30 minuti, perfette per la vita nomade!')">
                 <span class="mongoli-stat-number">∞</span>
                 <div class="mongoli-stat-label">Yurte trasportabili</div>
@@ -194,6 +258,7 @@
         </div>
     </div>
 
+    <!-- timeline espandibile: ogni viaggio ha un pulsante "Approfondisci" -->
     <div class="timeline-section reveal">
         <h2>Le Grandi Fasi dell'Espansione</h2>
 
@@ -201,6 +266,8 @@
             <span class="mongoli-year">1206</span>
             <h3>🏹 L'Unificazione di Gengis Khan</h3>
             <p>Temujin viene proclamato <strong>Gengis Khan</strong> ("Sovrano Universale") e unifica le tribù mongole. Trasforma i guerrieri nomadi in un esercito disciplinato di abilissimi cavalieri arcieri.</p>
+            
+            <!-- PULSANTE APPROFONDISCI: toggleDeepDive() apre/chiude il contenuto -->
             <button class="mongoli-deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
             <div class="mongoli-deep-content">
                 <h4>Perché l'esercito mongolo era così efficace?</h4>
@@ -214,6 +281,7 @@
             </div>
         </div>
 
+        <!-- ... altre card viaggio con stesso meccanismo ... -->
         <div class="mongoli-voyage">
             <span class="mongoli-year">1215-1227</span>
             <h3>🗡️ Le Conquiste in Asia</h3>
@@ -245,6 +313,7 @@
         </div>
     </div>
 
+    <!-- Box mappa con highlight informativo -->
     <div class="mongoli-map-box reveal">
         <h2>🗺️ L'Impero Mongolo al Massimo</h2>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Mongol_Empire_map.gif/800px-Mongol_Empire_map.gif" alt="Mappa dell'Impero Mongolo">
@@ -254,6 +323,7 @@
         </div>
     </div>
 
+    <!-- TABS: 3 schede cliccabili, openTab() gestisce quale mostrare -->
     <div class="timeline-section reveal">
         <h2>Curiosità</h2>
         <div class="mongoli-tabs">
@@ -261,6 +331,8 @@
             <button class="mongoli-tab-btn" onclick="openTab(event, 'personaggi')">Personaggi</button>
             <button class="mongoli-tab-btn" onclick="openTab(event, 'eredita')">Eredità</button>
         </div>
+        
+        <!-- solo la tab con classe "active" è visibile -->
         <div id="curiosita" class="mongoli-tab-content active">
             <ul>
                 <li>I guerrieri mongoli bevevano sangue di cavallo misto a latte per resistere durante le lunghe marce</li>
@@ -278,10 +350,13 @@
         </div>
     </div>
 
+    <!-- QUIZ INTERATTIVO: checkAnswer() valida la risposta e mostra feedback -->
     <div class="mongoli-quiz reveal">
         <h2>🎯 Mettiti alla Prova!</h2>
+        
         <div class="mongoli-quiz-question">1. Qual era l'abitazione tradizionale dei mongoli?</div>
         <div class="mongoli-quiz-options">
+            <!-- onclick="checkAnswer(this, true/false)" → true = corretto -->
             <button onclick="checkAnswer(this, false)">Castelli di pietra</button>
             <button onclick="checkAnswer(this, true)">Yurte (tende mobili)</button>
             <button onclick="checkAnswer(this, false)">Caverne scavate</button>
@@ -307,19 +382,31 @@
 
     <footer>
         <p>&copy; 2026 Scoperte Geografiche - Progetto scolastico</p>
+        <!-- pulsante "Torna su": appare dopo 300px di scroll, click = scroll fluido in cima -->
         <button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
     </footer>
 
+    <!-- 
+        ============================================
+                        JAVASCRIPT
+        ============================================
+    -->
     <script>
+        // DOMContentLoaded: esegue il codice solo quando tutta la pagina è caricata
         document.addEventListener('DOMContentLoaded', () => {
-            // Hamburger Menu
+            
+            /* ===== MENU HAMBURGER ===== */
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.getElementById('nav-menu');
+            
             if (hamburger && navMenu) {
+                // click sull'icona ☰: aggiunge/rimuove classe "active" per aprire/chiudere menu
                 hamburger.addEventListener('click', () => {
                     hamburger.classList.toggle('active');
                     navMenu.classList.toggle('active');
                 });
+                
+                // click su un link: chiude automaticamente il menu (utile su mobile)
                 document.querySelectorAll('.nav-link').forEach(link => {
                     link.addEventListener('click', () => {
                         hamburger.classList.remove('active');
@@ -328,67 +415,112 @@
                 });
             }
 
-            // Reveal on Scroll
+            /* ===== REVEAL ON SCROLL: animazione quando si scorre ===== */
             const revealElements = document.querySelectorAll('.reveal');
+            
             const revealOnScroll = () => {
                 revealElements.forEach(el => {
+                    // se l'elemento è entrato nello schermo (entro 100px dal fondo), aggiungi "active"
                     const elementTop = el.getBoundingClientRect().top;
                     if (elementTop < window.innerHeight - 100) el.classList.add('active');
                 });
             };
+            
+            // esegui al caricamento e ad ogni scroll
             revealOnScroll();
             window.addEventListener('scroll', revealOnScroll);
 
-            // Back to Top
+            /* ===== PULSANTE "TORNA SU" ===== */
             const backToTopBtn = document.getElementById('back-to-top');
+            
             if (backToTopBtn) {
+                // mostra/nascondi pulsante in base allo scroll
                 window.addEventListener('scroll', () => {
                     backToTopBtn.classList.toggle('visible', window.scrollY > 300);
                 });
-                backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-            }
-
-            // Dark Mode
-            const themeToggle = document.getElementById('theme-toggle');
-            const root = document.documentElement;
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) root.setAttribute('data-theme', 'dark');
-            if (themeToggle) {
-                themeToggle.addEventListener('click', () => {
-                    const newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-                    root.setAttribute('data-theme', newTheme);
-                    localStorage.setItem('theme', newTheme);
+                
+                // click: scroll fluido in cima alla pagina
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             }
 
-            // Page-specific functions
+            /* ===== DARK MODE TOGGLE ===== */
+            const themeToggle = document.getElementById('theme-toggle');
+            const root = document.documentElement; // Riferimento al tag <html>
+            
+            // controlla se l'utente ha già una preferenza salvata in localStorage
+            const savedTheme = localStorage.getItem('theme');
+            // se no, usa le impostazioni di sistema del dispositivo (prefers-color-scheme)
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            // applica il tema salvato o quello di sistema
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                root.setAttribute('data-theme', 'dark');
+            }
+            
+            // click sul pulsante ☀️/🌙: cambia tema e salva la preferenza
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const currentTheme = root.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    
+                    root.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme); // Salva per la prossima visita
+                });
+            }
+
+            /* ===== FUNZIONI SPECIFICHE DELLA PAGINA ===== */
+            
+            // toggleDeepDive() apre/chiude il box con animazione
             window.toggleDeepDive = function(btn) {
-                const content = btn.nextElementSibling;
-                content.classList.toggle('open');
+                const content = btn.nextElementSibling; // il div .mongoli-deep-content successivo al pulsante
+                content.classList.toggle('open'); // aggiunge/rimuove "open" per mostrare/nascondere
+                // cambia testo pulsante: "🔍 Approfondisci" ↔ "🔼 Chiudi"
                 btn.textContent = content.classList.contains('open') ? '🔼 Chiudi' : '🔍 Approfondisci';
             };
+            
+            // tabs: openTab() mostra solo la tab selezionata, nasconde le altre
             window.openTab = function(evt, tabName) {
+                // nascondi tutti i contenuti tab
                 document.querySelectorAll('.mongoli-tab-content').forEach(c => c.classList.remove('active'));
+                // rimuovi "active" da tutti i pulsanti tab
                 document.querySelectorAll('.mongoli-tab-btn').forEach(b => b.classList.remove('active'));
+                
+                // mostra il contenuto selezionato e evidenzia il pulsante
                 document.getElementById(tabName).classList.add('active');
                 evt.currentTarget.classList.add('active');
             };
+            
+            // QUIZ: checkAnswer() valida la risposta e mostra feedback verde/rosso
             window.checkAnswer = function(btn, isCorrect) {
-                const feedback = btn.parentElement.nextElementSibling;
-                const buttons = btn.parentElement.getElementsByTagName('button');
-                Array.from(buttons).forEach(b => { b.disabled = true; b.style.cursor = 'not-allowed'; });
+                const feedback = btn.parentElement.nextElementSibling; // il div .mongoli-quiz-feedback
+                const buttons = btn.parentElement.getElementsByTagName('button'); // tutti i pulsanti della domanda
+                
+                // disabilita tutti i pulsanti dopo la scelta (evita risposte multiple)
+                Array.from(buttons).forEach(b => { 
+                    b.disabled = true; 
+                    b.style.cursor = 'not-allowed'; 
+                });
+                
                 if (isCorrect) {
-                    btn.style.background = '#28a745'; btn.style.color = 'white';
+                    // ✅ risposta corretta: verde + messaggio
+                    btn.style.background = '#28a745'; 
+                    btn.style.color = 'white';
                     feedback.className = 'mongoli-quiz-feedback correct';
                     feedback.innerHTML = '<strong>✅ Corretto!</strong>';
                 } else {
-                    btn.style.background = '#dc3545'; btn.style.color = 'white';
+                    // ❌ sbagliata: rosso + evidenzia quella giusta
+                    btn.style.background = '#dc3545'; 
+                    btn.style.color = 'white';
                     feedback.className = 'mongoli-quiz-feedback wrong';
                     feedback.innerHTML = '<strong>❌ Sbagliato.</strong>';
+                    
+                    // evidenzia in verde la risposta corretta
                     Array.from(buttons).forEach(b => {
                         if (b.getAttribute('onclick')?.includes('true')) {
-                            b.style.background = '#28a745'; b.style.color = 'white';
+                            b.style.background = '#28a745'; 
+                            b.style.color = 'white';
                         }
                     });
                 }
