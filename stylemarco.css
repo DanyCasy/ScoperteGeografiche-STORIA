@@ -1,283 +1,929 @@
-/* ===== MARCO POLO PAGE STYLES ===== */
-.mp-hero {
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
-    color: white;
-    border-radius: 12px;
-    margin: 20px;
+/* Stile per tutto il corpo della pagina (MODALITÀ CHIARA - DEFAULT) */
+body {
+    font-family: Arial, sans-serif;           /* Tipo di carattere semplice */
+    margin: 0px;                               /* Niente margine esterno */
+    padding: 0px;                              /* Niente padding esterno */
+    background-color: #f5f5f5;                 /* Sfondo grigio chiarissimo */
+    color: #333333;                            /* Testo grigio scuro (leggibile) */
+    line-height: 1.6;                          /* Spazio tra le righe del testo */
 }
-.mp-hero h1 { font-size: 32px; margin-bottom: 10px; }
-.mp-subtitle { font-size: 18px; opacity: 0.95; margin-bottom: 20px; }
+
+/* Quando l'elemento <html> ha data-theme="dark" (attivato dal JS) */
+[data-theme="dark"] body {
+    background-color: #000000;                 /* Nero puro */
+    color: #ffffff;                            /* Testo bianco */
+}
+
+/* Contenitore dell'header in alto */
+header {
+    background-color: #ffffff;                 /* Sfondo bianco */
+    padding: 5px 10px;                         /* Spaziatura interna */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);   /* Ombra leggera sotto */
+    position: sticky;                          /* Resta fisso in alto quando scorri */
+    top: 0px;                                  /* Attaccato al bordo superiore */
+    z-index: 100;                              /* Sopra tutti gli altri elementi */
+}
+
+/* Header in modalità scura - TEMA ROSSO/NERO */
+[data-theme="dark"] header {
+    background-color: #0a0a0a;                 /* Nero molto scuro */
+    box-shadow: 0 2px 10px rgba(255,0,0,0.2); /* Ombra con sfumatura rossa */
+}
+
+/* Titolo principale "SCOPERTE GEOGRAFICHE" */
+header h1 {
+    margin: 0px 0px 10px 0px;                  /* Spazio solo sotto */
+    font-size: 22px;                           /* Dimensione testo */
+    text-align: center;                        /* Centrato */
+    color: #333333;                            /* Grigio scuro */
+}
+
+/* Titolo in dark mode */
+[data-theme="dark"] header h1 {
+    color: #ffffff;                            /* Bianco */
+}
+
+/* Contenitore del menu di navigazione */
+.navbar {
+    display: flex;                             /* Elementi in fila orizzontale */
+    justify-content: center;                   /* Centrati orizzontalmente */
+    gap: 10px;                                 /* Spazio tra gli elementi */
+    flex-wrap: wrap;                           /* Vanno a capo se non c'è spazio */
+}
+
+/* Lista dei link del menu */
+.nav-menu {
+    display: flex;                             /* Link in fila */
+    gap: 10px;                                 /* Spazio tra i link */
+    list-style: none;                          /* Niente pallini della lista */
+    padding: 0px;
+    margin: 0px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Singolo link del menu */
+.nav-item a {
+    text-decoration: none;                     /* Niente sottolineatura */
+    color: #667eea;                            /* Viola */
+    padding: 8px 15px;                         /* Spaziatura interna del pulsante */
+    border-radius: 8px;                        /* Angoli leggermente arrotondati */
+    font-weight: 600;                          /* Testo semi-grassetto */
+    transition: background 0.3s;               /* Animazione cambio colore */
+}
+
+/* Effetto quando passi il mouse sul link */
+.nav-item a:hover {
+    background-color: #667eea;                 /* Sfondo viola */
+    color: #ffffff;                            /* Testo bianco */
+}
+
+/* Link in dark mode - TEMA ROSSO */
+[data-theme="dark"] .nav-item a {
+    color: #ff6666;                            /* Rosso chiaro */
+}
+
+[data-theme="dark"] .nav-item a:hover {
+    background-color: #cc0000;                 /* Rosso intenso */
+    color: #ffffff;
+}
+
+/* Menu hamburger per mobile (nascosto su desktop) */
+.hamburger {
+    display: none;                             /* Nascosto di default */
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333333;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+[data-theme="dark"] .hamburger .bar {
+    background-color: #ffffff;                 /* Bianco in dark mode */
+}
+
+/* Pulsante con le icone ☀️ */
+.theme-btn {
+    position: absolute;                        /* Posizionato in alto a destra */
+    top: 15px;
+    right: 20px;
+    background: #667eea;                       /* Sfondo viola */
+    border: none;                              /* Nessun bordo */
+    border-radius: 50px;                       /* Cerchio perfetto */
+    width: 50px;                               /* Larghezza */
+    height: 50px;                              /* Altezza */
+    cursor: pointer;                           /* Cursore a manina */
+    font-size: 20px;                           /* Dimensione icone */
+    display: flex;                             /* Per centrare le icone */
+    align-items: center;                       /* Centra verticalmente */
+    justify-content: center;                   /* Centra orizzontalmente */
+    transition: background 0.3s;               /* Animazione colore */
+}
+
+/* Hover sul pulsante tema */
+.theme-btn:hover {
+    background: #cc0000;                       /* Rosso intenso */
+}
+
+/* Icona SOLE - visibile in modalità chiara */
+.theme-btn .sun-icon {
+    display: inline;                           /* Mostra il sole */
+}
+
+/* Icona LUNA - nascosta in modalità chiara */
+.theme-btn .moon-icon {
+    display: none;                             /* Nascondi la luna */
+}
+
+/* Quando è attiva la dark mode: NASCONDI il sole */
+[data-theme="dark"] .theme-btn .sun-icon {
+    display: none;
+}
+
+/* Quando è attiva la dark mode: MOSTRA la luna */
+[data-theme="dark"] .theme-btn .moon-icon {
+    display: inline;
+}
+
+/* Contenitore principale con titolo e ritratto */
+.mp-hero {
+    background: linear-gradient(to bottom right, #667eea, #764ba2);
+    color: #ffffff;                            /* Testo bianco */
+    padding: 60px 20px;                        /* Spaziatura generosa */
+    text-align: center;                        /* Tutto centrato */
+    border-radius: 0px 0px 30px 30px;          /* Angoli arrotondati solo sotto */
+    margin-bottom: 40px;                       /* Spazio sotto la sezione */
+}
+
+/* Hero in dark mode - gradiente ROSSO/NERO */
+[data-theme="dark"] .mp-hero {
+    background: linear-gradient(to bottom right, #1a0000, #000000);
+}
+
+/* Titolo "Marco Polo" dentro hero */
+.mp-hero h1 {
+    font-size: 42px;                           /* Testo grande */
+    margin-bottom: 5px;                        /* Spazio sotto */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Ombra per leggibilità */
+}
+
+/* Sottotitolo sotto il titolo */
+.mp-subtitle {
+    font-size: 20px;                           /* Testo medio */
+    opacity: 0.95;                             /* Leggermente trasparente */
+    margin: 10px 0px;
+}
+
+/* Cornice per il ritratto di Marco Polo */
+.mp-portrait {
+    max-width: 280px;                          /* Larghezza massima */
+    margin: 25px auto;                         /* Centro orizzontale, 25px verticale */
+    border-radius: 15px;                       /* Angoli arrotondati */
+    overflow: hidden;                          /* Nasconde parti che escono */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);  /* Ombra profonda */
+    border: 4px solid #ffffff;                 /* Bordo bianco spesso */
+}
+
+/* Immagine dentro la cornice */
+.mp-portrait img {
+    width: 100%;                               /* Occupa tutta la larghezza */
+    height: auto;                              /* Altezza automatica (proporzioni) */
+    display: block;                            /* Elimina spazio extra sotto */
+}
+
+/* Testo biografico con le date */
 .mp-bio-dates {
     font-size: 17px;
     max-width: 550px;
     margin: 18px auto;
     opacity: 0.95;
 }
-.mp-portrait {
-    max-width: 300px;
-    margin: 20px auto;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid white;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-}
-.mp-portrait img { width: 100%; height: auto; display: block; }
 
+/* Contenitore generico per le sezioni */
+.timeline-section {
+    max-width: 1000px;                         /* Larghezza massima contenuto */
+    margin: 0px auto 30px auto;                /* Centrato, con spazio sotto */
+    padding: 0px 20px;                         /* Padding laterale per mobile */
+}
+
+/* Titoli h2 delle sezioni */
+.timeline-section h2 {
+    text-align: center;                        /* Centrati */
+    font-size: 28px;                           /* Dimensione */
+    color: #333333;                            /* Grigio scuro */
+    margin-bottom: 25px;                       /* Spazio sotto il titolo */
+}
+
+/* Titoli in dark mode */
+[data-theme="dark"] .timeline-section h2 {
+    color: #ffffff;                            /* Bianco */
+}
+
+/* Griglia che contiene le 4 card */
 .mp-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 15px;
-    margin: 25px 0;
-}
-.mp-stat-card {
-    background: var(--timeline-item-bg);
-    padding: 20px 15px;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid var(--timeline-item-border);
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-.mp-stat-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px var(--timeline-item-shadow);
-}
-.mp-stat-number {
-    display: block;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--timeline-date-color);
-    margin-bottom: 5px;
-}
-.mp-stat-label {
-    font-size: 13px;
-    color: var(--text-secondary);
+    display: grid;                             /* Attiva layout a griglia */
+    grid-template-columns: 1fr 1fr 1fr 1fr;   /* 4 colonne uguali */
+    gap: 15px;                                 /* Spazio tra le card */
+    margin: 25px 0px;                          /* Spazio sopra/sotto */
 }
 
+/* Stile di ogni singola card statistica */
+.mp-stat-card {
+    background-color: #ffffff;                 /* Sfondo bianco */
+    padding: 20px;                             /* Spaziatura interna */
+    border-radius: 12px;                       /* Angoli arrotondati */
+    text-align: center;                        /* Testo centrato */
+    border: 2px solid #e0e0e0;                 /* Bordo grigio chiaro */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animazioni fluide */
+    cursor: pointer;                           /* Cursore a manina (cliccabile) */
+}
+
+/* CARD in DARK MODE - TEMA ROSSO/NERO! */
+[data-theme="dark"] .mp-stat-card {
+    background-color: #0a0a0a;                 /* Nero scuro */
+    border-color: #330000;                     /* Bordo rosso scuro */
+}
+
+/* Effetto quando passi il mouse sulla card */
+.mp-stat-card:hover {
+    transform: translateY(-5px);               /* Si alza di 5 pixel */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15); /* Ombra più forte */
+}
+
+/* Hover in dark mode - ombra rossa */
+[data-theme="dark"] .mp-stat-card:hover {
+    box-shadow: 0 12px 30px rgba(255,0,0,0.3); /* Ombra rossa */
+}
+
+/* Numero grande dentro la card (es. "24.000") */
+.mp-stat-number {
+    font-size: 32px;                           /* Testo grande */
+    font-weight: bold;                         /* Grassetto */
+    color: #667eea;                            /* Viola */
+    display: block;                            /* Va a capo automaticamente */
+}
+
+/* Numero in dark mode - ROSSO */
+[data-theme="dark"] .mp-stat-number {
+    color: #ff3333;                            /* Rosso brillante */
+}
+
+/* Etichetta sotto il numero (es. "Km percorsi") */
+.mp-stat-label {
+    color: #666666;                            /* Grigio medio */
+    margin-top: 5px;                           /* Piccolo spazio sopra */
+    font-size: 14px;                           /* Testo più piccolo */
+}
+
+/* Etichetta in dark mode */
+[data-theme="dark"] .mp-stat-label {
+    color: #cccccc;                            /* Grigio chiaro per contrasto */
+}
+
+/* Contenitore di ogni viaggio */
 .mp-journey {
-    margin-bottom: 25px;
-    padding: 20px;
-    background: var(--bg-card);
-    border-radius: 12px;
-    border-left: 4px solid var(--accent-color);
+    background-color: #ffffff;                 /* Bianco */
+    border-radius: 12px;                       /* Angoli arrotondati */
+    padding: 25px;                             /* Spaziatura interna */
+    margin: 20px 0px;                          /* Spazio sopra/sotto */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);   /* Ombra leggera */
+    border-left: 4px solid #667eea;            /* Linea colorata a sinistra */
+    transition: box-shadow 0.3s;               /* Animazione ombra */
 }
+
+/* VIAGGI in DARK MODE - TEMA ROSSO/NERO! */
+[data-theme="dark"] .mp-journey {
+    background-color: #0a0a0a;                 /* Nero scuro */
+    border-left-color: #cc0000;                /* Linea laterale rossa */
+    box-shadow: 0 4px 15px rgba(255,0,0,0.1); /* Ombra con sfumatura rossa */
+}
+
+/* Effetto hover sulla card viaggio */
+.mp-journey:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);  /* Ombra più forte */
+}
+
+[data-theme="dark"] .mp-journey:hover {
+    box-shadow: 0 8px 25px rgba(255,0,0,0.3); /* Ombra rossa più visibile */
+}
+
+/* Etichetta con l'anno (es. "1271-1275") */
 .mp-year {
-    display: inline-block;
-    background: var(--accent-color);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 12px;
+    background-color: #667eea;                 /* Viola */
+    color: #ffffff;                            /* Bianco */
+    display: inline-block;                     /* Si adatta al testo */
+    padding: 4px 12px;                         /* Spaziatura interna */
+    border-radius: 18px;                       /* Angoli molto arrotondati */
+    font-weight: 600;                          /* Semi-grassetto */
+    margin-bottom: 12px;                       /* Spazio sotto */
+    font-size: 14px;                           /* Testo piccolo */
 }
+
+/* Etichetta anno in dark mode - ROSSO */
+[data-theme="dark"] .mp-year {
+    background-color: #cc0000;                 /* Rosso */
+}
+
+/* Titolo del viaggio (es. "🚶 Andata: La Via della Seta") */
 .mp-journey h3 {
-    margin: 10px 0 15px;
-    color: var(--text-primary);
-    font-size: 20px;
+    color: #333333;                            /* Grigio scuro */
+    font-size: 22px;                           /* Dimensione */
+    margin: 10px 0px;                          /* Spazio sopra/sotto */
 }
+
+/* Titolo in dark mode */
+[data-theme="dark"] .mp-journey h3 {
+    color: #ffffff;                            /* Bianco */
+}
+
+/* Testo descrittivo del viaggio */
 .mp-journey p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 12px;
+    color: #666666;                            /* Grigio medio */
+    line-height: 1.6;                          /* Spazio tra le righe */
+}
+
+/* Testo in dark mode */
+[data-theme="dark"] .mp-journey p {
+    color: #cccccc;                            /* Grigio chiaro */
+}
+
+/* Testo in grassetto dentro i paragrafi */
+.mp-journey p strong {
+    color: #333333;                            /* Quasi nero in light mode */
+}
+
+[data-theme="dark"] .mp-journey p strong {
+    color: #ffffff;                            /* Bianco in dark mode */
 }
 
 .mp-deep-btn {
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.3s;
+    background-color: #667eea;                 /* Viola */
+    color: #ffffff;                            /* Bianco */
+    border: none;                              /* Nessun bordo */
+    padding: 8px 18px;                         /* Spaziatura: 8px verticale, 18px orizzontale */
+    border-radius: 22px;                       /* Angoli molto arrotondati (pillola) */
+    cursor: pointer;                           /* Cursore a manina */
+    margin-top: 12px;                          /* Spazio sopra il pulsante */
+    font-size: 14px;                           /* Testo piccolo */
+    transition: all 0.3s;                      /* Animazione per tutti i cambiamenti */
 }
-.mp-deep-btn:hover { background: var(--accent-hover); }
 
+/* Hover sul pulsante approfondisci */
+.mp-deep-btn:hover {
+    background-color: #764ba2;                 /* Viola più scuro */
+    transform: scale(1.05);                    /* Ingrandisce del 5% */
+}
+
+/* Pulsante in dark mode - TEMA ROSSO */
+[data-theme="dark"] .mp-deep-btn {
+    background-color: #cc0000;                 /* Rosso */
+}
+
+[data-theme="dark"] .mp-deep-btn:hover {
+    background-color: #990000;                 /* Rosso scuro */
+}
+
+
+
+/* Box che contiene i dettagli nascosti */
 .mp-deep-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    margin-top: 10px;
-    padding: 0 10px;
-    background: var(--bg-body);
-    border-radius: 8px;
+    max-height: 0px;                           /* Inizialmente nascosto (altezza zero) */
+    overflow: hidden;                          /* Nasconde il contenuto che "esce" */
+    transition: max-height 0.5s;               /* Animazione di apertura/chiusura */
+    background-color: #ffffff;                 /* Bianco */
+    padding: 0px 15px;                         /* Solo padding laterale (chiuso) */
+    border-radius: 8px;                        /* Angoli arrotondati */
+    margin-top: 12px;                          /* Spazio sopra */
+    border: 1px solid #e0e0e0;                 /* Bordo sottile grigio */
 }
+
+/* Quando JavaScript aggiunge la classe "open", mostriamo il contenuto */
 .mp-deep-content.open {
-    max-height: 500px;
-    padding: 15px 10px;
+    max-height: 500px;                         /* Altezza sufficiente per il contenuto */
+    padding: 15px;                             /* Padding completo quando aperto */
 }
+
+/* Contenuto in dark mode - TEMA ROSSO/NERO */
+[data-theme="dark"] .mp-deep-content {
+    background-color: #0a0a0a;                 /* Nero scuro */
+    border-color: #330000;                     /* Bordo rosso scuro */
+}
+
+/* Titoli h4 dentro l'approfondimento */
 .mp-deep-content h4 {
-    color: var(--text-primary);
-    margin: 12px 0 8px;
+    color: #667eea;                            /* Viola */
+    margin: 10px 0px;
     font-size: 16px;
 }
+
+/* Titoli h4 in dark mode - ROSSO */
+[data-theme="dark"] .mp-deep-content h4 {
+    color: #ff4444;                            /* Rosso */
+}
+
+/* Liste dentro l'approfondimento */
 .mp-deep-content ul {
-    padding-left: 20px;
-    margin: 8px 0;
+    padding-left: 20px;                        /* Indentazione a sinistra */
+    margin: 10px 0px;
 }
+
 .mp-deep-content li {
-    color: var(--text-secondary);
-    margin-bottom: 5px;
+    color: #666666;                            /* Grigio */
+    margin: 5px 0px;                           /* Spazio tra gli elementi */
 }
+
+/* Liste in dark mode */
+[data-theme="dark"] .mp-deep-content li {
+    color: #cccccc;                            /* Grigio chiaro */
+}
+
+
 
 .mp-map-box {
-    text-align: center;
+    background-color: #ffffff;                 /* Bianco */
     padding: 25px;
-    background: var(--bg-card);
     border-radius: 12px;
-    margin: 20px;
+    margin: 30px 0px;
+    text-align: center;                        /* Tutto centrato */
+    border: 1px solid #e0e0e0;                 /* Bordo sottile */
 }
+
+/* Mappa in dark mode - TEMA ROSSO/NERO */
+[data-theme="dark"] .mp-map-box {
+    background-color: #0a0a0a;                 /* Nero scuro */
+    border-color: #330000;                     /* Bordo rosso scuro */
+}
+
+/* Immagine della mappa */
 .mp-map-box img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 15px 0;
-    border: 2px solid var(--border-color);
+    max-width: 100%;                           /* Non supera la larghezza del contenitore */
+    border-radius: 10px;                       /* Angoli arrotondati */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);   /* Ombra leggera */
+    margin: 15px 0px;
+    border: 1px solid #e0e0e0;
 }
+
+
 
 .mp-highlight {
-    background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1));
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid var(--accent-color);
-    margin: 20px 0;
-}
-.mp-highlight h3 {
-    color: var(--accent-color);
-    margin-bottom: 10px;
-}
-.mp-extra-info {
-    margin-top: 12px;
-    line-height: 1.6;
+    background: linear-gradient(to bottom right, rgba(255,204,0,0.15), transparent);
+    border-left: 4px solid #ffcc00;            /* Linea gialla a sinistra */
+    padding: 15px;
+    margin: 20px 0px;
+    border-radius: 0px 8px 8px 0px;            /* Angoli arrotondati solo a destra */
 }
 
-.mp-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 20px 0;
-    justify-content: center;
+/* Highlight in dark mode - TEMA ROSSO */
+[data-theme="dark"] .mp-highlight {
+    background: linear-gradient(to bottom right, rgba(255,0,0,0.1), transparent);
+    border-left-color: #ff0000;                /* Linea rossa brillante */
 }
-.mp-tab-btn {
-    padding: 10px 20px;
-    background: var(--bg-body);
-    border: 2px solid var(--border-color);
-    border-radius: 25px;
-    cursor: pointer;
+
+/* Titoli dentro l'highlight */
+.mp-highlight h3 {
+    color: #333333;
+    margin-top: 0px;
+}
+
+[data-theme="dark"] .mp-highlight h3 {
+    color: #ffffff;
+}
+
+/* Testo dentro l'highlight */
+.mp-highlight p {
+    color: #666666;
+    margin-bottom: 0px;
+}
+
+[data-theme="dark"] .mp-highlight p {
+    color: #cccccc;
+}
+
+/* Informazioni extra */
+.mp-extra-info {
     font-size: 14px;
-    transition: all 0.3s;
-    color: var(--text-primary);
-}
-.mp-tab-btn:hover,
-.mp-tab-btn.active {
-    background: var(--accent-color);
-    color: white;
-    border-color: var(--accent-color);
-}
-.mp-tab-content {
-    display: none;
-    padding: 20px;
-    background: var(--bg-card);
-    border-radius: 10px;
     margin-top: 10px;
 }
-.mp-tab-content.active {
-    display: block;
-    animation: fadeIn 0.3s ease;
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
 
+/* Lista ordinata per la struttura del libro */
 .mp-ordered-list {
     padding-left: 20px;
-    line-height: 1.8;
+    text-align: left;
 }
 
-.mp-study-intro {
-    text-align: center;
-    color: var(--text-secondary);
-    margin-bottom: 30px;
+.mp-ordered-list li {
+    margin: 10px 0px;
+    color: #666666;
 }
+
+[data-theme="dark"] .mp-ordered-list li {
+    color: #cccccc;
+}
+
+/* Box fonti */
 .mp-sources {
     margin-top: 30px;
 }
+
 .mp-sources ul {
-    margin: 10px 0;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.mp-sources li {
+    margin: 8px 0px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.mp-sources li:before {
+    content: "📚";
+    position: absolute;
+    left: 0px;
+}
+
+
+
+/* Contenitore dei pulsanti tab */
+.mp-tabs {
+    display: flex;                             /* Pulsanti in fila */
+    gap: 8px;                                  /* Spazio tra i pulsanti */
+    margin: 20px 0px;
+    flex-wrap: wrap;                           /* Vanno a capo se necessario */
+}
+
+/* Stile dei pulsanti tab */
+.mp-tab-btn {
+    flex: 1;                                   /* Si espandono per occupare spazio */
+    min-width: 120px;                          /* Larghezza minima */
+    padding: 12px;
+    background-color: #ffffff;                 /* Bianco */
+    border: 2px solid #667eea;                 /* Bordo viola */
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #667eea;                            /* Testo viola */
+    transition: all 0.3s;
+}
+
+/* Hover sui tab */
+.mp-tab-btn:hover {
+    background-color: #667eea;                 /* Sfondo viola */
+    color: #ffffff;                            /* Testo bianco */
+}
+
+/* Tab attivo (selezionato) */
+.mp-tab-btn.active {
+    background-color: #667eea;
+    color: #ffffff;
+}
+
+/* Tab in dark mode - TEMA ROSSO/NERO */
+[data-theme="dark"] .mp-tab-btn {
+    background-color: #0a0a0a;                 /* Nero scuro */
+    border-color: #cc0000;                     /* Bordo rosso */
+    color: #ff6666;                            /* Rosso chiaro */
+}
+
+[data-theme="dark"] .mp-tab-btn:hover,
+[data-theme="dark"] .mp-tab-btn.active {
+    background-color: #cc0000;                 /* Rosso intenso */
+    color: #ffffff;
+    border-color: #ff0000;                     /* Rosso brillante */
+}
+
+/* Contenuto delle tab (nascosto di default) */
+.mp-tab-content {
+    display: none;                             /* Nascosto */
+    padding: 20px;
+    background-color: #ffffff;                 /* Bianco */
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    animation: fadeIn 0.4s;                    /* Animazione di comparsa */
+}
+
+/* Quando la tab è attiva, la mostriamo */
+.mp-tab-content.active {
+    display: block;                            /* Visibile */
+}
+
+/* Contenuto tab in dark mode */
+[data-theme="dark"] .mp-tab-content {
+    background-color: #0a0a0a;                 /* Nero scuro */
+    border-color: #330000;                     /* Bordo rosso scuro */
+}
+
+/* Liste dentro le tab */
+.mp-tab-content ul {
     padding-left: 20px;
 }
 
-.mp-quiz {
-    background: var(--bg-card);
-    padding: 25px;
-    border-radius: 12px;
-    margin: 20px;
-}
-.mp-quiz-question {
-    font-weight: 600;
-    margin: 20px 0 12px;
-    color: var(--text-primary);
-    font-size: 17px;
-}
-.mp-quiz-options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.mp-quiz-options button {
-    padding: 12px 16px;
-    background: var(--bg-body);
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: left;
-    transition: all 0.2s;
-    color: var(--text-primary);
-    font-size: 15px;
-}
-.mp-quiz-options button:hover:not(:disabled) {
-    border-color: var(--accent-color);
-    background: rgba(102,126,234,0.1);
-}
-.mp-quiz-options button.correct {
-    background: #28a745;
-    color: white;
-    border-color: #28a745;
-}
-.mp-quiz-options button.wrong {
-    background: #dc3545;
-    color: white;
-    border-color: #dc3545;
-}
-.mp-quiz-feedback {
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 14px;
-    display: none;
-}
-.mp-quiz-feedback.correct {
-    display: block;
-    background: rgba(40,167,69,0.15);
-    color: #28a745;
-    border: 1px solid #28a745;
-}
-.mp-quiz-feedback.wrong {
-    display: block;
-    background: rgba(220,53,69,0.15);
-    color: #dc3545;
-    border: 1px solid #dc3545;
+.mp-tab-content li {
+    color: #666666;
+    margin: 6px 0px;
 }
 
-/* Responsive */
+[data-theme="dark"] .mp-tab-content li {
+    color: #cccccc;
+}
+
+/* Animazione di comparsa (fadeIn) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;                            /* Trasparente all'inizio */
+        transform: translateY(8px);            /* Spostato in basso di 8px */
+    }
+    to {
+        opacity: 1;                            /* Opaco alla fine */
+        transform: translateY(0px);            /* Posizione normale */
+    }
+}
+
+
+
+.mp-study-intro {
+    text-align: center;
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 30px;
+}
+
+[data-theme="dark"] .mp-study-intro {
+    color: #cccccc;
+}
+
+
+
+.mp-quiz {
+    background-color: #ffffff;                 /* Bianco */
+    padding: 25px;
+    border-radius: 12px;
+    margin: 30px 0px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Quiz in dark mode - TEMA ROSSO/NERO */
+[data-theme="dark"] .mp-quiz {
+    background-color: #0a0a0a;                 /* Nero scuro */
+    box-shadow: 0 4px 15px rgba(255,0,0,0.15); /* Ombra con sfumatura rossa */
+}
+
+/* Domanda del quiz */
+.mp-quiz-question {
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+
+[data-theme="dark"] .mp-quiz-question {
+    color: #ffffff;
+}
+
+/* Pulsanti delle risposte */
+.mp-quiz-options button {
+    display: block;                            /* Ogni pulsante va a capo */
+    width: 100%;                               /* Larghezza piena */
+    padding: 10px;
+    margin: 6px 0px;
+    background-color: #ffffff;                 /* Bianco */
+    border: 2px solid #e0e0e0;                 /* Bordo grigio */
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;                          /* Testo allineato a sinistra */
+    color: #333333;
+    transition: all 0.3s;
+}
+
+/* Pulsanti quiz in dark mode */
+[data-theme="dark"] .mp-quiz-options button {
+    background-color: #0a0a0a;                 /* Nero scuro */
+    border-color: #330000;                     /* Bordo rosso scuro */
+    color: #ffffff;
+}
+
+/* Hover sui pulsanti quiz - ROSSO */
+.mp-quiz-options button:hover {
+    background-color: #cc0000;                 /* Rosso */
+    color: #ffffff;
+    border-color: #ff0000;                     /* Rosso brillante */
+}
+
+/* Pulsante disabilitato dopo la risposta */
+.mp-quiz-options button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Risposta corretta */
+.mp-quiz-options button.correct {
+    background-color: #27ae60;
+    color: #ffffff;
+    border-color: #229954;
+}
+
+/* Risposta sbagliata */
+.mp-quiz-options button.wrong {
+    background-color: #e74c3c;
+    color: #ffffff;
+    border-color: #c0392b;
+}
+
+/* Feedback (risposta corretta/sbagliata) - nascosto di default */
+.mp-quiz-feedback {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    display: none;                             /* Nascosto finché non serve */
+    font-weight: 500;
+}
+
+/* Feedback quando la risposta è CORRETTA */
+.mp-quiz-feedback.correct {
+    background-color: #d4edda;                 /* Verde chiaro */
+    color: #155724;                            /* Verde scuro */
+    display: block;                            /* Mostra */
+}
+
+/* Feedback quando la risposta è SBAGLIATA */
+.mp-quiz-feedback.wrong {
+    background-color: #f8d7da;                 /* Rosso chiaro */
+    color: #721c24;                            /* Rosso scuro */
+    display: block;
+}
+
+/* Feedback in dark mode - colori adattati per contrasto */
+[data-theme="dark"] .mp-quiz-feedback.correct {
+    background-color: #0d2b0d;                 /* Verde molto scuro */
+    color: #90ff90;                            /* Verde chiaro per testo */
+}
+
+[data-theme="dark"] .mp-quiz-feedback.wrong {
+    background-color: #3d0000;                 /* Rosso molto scuro */
+    color: #ff9999;                            /* Rosa chiaro per testo */
+}
+
+
+footer {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #e0e0e0;
+}
+
+[data-theme="dark"] footer {
+    background-color: #0a0a0a;                 /* Nero scuro */
+    border-top-color: #330000;                 /* Bordo rosso scuro */
+}
+
+footer p {
+    color: #666666;
+    margin: 0px;
+}
+
+[data-theme="dark"] footer p {
+    color: #bbbbbb;
+}
+
+/* Pulsante "Torna su" (freccia in alto) */
+.back-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #667eea;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;                                /* Nascosto di default */
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Quando ha la classe "visible", lo mostriamo */
+.back-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-btn:hover {
+    background-color: #cc0000;                 /* Rosso */
+}
+
+
+
+/* Elemento nascosto inizialmente */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+/* Quando JavaScript aggiunge la classe "active", l'elemento compare */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+
+
+/* Questi stili si applicano SOLO se lo schermo è largo meno di 768px */
 @media (max-width: 768px) {
-    .mp-hero h1 { font-size: 26px; }
-    .mp-subtitle { font-size: 16px; }
-    .mp-stats { grid-template-columns: repeat(2, 1fr); }
-    .mp-tabs { flex-direction: column; align-items: center; }
-    .mp-tab-btn { width: 100%; max-width: 300px; }
+    
+    /* Titolo hero più piccolo su mobile */
+    .mp-hero h1 {
+        font-size: 32px;                       /* Da 42px a 32px */
+    }
+    
+    /* Sottotitolo più piccolo */
+    .mp-subtitle {
+        font-size: 18px;                       /* Da 20px a 18px */
+    }
+    
+    /* Statistiche: da 4 colonne a 2 colonne */
+    .mp-stats {
+        grid-template-columns: 1fr 1fr;        /* 2 colonne invece di 4 */
+    }
+    
+    /* Tab: pulsanti uno sotto l'altro invece che in fila */
+    .mp-tabs {
+        flex-direction: column;                /* Disposizione verticale */
+    }
+    
+    /* Menu hamburger per mobile - MOSTRALO */
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Menu nascosto di default su mobile */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    /* Menu scuro su mobile */
+    [data-theme="dark"] .nav-menu {
+        background-color: #0a0a0a;
+    }
+    
+    /* Quando il menu è attivo (JavaScript aggiunge la classe) */
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    /* Link del menu su mobile */
+    .nav-menu .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Animazione hamburger */
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/* Schermi molto piccoli (meno di 480px) */
+@media (max-width: 480px) {
+    
+    /* Statistiche: 1 colonna su schermi molto piccoli */
+    .mp-stats {
+        grid-template-columns: 1fr;            /* 1 colonna */
+    }
+    
+    /* Titolo ancora più piccolo */
+    .mp-hero h1 {
+        font-size: 28px;
+    }
+    
+    /* Titoli sezioni più piccoli */
+    .timeline-section h2 {
+        font-size: 24px;
+    }
 }

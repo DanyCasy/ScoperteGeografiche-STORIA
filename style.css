@@ -1,6 +1,4 @@
-/* ========================================
-   RESET E IMPOSTAZIONI BASE
-   ======================================== */
+
 /* elimina margini e padding di default del browser e usa box-sizing border-box per includere bordi e padding nel calcolo delle dimensioni degli elementi */
 * {
     margin: 0;
@@ -8,9 +6,7 @@
     box-sizing: border-box;
 }
 
-/* ========================================
-   VARIABILI CSS (tema chiaro e scuro)
-   ======================================== */
+
 /* :root definisce le variabili disponibili in tutto il documento.
    si usano le variabili (--nome) per cambiare i colori in una sola volta 
    quando l'utente attiva la dark mode tramite JavaScript */
@@ -64,9 +60,9 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ========================================
+/* 
    HEADER E NAVIGAZIONE
-   ======================================== */
+ */
 header {
     background: var(--header-bg);
     color: var(--header-text);
@@ -87,9 +83,9 @@ header h1 {
     min-width: 200px;                      /* garantisce leggibilità minima */
 }
 
-/* ========================================
+/* 
    PULSANTE DARK MODE
-   ======================================== */
+   */
 .theme-btn {
     background: rgba(255,255,255,0.2);
     border: 2px solid white;
@@ -124,9 +120,9 @@ header h1 {
 [data-theme="dark"] .theme-btn .sun-icon { opacity: 0; }
 [data-theme="dark"] .theme-btn .moon-icon { opacity: 1; }
 
-/* ========================================
+/*
    MENU HAMBURGER
-   ======================================== */
+   */
 .hamburger {
     display: flex;
     flex-direction: column;                /* le 3 barre sono in colonna */
@@ -186,9 +182,9 @@ header h1 {
 .hamburger.active .bar:nth-child(2) { opacity: 0; }
 .hamburger.active .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
 
-/* ========================================
+/* 
    SEZIONI PRINCIPALI
-   ======================================== */
+  */
 .timeline-section, .about-section, .faq-section {
     max-width: 900px;
     margin: 30px auto;                     /* centrato orizzontalmente */
@@ -207,9 +203,9 @@ header h1 {
     transition: color 0.3s ease;
 }
 
-/* ========================================
+/* 
    TIMELINE VERTICALE
-   ======================================== */
+   */
 .timeline {
     position: relative;
     padding-left: 30px;
@@ -263,9 +259,9 @@ header h1 {
     transition: color 0.3s ease;
 }
 
-/* ========================================
+/* 
    CARD E FAQ
-   ======================================== */
+  */
 .card-custom {
     padding: 20px;
     background: var(--bg-card);
@@ -316,9 +312,9 @@ header h1 {
 
 .faq-answer p { margin: 10px 0; }
 
-/* ========================================
+/* 
    FOOTER E PULSANTE TORNA SU
-   ======================================== */
+  */
 footer {
     text-align: center;
     padding: 25px 20px;
@@ -355,9 +351,9 @@ footer {
 /* javaScript aggiunge .visible per mostrarlo dopo 300px di scroll */
 .back-btn.visible { display: flex; }
 
-/* ========================================
+/* 
    ANIMAZIONE REVEAL ON SCROLL
-   ======================================== */
+ */
 .reveal {
     opacity: 0;
     transform: translateY(30px);         /* spostato verso il basso */
@@ -370,9 +366,9 @@ footer {
     transform: translateY(0);
 }
 
-/* ========================================
+/* 
    RESPONSIVE (si adatta a tablet e telefono)
-   ======================================== */
+    */
 /* regole attive SOLO su schermi ≤ 768px (tablet/telefono) */
 @media (max-width: 768px) {
     header {

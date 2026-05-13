@@ -4,146 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scoperte Geografiche - Home</title>
+    <!-- Collegamento al tuo file CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    
     <header>
+        <h1>SCOPERTE GEOGRAFICHE</h1>
+        
+        <!-- Pulsante Menu Hamburger (visibile su mobile/tablet) -->
+        <div class="hamburger" id="hamburger" aria-label="Apri menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <!-- Menu di navigazione a scomparsa laterale -->
+        <nav class="nav-menu" id="nav-menu">
+            <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+            <div class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></div>
+            <div class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi siamo</a></div>
+            <div class="nav-item"><a href="mongoli.html" class="nav-link">I Mongoli</a></div>
+            <div class="nav-item"><a href="marco-polo.html" class="nav-link">Marco Polo</a></div>
+            <div class="nav-item"><a href="EnricoilNavigatore.html" class="nav-link">Enrico il Navigatore</a></div>
+            <div class="nav-item"><a href="bartolomeu-dias.html" class="nav-link">Bartolomeu Dias</a></div>
+            <div class="nav-item"><a href="vascodagama.html" class="nav-link">Vasco da Gama</a></div>
+            <div class="nav-item"><a href="PedroÁlvaresCabral.html" class="nav-link">Pedro Álvares Cabral</a></div>
+        </nav>
+
+        <!-- Pulsante per cambiare tema (Chiaro / Scuro) -->
         <button id="theme-toggle" class="theme-btn" aria-label="Cambia tema">
             <span class="sun-icon">☀️</span>
             <span class="moon-icon">🌙</span>
         </button>
-        <h1>SCOPERTE GEOGRAFICHE</h1>
-        <nav class="navbar">
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
-                <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi siamo</a></li>
-                <li class="nav-item"><a href="vascodagama.html" class="nav-link">Vasco Da Gama</a></li>
-                <li class="nav-item"><a href="mongoli.html" class="nav-link">Mongoli</a></li>
-                <li class="nav-item"><a href="bartolomeodiaz.html" class="nav-link">Bartolomeo Diaz</a></li>
-                <li class="nav-item"><a href="EnricoilNavigatore.html" class="nav-link">Enrico il Navigatore</a></li>
-                <li class="nav-item"><a href="PedroÁlvaresCabral.html" class="nav-link">Pedro Álvares Cabral</a></li>
-            </ul>
-        </nav>
     </header>
 
+
     <main>
+        <!-- Sezione con animazione "reveal" allo scroll -->
         <section class="timeline-section reveal">
-            <h2>Linea del tempo</h2>
+            <h2>Benvenuto nel Progetto</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: var(--text-secondary); max-width: 800px; margin-left: auto; margin-right: auto;">
+                Benvenuto nel nostro percorso didattico sulle scoperte geografiche e sulle civiltà che hanno plasmato il mondo. 
+                Naviga tra le sezioni qui sotto per esplorare ogni argomento in dettaglio.
+            </p>
+
+            <!-- Contenitore della Timeline Verticale -->
             <div class="timeline">
+                
+                <!-- 1. I Mongoli -->
                 <div class="timeline-item">
-                    <span class="timeline-marker"></span>
+                    <div class="timeline-marker"></div>
+                    <span class="timeline-date">XIII Secolo</span>
                     <div class="timeline-content">
-                        <div class="timeline-date">1492</div>
-                        <h3>Cristoforo Colombo</h3>
-                        <p>Partenza per le Americhe: scoperta del Nuovo Mondo e inizio di una nuova era geografica.</p>
+                        <h3>🏹 I Mongoli: Un Impero dalle Steppe</h3>
+                        <p>Dalle yurte nomadi alle conquiste di Gengis Khan. Scopri come un popolo di pastori abbia creato uno dei più vasti imperi della storia, garantendo sicurezza alla Via della Seta.</p>
+                        <a href="mongoli.html" class="nav-link" style="display: inline-block; margin-top: 12px;">Leggi la sezione →</a>
                     </div>
                 </div>
+
+                <!-- 2. Marco Polo -->
                 <div class="timeline-item">
-                    <span class="timeline-marker"></span>
+                    <div class="timeline-marker"></div>
+                    <span class="timeline-date">1271 - 1295</span>
                     <div class="timeline-content">
-                        <div class="timeline-date">1519-1522</div>
-                        <h3>Ferdinando Magellano</h3>
-                        <p>Prima circumnavigazione del globo, dimostrando che il mondo è connesso e circolare.</p>
+                        <h3>📜 Marco Polo e "Il Milione"</h3>
+                        <p>Il mercante veneziano che aprì le porte dell'Asia all'Europa. Un viaggio epico, la prigionia a Genova e un'opera che ispirò generazioni di esploratori, tra cui Colombo.</p>
+                        <a href="marco-polo.html" class="nav-link" style="display: inline-block; margin-top: 12px;">Leggi la sezione →</a>
                     </div>
                 </div>
+
+                <!-- 3. Enrico il Navigatore -->
                 <div class="timeline-item">
-                    <span class="timeline-marker"></span>
+                    <div class="timeline-marker"></div>
+                    <span class="timeline-date">1415 - 1460</span>
                     <div class="timeline-content">
-                        <div class="timeline-date">1770</div>
-                        <h3>James Cook</h3>
-                        <p>Esplorazioni nel Pacifico e nuove mappe, con nuove terre e rotte scoperte.</p>
+                        <h3>⚓ Enrico il Navigatore</h3>
+                        <p>Il principe portoghese che, senza mai salpare, organizzò le prime esplorazioni oceaniche. Strumenti nautici, la scuola di Sagres e la spinta verso l'Africa.</p>
+                        <a href="enrico-navigatore.html" class="nav-link" style="display: inline-block; margin-top: 12px;">Leggi la sezione →</a>
                     </div>
                 </div>
+
+                <!-- 4. Bartolomeu Dias -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <span class="timeline-date">1488</span>
+                    <div class="timeline-content">
+                        <h3>🌊 Bartolomeu Dias e il Capo delle Tempeste</h3>
+                        <p>Il primo europeo a doppiare la punta meridionale dell'Africa. Una scoperta cruciale che dimostrò il collegamento tra Atlantico e Oceano Indiano.</p>
+                        <a href="bartolomeu-dias.html" class="nav-link" style="display: inline-block; margin-top: 12px;">Leggi la sezione →</a>
+                    </div>
+                </div>
+
+                <!-- 5. Vasco da Gama -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <span class="timeline-date">1497 - 1498</span>
+                    <div class="timeline-content">
+                        <h3>🗺️ Vasco da Gama e la Rotta per l'India</h3>
+                        <p>Il viaggio che collegò direttamente Europa e Asia via mare. Spezie, conflitti commerciali e la nascita dell'impero portoghese nell'Oceano Indiano.</p>
+                        <a href="vasco-da-gama.html" class="nav-link" style="display: inline-block; margin-top: 12px;">Leggi la sezione →</a>
+                    </div>
+                </div>
+
+                <!-- 6. Pedro Álvares Cabral -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <span class="timeline-date">1500</span>
+                    <div class="timeline-content">
+                        <h3>🌎 Pedro Álvares Cabral e il Brasile</h3>
+                        <p>La "scoperta" storica del Sud America. Come una rotta occidentale e una tempesta portarono il Portogallo a prendere possesso di un nuovo continente.</p>
+                        <a href="pedro-cabral.html" class="nav-link" style="display: inline-block; margin-top: 12px;">Leggi la sezione →</a>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
 
+    <!-- 
+     
+      FOOTER E PULSANTE TORNA SU
+     
+    -->
     <footer>
-        <p>&copy; 2026 Scoperte Geografiche - Progetto scolastico</p>
-        <button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
+        <p>&copy; 2026 Gruppo Scolastico - Scoperte Geografiche | Progetto didattico</p>
     </footer>
+    <button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
 
+ 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Hamburger Menu
-            const hamburger = document.getElementById('hamburger');
-            const navMenu = document.getElementById('nav-menu');
             
-            if (hamburger && navMenu) {
-                hamburger.addEventListener('click', () => {
-                    hamburger.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-                
-                // Chiudi menu al click su un link
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.addEventListener('click', () => {
-                        hamburger.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    });
-                });
+            // 1. GESTIONE DARK MODE
+            const themeBtn = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            // Controlla se l'utente ha già scelto un tema salvato
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                html.setAttribute('data-theme', 'dark');
             }
 
-            // Reveal on Scroll
-            const revealElements = document.querySelectorAll('.reveal');
-            
-            const revealOnScroll = () => {
-                revealElements.forEach(el => {
-                    const elementTop = el.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    if (elementTop < windowHeight - 100) {
+            themeBtn.addEventListener('click', () => {
+                const isDark = html.getAttribute('data-theme') === 'dark';
+                const newTheme = isDark ? 'light' : 'dark';
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme); // Salva la scelta
+            });
+
+            // 2. MENU HAMBURGER (APRI/CHIUDI)
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            // Chiudi il menu quando si clicca su un link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // 3. PULSANTE "TORNA SU" (VISIBILE DOPO LO SCROLL)
+            const backBtn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backBtn.classList.add('visible');
+                } else {
+                    backBtn.classList.remove('visible');
+                }
+            });
+            backBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // 4. ANIMAZIONE REVEAL ALLO SCROLL
+            const reveals = document.querySelectorAll('.reveal');
+            const checkReveal = () => {
+                reveals.forEach(el => {
+                    const top = el.getBoundingClientRect().top;
+                    // Se l'elemento entra nel viewport, aggiungi la classe .active
+                    if (top < window.innerHeight - 50) {
                         el.classList.add('active');
                     }
                 });
             };
-            
-            // Trigger iniziale + scroll
-            revealOnScroll();
-            window.addEventListener('scroll', revealOnScroll);
-
-            // Back to Top Button
-            const backToTopBtn = document.getElementById('back-to-top');
-            
-            if (backToTopBtn) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 300) {
-                        backToTopBtn.classList.add('visible');
-                    } else {
-                        backToTopBtn.classList.remove('visible');
-                    }
-                });
-                
-                backToTopBtn.addEventListener('click', () => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-
-            // Dark Mode Toggle
-            const themeToggle = document.getElementById('theme-toggle');
-            const root = document.documentElement;
-            
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
-            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-                root.setAttribute('data-theme', 'dark');
-            }
-            
-            if (themeToggle) {
-                themeToggle.addEventListener('click', () => {
-                    const currentTheme = root.getAttribute('data-theme');
-                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                    
-                    root.setAttribute('data-theme', newTheme);
-                    localStorage.setItem('theme', newTheme);
-                });
-            }
+            window.addEventListener('scroll', checkReveal);
+            checkReveal(); // Controlla subito al caricamento
         });
     </script>
 </body>

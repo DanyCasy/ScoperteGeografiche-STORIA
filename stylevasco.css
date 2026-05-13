@@ -1,7 +1,4 @@
 
-        /* ========================================
-           1. IMPOSTAZIONI BASE DELLA PAGINA
-           ======================================== */
         
         /* Stile per tutto il corpo della pagina (MODALITÀ CHIARA - DEFAULT) */
         body {
@@ -13,9 +10,7 @@
             line-height: 1.6;                     /* Spazio tra le righe del testo */
         }
 
-        /* ========================================
-           2. DARK MODE - CORRETTA OVUNQUE!
-           ======================================== */
+ 
         
         /* Quando l'elemento <html> ha data-theme="dark" (attivato dal JS) */
         [data-theme="dark"] body {
@@ -23,10 +18,7 @@
             color: #f0f0f0;                       /* Testo bianco sporco (leggibile) */
         }
 
-        /* ========================================
-           3. HEADER E BARRA DI NAVIGAZIONE
-           ======================================== */
-        
+   
         /* Contenitore dell'header in alto */
         header {
             background-color: #ffffff;            /* Sfondo bianco */
@@ -101,10 +93,7 @@
             color: #ffffff;
         }
 
-        /* ========================================
-           4. PULSANTE CAMBIA TEMA (SOLE/LUNA)
-           ======================================== */
-        
+
         /* Pulsante con le icone ☀️🌙 */
         .theme-btn {
             position: absolute;                   /* Posizionato in alto a destra */
@@ -147,10 +136,6 @@
         [data-theme="dark"] .theme-btn .moon-icon {
             display: inline;
         }
-
-        /* ========================================
-           5. HERO SECTION (parte colorata in alto)
-           ======================================== */
 
         /* Contenitore principale con titolo e ritratto */
         .vdg-hero {
@@ -205,9 +190,7 @@
             opacity: 0.95;
         }
 
-        /* ========================================
-           6. SEZIONI CON TITOLO (es. "I Numeri dell'Impresa")
-           ======================================== */
+
 
         /* Contenitore generico per le sezioni */
         .timeline-section {
@@ -229,9 +212,7 @@
             color: #f0f0f0;                       /* Bianco leggibile */
         }
 
-        /* ========================================
-           7. CARD STATISTICHE (i 4 numeri cliccabili)
-           ======================================== */
+
 
         /* Griglia che contiene le 4 card */
         .vdg-stats {
@@ -289,9 +270,6 @@
             color: #bbbbbb;                       /* Grigio chiaro per contrasto */
         }
 
-        /* ========================================
-           8. CARD DEI TRE VIAGGI
-           ======================================== */
 
         /* Contenitore di ogni viaggio */
         .vdg-voyage {
@@ -363,9 +341,6 @@
             color: #ffffff;                       /* Bianco in dark mode */
         }
 
-        /* ========================================
-           9. PULSANTE "APPROFONDISCI"
-           ======================================== */
 
         .vdg-deep-btn {
             background-color: #667eea;            /* Viola */
@@ -385,9 +360,7 @@
             transform: scale(1.05);               /* Ingrandisce del 5% */
         }
 
-        /* ========================================
-           10. CONTENUTO NASCOSTO (APPROFONDIMENTO)
-           ======================================== */
+
 
         /* Box che contiene i dettagli nascosti */
         .vdg-deep-content {
@@ -436,9 +409,6 @@
             color: #cccccc;                       /* Grigio chiaro */
         }
 
-        /* ========================================
-           11. BOX DELLA MAPPA
-           ======================================== */
 
         .vdg-map-box {
             background-color: #ffffff;            /* Bianco */
@@ -464,9 +434,6 @@
             border: 1px solid #e0e0e0;
         }
 
-        /* ========================================
-           12. BOX EVIDENZIATO (highlight giallo)
-           ======================================== */
 
         .vdg-highlight {
             background: linear-gradient(to bottom right, rgba(255,204,0,0.15), transparent);
@@ -501,9 +468,6 @@
             color: #cccccc;
         }
 
-        /* ========================================
-           13. TAB (schede cliccabili: Curiosità/Personaggi/Eredità)
-           ======================================== */
 
         /* Contenitore dei pulsanti tab */
         .vdg-tabs {
@@ -600,9 +564,6 @@
             }
         }
 
-        /* ========================================
-           14. QUIZ INTERATTIVO
-           ======================================== */
 
         .vdg-quiz {
             background-color: #ffffff;            /* Bianco */
@@ -693,9 +654,7 @@
             color: #ffb3b3;                       /* Rosa chiaro per testo */
         }
 
-        /* ========================================
-           15. FOOTER (piè di pagina)
-           ======================================== */
+
 
         footer {
             background-color: #ffffff;
@@ -747,9 +706,6 @@
             background-color: #764ba2;
         }
 
-        /* ========================================
-           16. RESPONSIVE (per cellulari e tablet)
-           ======================================== */
 
         /* Questi stili si applicano SOLO se lo schermo è largo meno di 768px */
         @media (max-width: 768px) {
