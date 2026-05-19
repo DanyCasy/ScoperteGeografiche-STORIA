@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marco Polo - Scoperte Geografiche</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Stili specifici per la pagina di Marco Polo */
+    .mp-ordered-list {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+    .mp-ordered-list li {
+      margin: 8px 0;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <button id="theme-slider" class="theme-slider" aria-label="Cambia tema">
+    <span class="slider-sun">☀️</span>
+    <span class="slider-moon">🌙</span>
+  </button>
+  <h1>SCOPERTE GEOGRAFICHE</h1>
+  <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <ul class="nav-menu" id="nav-menu">
+    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="../faq.html" class="nav-link">FAQ</a></li>
+    <li class="nav-item"><a href="../chi-siamo.html" class="nav-link">Chi siamo</a></li>
+    <li class="nav-item"><a href="vasco-da-gama.html" class="nav-link">Vasco da Gama</a></li>
+    <li class="nav-item"><a href="bartolomeu-dias.html" class="nav-link">Bartolomeo Diaz</a></li>
+    <li class="nav-item"><a href="enrico-il-navigatore.html" class="nav-link">Enrico il Navigatore</a></li>
+    <li class="nav-item"><a href="pedro-alvares-cabral.html" class="nav-link">Pedro Álvares Cabral</a></li>
+    <li class="nav-item"><a href="marco-polo.html" class="nav-link">Marco Polo</a></li>
+    <li class="nav-item"><a href="mongoli.html" class="nav-link">Mongoli</a></li>
+  </ul>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Marco Polo</h1>
+    <p class="hero-subtitle">Il mercante veneziano che aprì l'Europa all'Asia</p>
+    <div class="hero-portrait">
+      <img src="../images/marcopolo.jpg" alt="Ritratto di Marco Polo">
+    </div>
+    <p class="hero-dates">1254 - 1324 | Esploratore, mercante e autore de "Il Milione"</p>
+  </section>
+
+  <!-- STATISTICHE -->
+  <div class="section reveal">
+    <h2>I Numeri del Viaggio</h2>
+    <div class="stats-grid">
+      <div class="stat-card" onclick="alert('Marco Polo viaggiò per circa 24.000 km tra andata e ritorno!')">
+        <span class="stat-number">24.000</span>
+        <span class="stat-label">Km percorsi</span>
+      </div>
+      <div class="stat-card" onclick="alert('Rimase in Asia dal 1275 al 1292, al servizio di Kublai Khan')">
+        <span class="stat-number">17</span>
+        <span class="stat-label">Anni in Cina</span>
+      </div>
+      <div class="stat-card" onclick="alert('Partì da Venezia nel 1271 e tornò nel 1295')">
+        <span class="stat-number">24</span>
+        <span class="stat-label">Anni di viaggio totale</span>
+      </div>
+      <div class="stat-card" onclick="alert('Il Milione fu tradotto in oltre 20 lingue nei primi secoli')">
+        <span class="stat-number">20+</span>
+        <span class="stat-label">Lingue del Milione</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- IL GRANDE VIAGGIO -->
+  <div class="section reveal">
+    <h2>🗺️ Il Grande Viaggio (1271-1295)</h2>
+
+    <div class="journey-card">
+      <span class="year-badge">1271-1275</span>
+      <h3>🚶 Andata: La Via della Seta</h3>
+      <p>Partiti da <strong>Venezia nel 1271</strong>, Marco Polo insieme al padre Niccolò e allo zio Maffeo attraversarono l'Anatolia, la Persia, il Pamir e il temuto <strong>deserto del Gobi</strong>, seguendo i rami settentrionali della Via della Seta.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <h4>Cos'era la Via della Seta?</h4>
+        <p>Non era un'unica strada, ma una vasta <strong>rete di percorsi commerciali</strong> terrestri e marittimi che collegavano la Cina al Mediterraneo. Vi transitavano:</p>
+        <ul>
+          <li>🧵 Seta cinese (la merce più pregiata)</li>
+          <li>🌶️ Spezie, pietre preziose, tessuti</li>
+          <li>💡 Tecnologie e idee religiose</li>
+        </ul>
+        <p><strong>Obiettivo:</strong> Raggiungere la corte di Kublai Khan per stabilire relazioni commerciali.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1275-1292</span>
+      <h3>🏯 Permanenza nel Catai</h3>
+      <p>Soggiornarono per <strong>17 anni</strong> presso la corte di <strong>Kublai Khan</strong>, Gran Khan dell'Impero Mongolo. Marco Polo divenne un funzionario fidato, compiendo missioni diplomatiche e amministrative in varie province.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <h4>Cosa ammirò Marco Polo in Cina?</h4>
+        <ul>
+          <li><strong>Carta moneta:</strong> Innovazione sconosciuta in Europa</li>
+          <li><strong>Carbone fossile:</strong> "Pietre nere che bruciano"</li>
+          <li><strong>Sistema postale Yam:</strong> Staffette veloci per comunicazioni imperiali</li>
+          <li><strong>Tolleranza religiosa:</strong> Cristiani, buddisti e musulmani convivevano</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1292-1295</span>
+      <h3>⛵ Ritorno: La Via del Mare</h3>
+      <p>Nel 1292 scortarono la principessa mongola <strong>Kököchin</strong> in Persia. Il viaggio di ritorno avvenne via mare, circumnavigando l'Indocina, l'India e toccando Sumatra, prima di rientrare a <strong>Venezia nel 1295</strong>.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <p>Il viaggio di ritorno fu pericoloso: molte persone del seguito morirono durante la traversata. Marco Polo tornò ricco di esperienze, oggetti esotici e storie incredibili che avrebbe poi raccontato nel Milione.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- IL MILIONE -->
+  <div class="section reveal">
+    <div class="map-box">
+      <h2>📖 Il Milione: L'Opera</h2>
+      <img src="../images/milione.jpg" alt="Manoscritto del Milione">
+      <div class="highlight">
+        <h3>Come nacque il libro?</h3>
+        <p>L'opera fu scritta nel <strong>1298</strong> durante la prigionia di Marco Polo a <strong>Genova</strong>, dopo la Battaglia di Curzola. In carcere incontrò <strong>Rustichello da Pisa</strong>, scrittore di romanzi cavallereschi, che trascrisse e diede forma letteraria ai racconti di Polo.</p>
+        <p><strong>Lingua:</strong> Franco-veneto (lingua cortese dell'Italia settentrionale)<br>
+        <strong>Titolo:</strong> Forse dal soprannome familiare "Emilione" o dai "milioni" di meraviglie descritte.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEMI PRINCIPALI (TAB) -->
+  <div class="section reveal">
+    <h2>✨ Temi Principali del Milione</h2>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="openTab(event, 'geografia')">🌍 Geografia</button>
+      <button class="tab-btn" onclick="openTab(event, 'economia')">💰 Economia</button>
+      <button class="tab-btn" onclick="openTab(event, 'politica')">👑 Politica</button>
+    </div>
+    <div id="geografia" class="tab-content active">
+      <p><strong>Descrizioni etnografiche:</strong> Popoli, usi, costumi e religioni di terre sconosciute agli europei (cristiani nestoriani, buddisti, musulmani).</p>
+      <p><strong>Fauna esotica:</strong> Animali mai visti in Europa, descritti con meraviglia e precisione.</p>
+      <p><strong>Città straordinarie:</strong> Hangzhou definita "la più nobile e la più eccellente che sia al mondo".</p>
+    </div>
+    <div id="economia" class="tab-content">
+      <p><strong>Mercati e merci:</strong> Focus su spezie, pietre preziose, tessuti pregiati e tecniche artigianali orientali.</p>
+      <p><strong>Innovazioni tecnologiche:</strong> Carta moneta, carbone fossile, sistema postale efficiente.</p>
+      <p><strong>Rotte commerciali:</strong> Indicazioni pratiche per mercanti su percorsi, pericoli e opportunità.</p>
+    </div>
+    <div id="politica" class="tab-content">
+      <p><strong>L'Impero Mongolo:</strong> Elogio dell'efficienza amministrativa, della tolleranza religiosa e della sicurezza delle strade.</p>
+      <p><strong>Kublai Khan:</strong> Ritratto del sovrano come leader carismatico, saggio e aperto alle culture diverse.</p>
+      <p><strong>Sistema Yam:</strong> Rete di staffette postali che permetteva comunicazioni velocissime in tutto l'impero.</p>
+    </div>
+  </div>
+
+  <!-- STRUTTURA DEL LIBRO -->
+  <div class="section reveal">
+    <div class="highlight">
+      <h3>📚 Struttura del Libro</h3>
+      <ol class="mp-ordered-list">
+        <li><strong>Prologo:</strong> Primo viaggio di Niccolò e Maffeo Polo, incontro con Kublai Khan</li>
+        <li><strong>Asia Centrale:</strong> Armenia, Persia, Afghanistan, Pamir, deserto del Gobi</li>
+        <li><strong>Il Catai (Cina):</strong> Corte imperiale di Cambaluc (Pechino), città, amministrazione</li>
+        <li><strong>India e Isole:</strong> Coste indiane, Sri Lanka, Sumatra, Giava, spezie</li>
+        <li><strong>Epilogo:</strong> Ritorno via mare, morte di Kublai Khan, arrivo a Venezia</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- EREDITÀ STORICA -->
+  <div class="section reveal">
+    <div class="map-box">
+      <h2>🌟 Eredità Storica</h2>
+      <div class="highlight">
+        <h3>🗺️ Cartografia</h3>
+        <p>Il Milione influenzò profondamente la cartografia medievale. Il <strong>Mappamondo di Fra Mauro</strong> (ca. 1450) integrò le conoscenze di Marco Polo per correggere la posizione di molte regioni asiatiche.</p>
+      </div>
+      <div class="highlight">
+        <h3>🚢 Grandi Esplorazioni</h3>
+        <p><strong>Cristoforo Colombo</strong> possedeva una copia annotata del Milione. Le descrizioni delle ricchezze del Catai e del Cipango (Giappone) lo spinsero a cercare una rotta occidentale per l'Asia.</p>
+      </div>
+      <div class="highlight">
+        <h3>🌍 Impatto Culturale</h3>
+        <p>Inizialmente considerato da molti una raccolta di esagerazioni ("Il Milione" come "mille bugie"), col tempo le descrizioni di Polo furono confermate, consolidando il suo ruolo come <strong>ponte fondamentale tra Oriente e Occidente</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEZIONE RIPASSO -->
+  <div class="section reveal">
+    <h2>📖 Ripassa Prima del Quiz!</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 30px;">Leggi attentamente queste informazioni e prova a rispondere alle domande</p>
+
+    <div class="journey-card">
+      <span class="year-badge">BIOGRAFIA</span>
+      <h3>👤 Chi era Marco Polo?</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 1: Quando e dove nacque?</h4>
+        <p><strong>Risposta:</strong> Tra il <strong>1254</strong> a <strong>Venezia</strong>.</p>
+        <h4>📍 Domanda 2: Chi erano i suoi compagni di viaggio?</h4>
+        <p><strong>Risposta:</strong> Il padre <strong>Niccolò</strong> e lo zio <strong>Maffeo</strong>.</p>
+        <h4>📍 Domanda 3: Quale ruolo ebbe presso Kublai Khan?</h4>
+        <p><strong>Risposta:</strong> Divenne un <strong>funzionario fidato</strong> per missioni diplomatiche.</p>
+        <h4>📍 Domanda 4: Quando e dove morì?</h4>
+        <p><strong>Risposta:</strong> Nel <strong>1324 a Venezia</strong>.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">IL MILIONE</span>
+      <h3>📚 L'Opera</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 5: Chi scrisse materialmente il libro?</h4>
+        <p><strong>Risposta:</strong> <strong>Rustichello da Pisa</strong> durante la prigionia a Genova (1298).</p>
+        <h4>📍 Domanda 6: In quale lingua fu scritto?</h4>
+        <p><strong>Risposta:</strong> In <strong>franco-veneto</strong>.</p>
+        <h4>📍 Domanda 7: Quali innovazioni tecnologiche descrisse?</h4>
+        <p><strong>Risposta:</strong> <strong>Carta moneta</strong>, <strong>carbone fossile</strong>, sistema postale Yam.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">EREDITÀ</span>
+      <h3>🌟 Impatto Storico</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 8: Come influenzò la cartografia?</h4>
+        <p><strong>Risposta:</strong> Il <strong>Mappamondo di Fra Mauro</strong> (1450) usò le sue descrizioni.</p>
+        <h4>📍 Domanda 9: Quale ruolo ebbe per Colombo?</h4>
+        <p><strong>Risposta:</strong> Colombo possedeva una copia annotata; lo spinse a cercare una rotta occidentale.</p>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <h3>📚 Fonti Consultate</h3>
+      <ul>
+        <li><strong>Treccani</strong> - Enciclopedia Italiana</li>
+        <li><strong>Geopop</strong> - Approfondimenti sulla Via della Seta</li>
+        <li><strong>Focus Junior</strong> - Spiegazioni su Il Milione</li>
+        <li><strong>Libro di storia</strong> - Impatto sulle esplorazioni</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="section reveal">
+    <div class="quiz">
+      <h2>🎯 Mettiti alla Prova!</h2>
+      <div class="quiz-question">1. In quale anno Marco Polo partì per il suo grande viaggio?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">1265</button>
+        <button onclick="checkAnswer(this, true)">1271</button>
+        <button onclick="checkAnswer(this, false)">1280</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">2. Chi trascrisse materialmente Il Milione?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">Marco Polo stesso</button>
+        <button onclick="checkAnswer(this, true)">Rustichello da Pisa</button>
+        <button onclick="checkAnswer(this, false)">Un monaco veneziano</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">3. Quale innovazione tecnologica cinese stupì gli europei?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">La bussola</button>
+        <button onclick="checkAnswer(this, false)">La polvere da sparo</button>
+        <button onclick="checkAnswer(this, true)">La carta moneta</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">4. Quale famoso esploratore lesse Il Milione?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, true)">Cristoforo Colombo</button>
+        <button onclick="checkAnswer(this, false)">Ferdinando Magellano</button>
+        <button onclick="checkAnswer(this, false)">James Cook</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Scoperte Geografiche - Progetto scolastico</p>
+</footer>
+<button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

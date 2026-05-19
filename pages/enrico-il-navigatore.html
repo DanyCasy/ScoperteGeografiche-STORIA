@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enrico il Navigatore - Scoperte Geografiche</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <button id="theme-slider" class="theme-slider" aria-label="Cambia tema">
+    <span class="slider-sun">☀️</span>
+    <span class="slider-moon">🌙</span>
+  </button>
+  <h1>SCOPERTE GEOGRAFICHE</h1>
+  <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <ul class="nav-menu" id="nav-menu">
+    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="../faq.html" class="nav-link">FAQ</a></li>
+    <li class="nav-item"><a href="../chi-siamo.html" class="nav-link">Chi siamo</a></li>
+    <li class="nav-item"><a href="vasco-da-gama.html" class="nav-link">Vasco da Gama</a></li>
+    <li class="nav-item"><a href="bartolomeu-dias.html" class="nav-link">Bartolomeo Diaz</a></li>
+    <li class="nav-item"><a href="enrico-il-navigatore.html" class="nav-link">Enrico il Navigatore</a></li>
+    <li class="nav-item"><a href="pedro-alvares-cabral.html" class="nav-link">Pedro Álvares Cabral</a></li>
+    <li class="nav-item"><a href="marco-polo.html" class="nav-link">Marco Polo</a></li>
+    <li class="nav-item"><a href="mongoli.html" class="nav-link">Mongoli</a></li>
+  </ul>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Enrico il Navigatore</h1>
+    <p class="hero-subtitle">Il principe che diede inizio all'era delle scoperte portoghesi</p>
+    <div class="hero-portrait">
+      <img src="../images/enrico-il-navigatore.jpg" alt="Ritratto di Enrico il Navigatore">
+    </div>
+    <p class="hero-dates">1394 - 1460 | Infante del Portogallo, pioniere delle esplorazioni oceaniche</p>
+  </section>
+
+  <!-- STATISTICHE -->
+  <div class="section reveal">
+    <h2>I Numeri dell'Impresa</h2>
+    <div class="stats-grid">
+      <div class="stat-card" onclick="alert('Enrico patrocinò spedizioni per circa 45 anni, dal 1415 al 1460')">
+        <span class="stat-number">45</span>
+        <span class="stat-label">Anni di patrocinio</span>
+      </div>
+      <div class="stat-card" onclick="alert('La conquista di Ceuta nel 1415 fu la prima impresa overseas del Portogallo')">
+        <span class="stat-number">1415</span>
+        <span class="stat-label">Conquista di Ceuta</span>
+      </div>
+      <div class="stat-card" onclick="alert('Gil Eanes superò il temuto Capo Bojador nel 1434')">
+        <span class="stat-number">1434</span>
+        <span class="stat-label">Superamento Capo Bojador</span>
+      </div>
+      <div class="stat-card" onclick="alert('Enrico sponsorizzò oltre 14 spedizioni principali lungo le coste africane')">
+        <span class="stat-number">14+</span>
+        <span class="stat-label">Spedizioni sponsorizzate</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LE TRE FASI -->
+  <div class="section reveal">
+    <h2>Le Fasi dell'Esplorazione</h2>
+
+    <div class="journey-card">
+      <span class="year-badge">1415</span>
+      <h3>⚔️ La Conquista di Ceuta</h3>
+      <p>Enrico partecipò alla conquista di <strong>Ceuta</strong>, una città fortificata in Nord Africa. Fu la <strong>prima impresa militare overseas</strong> del Portogallo e segnò l'inizio dell'espansione portoghese.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <h4>Perché Ceuta era importante?</h4>
+        <ul>
+          <li><strong>Posizione strategica:</strong> controllava l'ingresso al Mediterraneo dallo Stretto di Gibilterra</li>
+          <li><strong>Ricchezza commerciale:</strong> era un importante centro di scambio di spezie e oro</li>
+          <li><strong>Crociato:</strong> Enrico ricevette il titolo di cavaliere dopo la conquista</li>
+        </ul>
+        <p><strong>Impatto:</strong> Ceuta aprì gli occhi di Enrico sulla ricchezza dell'Africa e lo motivò a sponsorizzare esplorazioni più a sud.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1419-1433</span>
+      <h3>🗺️ Le Prime Scoperte: Madeira e Azzorre</h3>
+      <p>Grazie al patrocinio di Enrico, i navigatori portoghesi scoprirono <strong>Madeira (1419)</strong> e le <strong>Azzorre (1427)</strong>. Questi arcipelaghi diventarono basi fondamentali per le spedizioni future.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <h4>Cosa scoprirono in queste isole?</h4>
+        <ul>
+          <li><strong>Madeira:</strong> Isola fertile, ideale per coltivare zucchero e vite</li>
+          <li><strong>Azzorre:</strong> Arcipelago strategico nell'Atlantico, base per rotte verso ovest</li>
+          <li><strong>Colonizzazione:</strong> Portoghesi insediarono coloni nelle isole</li>
+        </ul>
+        <p><strong>Scuola di Sagres:</strong> Enrico riunì a Sagres cartografi, astronomi e costruttori navali per perfezionare le tecniche di navigazione.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1434-1460</span>
+      <h3>🌊 Oltre il Capo Bojador: L'Africa si Apre</h3>
+      <p>Nel <strong>1434</strong>, il capitano <strong>Gil Eanes</strong> superò il temuto <strong>Capo Bojador</strong>, rompendo il mito che oltre quel punto ci fosse la morte certa. Da lì, le esplorazioni proseguirono lungo le coste africane fino alla <strong>Sierra Leone</strong>.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <h4>Perché Capo Bojador era così temuto?</h4>
+        <ul>
+          <li><strong>Leggende:</strong> si credeva che oltre il capo ci fossero "mostri marini" e "acque bollenti"</li>
+          <li><strong>Correnti:</strong> forti correnti e venti contrari rendevano difficile il ritorno</li>
+          <li><strong>Sabbia:</strong> la costa era desolata e priva di punti di riferimento</li>
+        </ul>
+        <p><strong>Risultati:</strong> Dopo Bojador, Enrico sponsorizzò spedizioni che raggiunsero il Senegal, Capo Verde e la Sierra Leone, aprendo rotte commerciali per oro, avorio e schiavi.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAPPA -->
+  <div class="section reveal">
+    <div class="map-box">
+      <h2>🗺️ Le Rotte Esplorate</h2>
+      <img src="../images/enrico-rotta.jpg" alt="Mappa delle rotte esplorate da Enrico il Navigatore">
+      <div class="highlight">
+        <h3>Come furono possibili queste esplorazioni?</h3>
+        <p>Enrico il Navigatore non navigò mai personalmente, ma fu un <strong>instancabile patrocinatore</strong>. Riunì i migliori cartografi, astronomi e costruttori navali a <em>Sagres</em>, creando una vera e propria "scuola di navigazione". Sviluppò la <strong>caravella</strong>, una nave agile e veloce, e promosse l'uso dell'<strong>astrolabio</strong> e della <strong>bussola</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB -->
+  <div class="section reveal">
+    <h2>Curiosità</h2>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="openTab(event, 'curiosita')">Curiosità</button>
+      <button class="tab-btn" onclick="openTab(event, 'personaggi')">Personaggi</button>
+      <button class="tab-btn" onclick="openTab(event, 'eredita')">Eredità</button>
+    </div>
+    <div id="curiosita" class="tab-content active">
+      <ul>
+        <li>Non navigò mai personalmente: il suo soprannome "il Navigatore" fu dato dopo la sua morte</li>
+        <li>La caravella, da lui sviluppata, poteva navigare anche controvento grazie alle vele latine</li>
+        <li>La "Scuola di Sagres" non era una scuola formale, ma un centro di raccolta di conoscenze</li>
+      </ul>
+    </div>
+    <div id="personaggi" class="tab-content">
+      <p><strong>Gil Eanes:</strong> Il capitano che nel 1434 superò il temuto Capo Bojador.</p>
+      <p><strong>Gonçalo Velho Cabral:</strong> Scopritore delle isole Azzorre (1427) e di Madeira.</p>
+      <p><strong>Nuno Tristão:</strong> Esploratore che raggiunse la Guinea e il Senegal.</p>
+    </div>
+    <div id="eredita" class="tab-content">
+      <p>L'opera di Enrico il Navigatore pose le basi per l'espansione portoghese: <strong>Bartolomeo Diaz</strong> raggiunse il Capo di Buona Speranza (1488) e <strong>Vasco da Gama</strong> arrivò in India (1498), entrambi grazie alle rotte e alle conoscenze sviluppate sotto il patrocinio di Enrico.</p>
+    </div>
+  </div>
+
+  <!-- SEZIONE RIPASSO -->
+  <div class="section reveal">
+    <h2>📖 Ripassa Prima del Quiz!</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 30px;">Leggi attentamente queste informazioni e prova a rispondere alle domande</p>
+
+    <div class="journey-card">
+      <span class="year-badge">BIOGRAFIA</span>
+      <h3>👤 Chi era Enrico il Navigatore?</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 1: Quando e dove nacque?</h4>
+        <p><strong>Risposta:</strong> Enrico nacque il <strong>4 marzo 1394</strong> a <strong>Porto, in Portogallo</strong>.</p>
+        <h4>📍 Domanda 2: Chi erano i suoi genitori?</h4>
+        <p><strong>Risposta:</strong> Era il <strong>terzo figlio di Re Giovanni I</strong> del Portogallo e di <strong>Filippa di Lancaster</strong>.</p>
+        <h4>📍 Domanda 3: Perché si chiamava "il Navigatore"?</h4>
+        <p><strong>Risposta:</strong> Il soprannome gli fu dato <strong>dopo la sua morte</strong>, perché sponsorizzò molte spedizioni, anche se <strong>non navigò mai personalmente</strong>.</p>
+        <h4>📍 Domanda 4: Quando e dove morì?</h4>
+        <p><strong>Risposta:</strong> Morì il <strong>13 novembre 1460</strong> a <strong>Sagres</strong>.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1415</span>
+      <h3>⚔️ La Conquista di Ceuta</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 5: Cos'è Ceuta?</h4>
+        <p><strong>Risposta:</strong> Una <strong>città fortificata in Nord Africa</strong> all'ingresso dello Stretto di Gibilterra.</p>
+        <h4>📍 Domanda 6: Quando fu conquistata?</h4>
+        <p><strong>Risposta:</strong> Nel <strong>1415</strong>.</p>
+        <h4>📍 Domanda 7: Che impatto ebbe su Enrico?</h4>
+        <p><strong>Risposta:</strong> Vide le ricchezze africane e decise di sponsorizzare esplorazioni più a sud.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1434</span>
+      <h3>🌊 Il Superamento di Capo Bojador</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 8: Chi superò Capo Bojador e quando?</h4>
+        <p><strong>Risposta:</strong> <strong>Gil Eanes</strong> nel <strong>1434</strong>.</p>
+        <h4>📍 Domanda 9: Perché era così temuto?</h4>
+        <p><strong>Risposta:</strong> Leggende di mostri marini, correnti pericolose, costa desolata.</p>
+        <h4>📍 Domanda 10: Cosa successe dopo?</h4>
+        <p><strong>Risposta:</strong> I portoghesi raggiunsero Senegal, Capo Verde e Sierra Leone.</p>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <h3>📚 Fonti Consultate</h3>
+      <ul>
+        <li><strong>Treccani</strong> - Enciclopedia Italiana</li>
+        <li><strong>Geopop</strong> - Approfondimenti</li>
+        <li><strong>Focus Junior</strong> - Spiegazioni per ragazzi</li>
+        <li><strong>Libro di storia</strong> - Contesto storico</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="section reveal">
+    <div class="quiz">
+      <h2>🎯 Mettiti alla Prova!</h2>
+      <div class="quiz-question">1. Qual era il ruolo principale di Enrico il Navigatore?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">Navigatore e capitano di nave</button>
+        <button onclick="checkAnswer(this, true)">Patrocinatore e organizzatore di spedizioni</button>
+        <button onclick="checkAnswer(this, false)">Re del Portogallo</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">2. Cosa significa "caravella"?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">Una bussola</button>
+        <button onclick="checkAnswer(this, false)">Un astrolabio</button>
+        <button onclick="checkAnswer(this, true)">Un tipo di nave agile con vele latine</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">3. Chi superò il temuto Capo Bojador nel 1434?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">Vasco da Gama</button>
+        <button onclick="checkAnswer(this, true)">Gil Eanes</button>
+        <button onclick="checkAnswer(this, false)">Bartolomeo Diaz</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">4. Dove morì Enrico il Navigatore nel 1460?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, true)">Sagres</button>
+        <button onclick="checkAnswer(this, false)">Lisbona</button>
+        <button onclick="checkAnswer(this, false)">Porto</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Scoperte Geografiche - Progetto scolastico</p>
+</footer>
+<button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

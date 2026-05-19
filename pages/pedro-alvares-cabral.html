@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro Álvares Cabral - Scoperte Geografiche</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <button id="theme-slider" class="theme-slider" aria-label="Cambia tema">
+    <span class="slider-sun">☀️</span>
+    <span class="slider-moon">🌙</span>
+  </button>
+  <h1>SCOPERTE GEOGRAFICHE</h1>
+  <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <ul class="nav-menu" id="nav-menu">
+    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="../faq.html" class="nav-link">FAQ</a></li>
+    <li class="nav-item"><a href="../chi-siamo.html" class="nav-link">Chi siamo</a></li>
+    <li class="nav-item"><a href="vasco-da-gama.html" class="nav-link">Vasco da Gama</a></li>
+    <li class="nav-item"><a href="bartolomeu-dias.html" class="nav-link">Bartolomeo Diaz</a></li>
+    <li class="nav-item"><a href="enrico-il-navigatore.html" class="nav-link">Enrico il Navigatore</a></li>
+    <li class="nav-item"><a href="pedro-alvares-cabral.html" class="nav-link">Pedro Álvares Cabral</a></li>
+    <li class="nav-item"><a href="marco-polo.html" class="nav-link">Marco Polo</a></li>
+    <li class="nav-item"><a href="mongoli.html" class="nav-link">Mongoli</a></li>
+  </ul>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Pedro Álvares Cabral</h1>
+    <p class="hero-subtitle">Lo scopritore del Brasile nel 1500</p>
+    <div class="hero-portrait">
+      <img src="../images/pedro-cabral.jpg" alt="Ritratto di Pedro Álvares Cabral">
+    </div>
+    <p class="hero-dates">1467 - 1520 | Esploratore portoghese che scoprì il Brasile nel 1500</p>
+  </section>
+
+  <!-- STATISTICHE -->
+  <div class="section reveal">
+    <h2>I Numeri dell'Impresa</h2>
+    <div class="stats-grid">
+      <div class="stat-card" onclick="alert('Cabral guidò una flotta di 13 navi con circa 1500 uomini')">
+        <span class="stat-number">13</span>
+        <span class="stat-label">Navi nella flotta</span>
+      </div>
+      <div class="stat-card" onclick="alert('La spedizione del 1500 contava circa 1500 uomini')">
+        <span class="stat-number">1500</span>
+        <span class="stat-label">Uomini dell'equipaggio</span>
+      </div>
+      <div class="stat-card" onclick="alert('Il 22 aprile 1500 Cabral avvistò la costa brasiliana')">
+        <span class="stat-number">1500</span>
+        <span class="stat-label">Anno della scoperta del Brasile</span>
+      </div>
+      <div class="stat-card" onclick="alert('Solo 7 navi su 13 tornarono in Portogallo dopo la spedizione in India')">
+        <span class="stat-number">7</span>
+        <span class="stat-label">Navi tornate in Portogallo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LE TRE FASI -->
+  <div class="section reveal">
+    <h2>Le Fasi della Spedizione</h2>
+
+    <div class="journey-card">
+      <span class="year-badge">Marzo 1500</span>
+      <h3>🚢 La Grande Partenza</h3>
+      <p>Cabral partì da <strong>Lisbona il 9 marzo 1500</strong> con <strong>13 navi e circa 1500 uomini</strong>. Era la spedizione più grande mai inviata dal Portogallo. L'obiettivo ufficiale era raggiungere l'<strong>India</strong> seguendo la rotta di Vasco da Gama.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <h4>Perché la flotta era così grande?</h4>
+        <ul>
+          <li><strong>13 navi:</strong> la più grande flotta portoghese mai assemblata</li>
+          <li><strong>1500 uomini:</strong> marinai, soldati e sacerdoti</li>
+          <li><strong>Obiettivo doppio:</strong> commerciare spezie in India e fondare colonie</li>
+        </ul>
+        <p><strong>Re Manuele I:</strong> Il re del Portogallo scelse Cabral come comandante della spedizione.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">Aprile 1500</span>
+      <h3>🌴 La Scoperta del Brasile</h3>
+      <p>Il <strong>22 aprile 1500</strong>, Cabral avvistò la costa del Brasile. Inizialmente battezzò la nuova terra come <strong>"Isola di Vera Cruz"</strong> e poi <strong>"Terra di Santa Cruz"</strong>. Prese possesso della terra in nome del Portogallo.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <h4>Cosa fece Cabral in Brasile?</h4>
+        <ul>
+          <li><strong>Atterraggio:</strong> sbarcò sulla costa e dichiarò la terra portoghese</li>
+          <li><strong>Primo contatto:</strong> incontrò le popolazioni indigene Tupi</li>
+          <li><strong>Lettera di Caminha:</strong> il segretario Pero Vaz de Caminha scrisse una lettera dettagliata al re</li>
+        </ul>
+        <p><strong>La Lettera di Caminha:</strong> documento storico che descrive per la prima volta il Brasile.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">Maggio 1500 - Luglio 1501</span>
+      <h3>⚓ La Rotta per l'India</h3>
+      <p>Dopo il Brasile, Cabral ripartì verso l'India, ma <strong>4 navi affondarono</strong> durante la traversata dell'Atlantico meridionale. Arrivato a <strong>Calicut</strong>, fu accolto dal rajà, ma un incidente portò a uno scontro che causò la morte di <strong>70 portoghesi</strong>.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <h4>Cosa successe in India?</h4>
+        <ul>
+          <li><strong>Calicut:</strong> Cabral fu accolto dal rajà, ma gli arabi lo ostacolarono</li>
+          <li><strong>Scontro:</strong> 70 portoghesi morirono in un attacco</li>
+          <li><strong>Rappresaglia:</strong> Cabral bombardò la città e affondò navi arabe</li>
+          <li><strong>Base commerciale:</strong> fondò una base a Cochin</li>
+        </ul>
+        <p><strong>Ritorno:</strong> Solo 7 navi su 13 tornarono in Portogallo nel 1501, ma con un ricco carico di spezie.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAPPA -->
+  <div class="section reveal">
+    <div class="map-box">
+      <h2>🗺️ La Rotta di Cabral</h2>
+      <img src="../images/cabral-rotta.jpg" alt="Mappa della rotta di Cabral">
+      <div class="highlight">
+        <h3>Come avvenne la scoperta del Brasile?</h3>
+        <p>La scoperta del Brasile nel 1500 è stata oggetto di dibattito: alcuni storici credono che Cabral sia stato <strong>deviato dalle correnti oceaniche</strong>, altri che il Portogallo <strong>sapesse già dell'esistenza di terre a ovest</strong> grazie al Trattato di Tordesillas (1494). In ogni caso, Cabral fu il primo europeo a <strong>dichiarare ufficialmente</strong> la scoperta del Brasile in nome del Portogallo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB -->
+  <div class="section reveal">
+    <h2>Curiosità</h2>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="openTab(event, 'curiosita')">Curiosità</button>
+      <button class="tab-btn" onclick="openTab(event, 'personaggi')">Personaggi</button>
+      <button class="tab-btn" onclick="openTab(event, 'eredita')">Eredità</button>
+    </div>
+    <div id="curiosita" class="tab-content active">
+      <ul>
+        <li>Il Brasile inizialmente fu chiamato "Isola di Vera Cruz" perché si credeva fosse un'isola</li>
+        <li>La spedizione perse 6 navi: 4 in mare e 2 durante la navigazione verso l'India</li>
+        <li>Pedro Vaz de Caminha scrisse la prima descrizione scritta del Brasile</li>
+      </ul>
+    </div>
+    <div id="personaggi" class="tab-content">
+      <p><strong>Pero Vaz de Caminha:</strong> Il segretario della spedizione che scrisse la famosa "Lettera di Caminha".</p>
+      <p><strong>Nicolau Coelho:</strong> Uno dei capitani che aveva già viaggiato con Vasco da Gama.</p>
+      <p><strong>Bartolomeu Dias:</strong> Il famoso esploratore che accompagnò Cabral ma morì durante la tempesta al Capo di Buona Speranza.</p>
+    </div>
+    <div id="eredita" class="tab-content">
+      <p>La scoperta di Cabral aprì la strada alla <strong>colonizzazione del Brasile</strong> da parte del Portogallo. Il paese rimase una colonia portoghese per <strong>oltre 300 anni</strong> fino al 1822. Oggi il Brasile è l'unico paese dell'America Latina dove si parla <strong>portoghese</strong>.</p>
+    </div>
+  </div>
+
+  <!-- SEZIONE RIPASSO -->
+  <div class="section reveal">
+    <h2>📖 Ripassa Prima del Quiz!</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 30px;">Leggi attentamente queste informazioni e prova a rispondere alle domande</p>
+
+    <div class="journey-card">
+      <span class="year-badge">BIOGRAFIA</span>
+      <h3>👤 Chi era Pedro Álvares Cabral?</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 1: Quando e dove nacque?</h4>
+        <p><strong>Risposta:</strong> Intorno al <strong>1467</strong> a <strong>Belmonte, in Portogallo</strong>.</p>
+        <h4>📍 Domanda 2: Che famiglia aveva?</h4>
+        <p><strong>Risposta:</strong> <strong>Famiglia nobile portoghese</strong> con legami con la corte reale.</p>
+        <h4>📍 Domanda 3: Perché fu scelto per la spedizione?</h4>
+        <p><strong>Risposta:</strong> Re Manuele I lo scelse come comandante, forse perché sapeva che la rotta avrebbe potuto portare alla <strong>scoperta di nuove terre</strong>.</p>
+        <h4>📍 Domanda 4: Quando e dove morì?</h4>
+        <p><strong>Risposta:</strong> Intorno al <strong>1520</strong> in Portogallo, in povertà e dimenticato.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1500</span>
+      <h3>🚢 La Grande Spedizione del 1500</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 5: Quando partì Cabral e con quante navi?</h4>
+        <p><strong>Risposta:</strong> <strong>9 marzo 1500</strong> con <strong>13 navi e 1500 uomini</strong>.</p>
+        <h4>📍 Domanda 6: Qual era l'obiettivo della spedizione?</h4>
+        <p><strong>Risposta:</strong> <strong>Raggiungere l'India</strong> seguendo la rotta di Vasco da Gama.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">22 Aprile 1500</span>
+      <h3>🌴 La Scoperta del Brasile</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 7: Quando avvenne la scoperta?</h4>
+        <p><strong>Risposta:</strong> <strong>22 aprile 1500</strong>.</p>
+        <h4>📍 Domanda 8: Come chiamò la nuova terra?</h4>
+        <p><strong>Risposta:</strong> <strong>"Isola di Vera Cruz"</strong>, poi <strong>"Terra di Santa Cruz"</strong>.</p>
+        <h4>📍 Domanda 9: Cos'è la Lettera di Caminha?</h4>
+        <p><strong>Risposta:</strong> La <strong>prima descrizione scritta del Brasile</strong>.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">Maggio 1500 - Luglio 1501</span>
+      <h3>⚓ La Rotta per l'India</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 10: Quante navi perse Cabral in mare?</h4>
+        <p><strong>Risposta:</strong> <strong>4 navi</strong> affondarono durante una tempesta.</p>
+        <h4>📍 Domanda 11: Cosa successe a Calicut?</h4>
+        <p><strong>Risposta:</strong> Un attacco uccise <strong>70 portoghesi</strong>, Cabral bombardò la città in rappresaglia.</p>
+        <h4>📍 Domanda 12: Quante navi tornarono in Portogallo?</h4>
+        <p><strong>Risposta:</strong> Solo <strong>7 su 13</strong>.</p>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <h3>📚 Fonti Consultate</h3>
+      <ul>
+        <li><strong>Treccani</strong> - Enciclopedia Italiana</li>
+        <li><strong>Geopop</strong> - Approfondimenti</li>
+        <li><strong>Focus Junior</strong> - Spiegazioni per ragazzi</li>
+        <li><strong>Libro di storia</strong> - Contesto storico</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="section reveal">
+    <div class="quiz">
+      <h2>🎯 Mettiti alla Prova!</h2>
+      <div class="quiz-question">1. In quale anno Pedro Álvares Cabral scoprì il Brasile?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">1498</button>
+        <button onclick="checkAnswer(this, true)">1500</button>
+        <button onclick="checkAnswer(this, false)">1502</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">2. Come fu chiamata inizialmente la terra scoperta?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">Nuova Lusitania</button>
+        <button onclick="checkAnswer(this, false)">Terra di Cabral</button>
+        <button onclick="checkAnswer(this, true)">Isola di Vera Cruz</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">3. Quante navi tornarono in Portogallo?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, true)">7</button>
+        <button onclick="checkAnswer(this, false)">9</button>
+        <button onclick="checkAnswer(this, false)">11</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">4. Chi scrisse la famosa lettera al re descrivendo il Brasile?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">Bartolomeu Dias</button>
+        <button onclick="checkAnswer(this, true)">Pero Vaz de Caminha</button>
+        <button onclick="checkAnswer(this, false)">Nicolau Coelho</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Scoperte Geografiche - Progetto scolastico</p>
+</footer>
+<button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

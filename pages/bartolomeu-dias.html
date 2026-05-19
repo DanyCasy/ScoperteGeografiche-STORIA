@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bartolomeu Dias - Scoperte Geografiche</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <button id="theme-slider" class="theme-slider" aria-label="Cambia tema">
+    <span class="slider-sun">☀️</span>
+    <span class="slider-moon">🌙</span>
+  </button>
+  <h1>SCOPERTE GEOGRAFICHE</h1>
+  <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <ul class="nav-menu" id="nav-menu">
+    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="../faq.html" class="nav-link">FAQ</a></li>
+    <li class="nav-item"><a href="../chi-siamo.html" class="nav-link">Chi siamo</a></li>
+    <li class="nav-item"><a href="vasco-da-gama.html" class="nav-link">Vasco da Gama</a></li>
+    <li class="nav-item"><a href="bartolomeu-dias.html" class="nav-link">Bartolomeo Diaz</a></li>
+    <li class="nav-item"><a href="enrico-il-navigatore.html" class="nav-link">Enrico il Navigatore</a></li>
+    <li class="nav-item"><a href="pedro-alvares-cabral.html" class="nav-link">Pedro Álvares Cabral</a></li>
+    <li class="nav-item"><a href="marco-polo.html" class="nav-link">Marco Polo</a></li>
+    <li class="nav-item"><a href="mongoli.html" class="nav-link">Mongoli</a></li>
+  </ul>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Bartolomeu Dias</h1>
+    <p class="hero-subtitle">Il primo europeo a doppiare il Capo di Buona Speranza</p>
+    <div class="hero-portrait">
+      <img src="../images/bartolomeodiaz.jpg" alt="Ritratto di Bartolomeu Dias">
+    </div>
+    <p class="hero-dates">~1450 - 1500 | Esploratore portoghese che aprì la rotta verso l'Oceano Indiano</p>
+  </section>
+
+  <!-- STATISTICHE -->
+  <div class="section reveal">
+    <h2>I Numeri dell'Impresa</h2>
+    <div class="stats-grid">
+      <div class="stat-card" onclick="alert('Partenza dal Portogallo nel 1487 con una piccola flotta')">
+        <span class="stat-number">1487</span>
+        <span class="stat-label">Anno di partenza</span>
+      </div>
+      <div class="stat-card" onclick="alert('Una piccola flotta più una nave di rifornimento')">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Navi della spedizione</span>
+      </div>
+      <div class="stat-card" onclick="alert('Raggiunse il Capo di Buona Speranza nel 1488')">
+        <span class="stat-number">1488</span>
+        <span class="stat-label">Anno della scoperta</span>
+      </div>
+      <div class="stat-card" onclick="alert('Tracciò una mappa dei venti e correnti utile a Vasco da Gama')">
+        <span class="stat-number">10</span>
+        <span class="stat-label">Anni prima di Vasco da Gama</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- IL GRANDE VIAGGIO -->
+  <div class="section reveal">
+    <h2>🌊 Il Grande Viaggio (1487-1488)</h2>
+
+    <div class="journey-card">
+      <span class="year-badge">1487</span>
+      <h3>🚢 La Partenza dal Portogallo</h3>
+      <p>Bartolomeu Dias partì con una piccola flotta e una nave che portava i viveri. L'obiettivo era <strong>esplorare le coste africane sempre più a sud</strong>, in un periodo in cui il Portogallo cercava nuove rotte verso l'Oriente.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <h4>Perché il Portogallo cercava nuove rotte?</h4>
+        <ul>
+          <li><strong>Commercio delle spezie:</strong> evitare gli intermediari arabi e veneziani</li>
+          <li><strong>Competizione europea:</strong> Spagna e Portogallo in gara per le scoperte</li>
+          <li><strong>Tecnologia navale:</strong> caravelle più veloci e manovrabili</li>
+        </ul>
+        <p><strong>Fonte:</strong> Treccani - Enciclopedia Italiana</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1488</span>
+      <h3>⛈️ Le Tempeste e la Scoperta</h3>
+      <p>Durante il viaggio affrontò <strong>tempeste molto violente</strong> che lo spinsero lontano dalla costa. Quando tornò verso terra, si rese conto di aver superato il punto più a sud del continente africano: aveva raggiunto il <strong>Capo di Buona Speranza</strong>.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <p>Inizialmente chiamò quel luogo <strong>"Capo delle Tempeste"</strong> per le difficoltà incontrate. Fu il re del Portogallo a rinominarlo "Capo di Buona Speranza", simbolo di ottimismo per la nuova rotta aperta verso l'Asia.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">L'Eredità</span>
+      <h3>🗺️ La Mappa dei Venti e delle Correnti</h3>
+      <p>Durante il suo viaggio tracciò una <strong>mappa dei venti e delle correnti marine</strong>, che dieci anni dopo fu molto utile a <strong>Vasco da Gama</strong> per completare la rotta verso l'India.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <p>Questa mappa era fondamentale perché permetteva ai navigatori di sfruttare i venti favorevoli e evitare quelli contrari, riducendo i tempi e i rischi della navigazione oceanica.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAPPA -->
+  <div class="section reveal">
+    <div class="map-box">
+      <h2>🗺️ La Rotta Scoperta</h2>
+      <img src="../images/bartolomeodiaztravel.jpg" alt="Mappa della rotta di Bartolomeu Dias">
+      <div class="highlight">
+        <h3>Come fu scoperta la nuova possibilità di navigazione?</h3>
+        <p>La scoperta di Bartolomeu Dias dimostrò che l'<strong>Oceano Atlantico e l'Oceano Indiano erano collegati</strong>, rendendo possibile una rotta marittima verso l'Asia. Anche se non arrivò fino in India, il suo viaggio preparò la strada a Vasco da Gama, che qualche anno dopo completò l'impresa.</p>
+        <p><strong>La nuova possibilità di navigazione consiste in:</strong> la possibilità di raggiungere l'Asia via mare, doppiando l'Africa, senza dover passare per le rotte terrestri controllate da intermediari.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB (CURIOSITÀ, PERSONAGGI, EREDITÀ) -->
+  <div class="section reveal">
+    <h2>Curiosità</h2>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="openTab(event, 'curiosita')">Curiosità</button>
+      <button class="tab-btn" onclick="openTab(event, 'personaggi')">Personaggi</button>
+      <button class="tab-btn" onclick="openTab(event, 'eredita')">Eredità</button>
+    </div>
+    <div id="curiosita" class="tab-content active">
+      <ul>
+        <li>Chiamò il Capo di Buona Speranza "Capo delle Tempeste" per le difficoltà incontrate</li>
+        <li>La sua mappa dei venti fu essenziale per il successo di Vasco da Gama</li>
+        <li>Morì nel 1500 proprio vicino al Capo che aveva scoperto, durante un viaggio verso l'India</li>
+      </ul>
+    </div>
+    <div id="personaggi" class="tab-content">
+      <p><strong>Re Giovanni II del Portogallo:</strong> Sostenitore delle esplorazioni, rinominò il "Capo delle Tempeste" in "Capo di Buona Speranza".</p>
+      <p><strong>Vasco da Gama:</strong> Completò l'impresa di Dias raggiungendo l'India nel 1498, usando la mappa tracciata da Bartolomeu.</p>
+    </div>
+    <div id="eredita" class="tab-content">
+      <p>Il merito principale di Bartolomeu Dias fu aver <strong>aperto una nuova possibilità di navigazione</strong>: collegare Atlantico e Indiano via mare. Questo cambiò per sempre le esplorazioni e il commercio tra Europa e Oriente, favorendo l'ascesa del Portogallo come potenza globale.</p>
+    </div>
+  </div>
+
+  <!-- SEZIONE RIPASSO -->
+  <div class="section reveal">
+    <h2>📖 Ripassa Prima del Quiz!</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 30px;">Leggi attentamente queste informazioni e prova a rispondere alle domande</p>
+
+    <div class="journey-card">
+      <span class="year-badge">BIOGRAFIA</span>
+      <h3>👤 Chi era Bartolomeu Dias?</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 1: Quando e dove nacque?</h4>
+        <p><strong>Risposta:</strong> Bartolomeu Dias nacque <strong>intorno al 1450 in Portogallo</strong>.</p>
+        <h4>📍 Domanda 2: Che famiglia aveva?</h4>
+        <p><strong>Risposta:</strong> Era membro di una <strong>famiglia legata alla corte reale e alla navigazione</strong>.</p>
+        <h4>📍 Domanda 3: In che contesto storico operava?</h4>
+        <p><strong>Risposta:</strong> Operava in un periodo in cui il <strong>Portogallo cercava nuove rotte verso l'Oriente</strong> per il commercio delle spezie.</p>
+        <h4>📍 Domanda 4: Quando e dove morì?</h4>
+        <p><strong>Risposta:</strong> Morì nel <strong>1500 durante un viaggio verso l'India</strong>, vicino al <strong>Capo di Buona Speranza</strong>.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1487-1488</span>
+      <h3>🚢 Il Viaggio Storico</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 5: Quando partì e con quale obiettivo?</h4>
+        <p><strong>Risposta:</strong> Partì nel <strong>1487</strong> dal Portogallo con una piccola flotta. Obiettivo: <strong>esplorare le coste africane sempre più a sud</strong>.</p>
+        <h4>📍 Domanda 6: Cosa accadde durante il viaggio?</h4>
+        <p><strong>Risposta:</strong> Affrontò <strong>tempeste molto violente</strong> che lo spinsero lontano dalla costa.</p>
+        <h4>📍 Domanda 7: Quando raggiunse il Capo di Buona Speranza?</h4>
+        <p><strong>Risposta:</strong> Nel <strong>1488</strong>.</p>
+        <h4>📍 Domanda 8: Perché lo chiamò "Capo delle Tempeste"?</h4>
+        <p><strong>Risposta:</strong> Per le <strong>difficoltà incontrate</strong> durante le violente tempeste.</p>
+        <h4>📍 Domanda 9: Chi rinominò il capo e perché?</h4>
+        <p><strong>Risposta:</strong> Il <strong>re del Portogallo</strong> lo rinominò "Capo di Buona Speranza" come simbolo di ottimismo.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">L'EREDITÀ</span>
+      <h3>🗺️ La Mappa dei Venti e delle Correnti</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 10: Cosa tracciò durante il viaggio?</h4>
+        <p><strong>Risposta:</strong> Una <strong>mappa dei venti e delle correnti marine</strong>.</p>
+        <h4>📍 Domanda 11: A chi fu utile questa mappa?</h4>
+        <p><strong>Risposta:</strong> A <strong>Vasco da Gama dieci anni dopo</strong>.</p>
+        <h4>📍 Domanda 12: Perché questa scoperta fu fondamentale?</h4>
+        <p><strong>Risposta:</strong> Dimostrò che <strong>Atlantico e Indiano erano collegati</strong>.</p>
+        <h4>📍 Domanda 13: In cosa consiste la nuova possibilità di navigazione?</h4>
+        <p><strong>Risposta:</strong> Raggiungere l'Asia via mare <strong>doppiando l'Africa</strong> senza intermediari.</p>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <h3>📚 Fonti Consultate</h3>
+      <ul>
+        <li><strong>Treccani</strong> - Enciclopedia Italiana</li>
+        <li><strong>Focus Junior</strong> - Spiegazioni per ragazzi</li>
+        <li><strong>Geopop</strong> - Approfondimenti scientifici</li>
+        <li><strong>Libro di storia</strong> - Contesto storico</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="section reveal">
+    <div class="quiz">
+      <h2>🎯 Mettiti alla Prova!</h2>
+      <div class="quiz-question">1. Quando partì Bartolomeu Dias per il suo viaggio storico?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">1497</button>
+        <button onclick="checkAnswer(this, true)">1487</button>
+        <button onclick="checkAnswer(this, false)">1477</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">2. Come chiamò inizialmente il Capo di Buona Speranza?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, true)">Capo delle Tempeste</button>
+        <button onclick="checkAnswer(this, false)">Capo della Speranza</button>
+        <button onclick="checkAnswer(this, false)">Capo del Sud</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">3. Cosa tracciò Dias durante il viaggio che fu utile a Vasco da Gama?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">Una mappa delle stelle</button>
+        <button onclick="checkAnswer(this, true)">Una mappa dei venti e delle correnti</button>
+        <button onclick="checkAnswer(this, false)">Una mappa delle coste</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">4. Perché la scoperta di Dias fu fondamentale?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">Perché scoprì l'America</button>
+        <button onclick="checkAnswer(this, true)">Perché dimostrò che Atlantico e Indiano erano collegati</button>
+        <button onclick="checkAnswer(this, false)">Perché trovò l'India</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">5. Quando e dove morì Bartolomeu Dias?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, true)">1500, vicino al Capo di Buona Speranza</button>
+        <button onclick="checkAnswer(this, false)">1499, a Lisbona</button>
+        <button onclick="checkAnswer(this, false)">1502, in India</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Scoperte Geografiche - Progetto scolastico</p>
+</footer>
+<button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

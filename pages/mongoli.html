@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Mongoli - Scoperte Geografiche</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <button id="theme-slider" class="theme-slider" aria-label="Cambia tema">
+    <span class="slider-sun">☀️</span>
+    <span class="slider-moon">🌙</span>
+  </button>
+  <h1>SCOPERTE GEOGRAFICHE</h1>
+  <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <ul class="nav-menu" id="nav-menu">
+    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="../faq.html" class="nav-link">FAQ</a></li>
+    <li class="nav-item"><a href="../chi-siamo.html" class="nav-link">Chi siamo</a></li>
+    <li class="nav-item"><a href="vasco-da-gama.html" class="nav-link">Vasco da Gama</a></li>
+    <li class="nav-item"><a href="bartolomeu-dias.html" class="nav-link">Bartolomeo Diaz</a></li>
+    <li class="nav-item"><a href="enrico-il-navigatore.html" class="nav-link">Enrico il Navigatore</a></li>
+    <li class="nav-item"><a href="pedro-alvares-cabral.html" class="nav-link">Pedro Álvares Cabral</a></li>
+    <li class="nav-item"><a href="marco-polo.html" class="nav-link">Marco Polo</a></li>
+    <li class="nav-item"><a href="mongoli.html" class="nav-link">Mongoli</a></li>
+  </ul>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>I Mongoli</h1>
+    <p class="hero-subtitle">L'impero che collegò Oriente e Occidente</p>
+    <div class="hero-portrait">
+      <img src="../images/mongoli.jpg" alt="Esercito mongolo a cavallo">
+    </div>
+    <p class="hero-dates">1206 - 1368 | Da Gengis Khan all'Impero più vasto della storia</p>
+  </section>
+
+  <!-- STATISTICHE -->
+  <div class="section reveal">
+    <h2>I Numeri dell'Impero</h2>
+    <div class="stats-grid">
+      <div class="stat-card" onclick="alert('L\'Impero Mongolo si estendeva dalla Cina all\'Europa orientale')">
+        <span class="stat-number">33</span>
+        <span class="stat-label">Milioni di km² (massima estensione)</span>
+      </div>
+      <div class="stat-card" onclick="alert('Oltre 100 milioni di persone sotto il dominio mongolo')">
+        <span class="stat-number">100+</span>
+        <span class="stat-label">Milioni di sudditi</span>
+      </div>
+      <div class="stat-card" onclick="alert('Gengis Khan unificò le tribù mongole nel 1206')">
+        <span class="stat-number">1206</span>
+        <span class="stat-label">Anno del Grande Kuriltai</span>
+      </div>
+      <div class="stat-card" onclick="alert('La Pax Mongolica durò circa un secolo')">
+        <span class="stat-number">100</span>
+        <span class="stat-label">Anni di pace mongola</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- I MONGOLI -->
+  <div class="section reveal">
+    <h2>L'Ascesa dei Mongoli</h2>
+
+    <div class="journey-card">
+      <span class="year-badge">1206</span>
+      <h3>🏹 Gengis Khan: Unificatore delle Steppe</h3>
+      <p>Nel <strong>1206</strong>, Temujin riunì tutte le tribù mongole sotto un unico comando e fu proclamato <strong>Gengis Khan</strong> ("Sovrano Universale"). Creò un esercito disciplinato, organizzato in decine, centinaia, migliaia e tumen (10.000 uomini).</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <h4>Quali furono le innovazioni di Gengis Khan?</h4>
+        <ul>
+          <li><strong>Esercito meritocratico:</strong> promozioni basate sul merito, non sulla nobiltà</li>
+          <li><strong>Codice Yasa:</strong> leggi severe contro tradimenti e saccheggi</li>
+          <li><strong>Arco composito:</strong> armi potentissime utilizzate da cavallo</li>
+          <li><strong>Tolleranza religiosa:</strong> rispetto per tutte le fedi</li>
+        </ul>
+        <p><strong>Tecniche militari:</strong> Finto ritiro, accerchiamento, arcieri a cavallo.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1206-1294</span>
+      <h3>🗺️ L'Impero più Vasto della Storia</h3>
+      <p>Dalla Cina all'Europa orientale, dalla Siberia all'India del nord. I successori di Gengis Khan, come <strong>Ögedei</strong> e <strong>Kublai Khan</strong>, espansero l'impero fino a includere Corea, Vietnam, Persia e Russia.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <h4>Quali territori conquistarono?</h4>
+        <ul>
+          <li><strong>Impero Mongolo:</strong> La Cina (dinastia Yuan), Corea</li>
+          <li><strong>Ilkhanato:</strong> Persia, Mesopotamia</li>
+          <li><strong>Khanato dell'Orda d'Oro:</strong> Russia, Ucraina</li>
+          <li><strong>Khanato di Chagatai:</strong> Asia centrale</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">Pax Mongolica</span>
+      <h3>🕊️ La Pace Mongola e la Via della Seta</h3>
+      <p>La <strong>Pax Mongolica</strong> (pace mongola) garantì sicurezza sulle rotte commerciali tra Europa e Asia. Mercanti, ambasciatori e viaggiatori come <strong>Marco Polo</strong> poterono attraversare l'impero senza timore di banditi.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <h4>Cosa permise la Pax Mongolica?</h4>
+        <ul>
+          <li><strong>Sicurezza della Via della Seta:</strong> commercio fiorì come mai prima</li>
+          <li><strong>Scambi culturali:</strong> tecnologie (carta, polvere da sparo, bussola) arrivarono in Europa</li>
+          <li><strong>Esplorazioni:</strong> viaggi di Marco Polo, Giovanni da Pian del Carpine</li>
+          <li><strong>Sistema Yam:</strong> rete di staffette postali efficientissima</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAPPA -->
+  <div class="section reveal">
+    <div class="map-box">
+      <h2>🗺️ L'Impero Mongolo alla sua massima espansione</h2>
+      <img src="../images/mongoli-mappa.jpg" alt="Mappa dell'Impero Mongolo">
+      <div class="highlight">
+        <h3>Come riuscirono a conquistare così tanti territori?</h3>
+        <p>I mongoli erano <strong>cavalieri eccezionali</strong> fin dall'infanzia. Usavano tattiche innovative come il <strong>finto ritiro</strong> e l'<strong>accerchiamento</strong>. Erano tolleranti verso le religioni locali, riducendo le ribellioni, e adottavano tecnologie nemiche (es. macchine d'assedio cinesi).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB -->
+  <div class="section reveal">
+    <h2>Approfondimenti</h2>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="openTab(event, 'organizzazione')">🏛️ Organizzazione</button>
+      <button class="tab-btn" onclick="openTab(event, 'commerci')">📦 Commerci e Scambi</button>
+      <button class="tab-btn" onclick="openTab(event, 'declino')">📉 Declino dell'Impero</button>
+    </div>
+    <div id="organizzazione" class="tab-content active">
+      <ul>
+        <li><strong>Esercito decimale:</strong> organizzazione in decine, centinaia, migliaia, tumen (10.000)</li>
+        <li><strong>Codice Yasa:</strong> legge severa che proibiva il saccheggio non autorizzato</li>
+        <li><strong>Yam (staffetta postale):</strong> cavalieri cambio-cavallo ogni 30-50 km, messaggi velocissimi</li>
+        <li><strong>Tolleranza religiosa:</strong> libertà di culto per tutte le religioni</li>
+      </ul>
+    </div>
+    <div id="commerci" class="tab-content">
+      <ul>
+        <li><strong>Via della Seta sicura:</strong> commercio di seta, spezie, porcellane, pietre preziose</li>
+        <li><strong>Scambi tecnologici:</strong> carta, polvere da sparo, bussola, stampa</li>
+        <li><strong>Merci dall'Europa:</strong> lana, vetro, ambra, schiavi</li>
+      </ul>
+    </div>
+    <div id="declino" class="tab-content">
+      <ul>
+        <li><strong>Frammentazione:</strong> divisione in quattro khanati dopo la morte di Gengis Khan</li>
+        <li><strong>Conflitti interni:</strong> lotte per la successione</li>
+        <li><strong>Peste nera:</strong> diffusione lungo le rotte commerciali indebolì l'impero</li>
+        <li><strong>Ribellioni:</strong> Cina (dinastia Ming), Russia, Persia si liberarono</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SEZIONE RIPASSO -->
+  <div class="section reveal">
+    <h2>📖 Ripassa Prima del Quiz!</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 30px;">Leggi attentamente queste informazioni e prova a rispondere alle domande</p>
+
+    <div class="journey-card">
+      <span class="year-badge">STORIA</span>
+      <h3>🏹 L'Impero Mongolo</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 1: Chi fu Gengis Khan?</h4>
+        <p><strong>Risposta:</strong> Il capo che unificò le tribù mongole nel <strong>1206</strong> e fondò l'impero.</p>
+        <h4>📍 Domanda 2: Cosa significa "Gengis Khan"?</h4>
+        <p><strong>Risposta:</strong> <strong>"Sovrano Universale"</strong>.</p>
+        <h4>📍 Domanda 3: Quali territori conquistarono?</h4>
+        <p><strong>Risposta:</strong> Cina, Corea, Asia centrale, Persia, Russia, Europa orientale.</p>
+        <h4>📍 Domanda 4: Cos'era la Pax Mongolica?</h4>
+        <p><strong>Risposta:</strong> Un periodo di <strong>pace e sicurezza</strong> sulle rotte commerciali.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">ORGANIZZAZIONE</span>
+      <h3>⚔️ Esercito e Leggi</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 5: Come era organizzato l'esercito?</h4>
+        <p><strong>Risposta:</strong> In <strong>decine, centinaia, migliaia e tumen</strong> (10.000 uomini).</p>
+        <h4>📍 Domanda 6: Cos'era il Codice Yasa?</h4>
+        <p><strong>Risposta:</strong> Il <strong>codice di leggi</strong> mongolo che proibiva tradimenti e saccheggi.</p>
+        <h4>📍 Domanda 7: Cos'era il sistema Yam?</h4>
+        <p><strong>Risposta:</strong> Una <strong>rete di staffette postali</strong> per comunicazioni veloci.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">EREDITÀ</span>
+      <h3>🌍 Impatto sulla Storia</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 8: Come influenzarono la Via della Seta?</h4>
+        <p><strong>Risposta:</strong> La resero <strong>sicura e prospera</strong>, favorendo scambi commerciali e culturali.</p>
+        <h4>📍 Domanda 9: Quali tecnologie arrivarono in Europa grazie ai mongoli?</h4>
+        <p><strong>Risposta:</strong> <strong>Carta, polvere da sparo, bussola, stampa</strong>.</p>
+        <h4>📍 Domanda 10: Quale famoso viaggiatore attraversò l'impero?</h4>
+        <p><strong>Risposta:</strong> <strong>Marco Polo</strong>.</p>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <h3>📚 Fonti Consultate</h3>
+      <ul>
+        <li><strong>Treccani</strong> - Enciclopedia Italiana</li>
+        <li><strong>Focus Junior</strong> - Spiegazioni per ragazzi</li>
+        <li><strong>Geopop</strong> - Approfondimenti storici</li>
+        <li><strong>Libro di storia</strong> - Contesto storico</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="section reveal">
+    <div class="quiz">
+      <h2>🎯 Mettiti alla Prova!</h2>
+      <div class="quiz-question">1. Chi fu il fondatore dell'Impero Mongolo?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">Kublai Khan</button>
+        <button onclick="checkAnswer(this, true)">Gengis Khan</button>
+        <button onclick="checkAnswer(this, false)">Ögedei Khan</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">2. Cosa significa "Pax Mongolica"?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">La guerra mongola</button>
+        <button onclick="checkAnswer(this, true)">Il periodo di pace e sicurezza</button>
+        <button onclick="checkAnswer(this, false)">Il codice di leggi mongolo</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">3. Cos'era il sistema Yam?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">Un'arma mongola</button>
+        <button onclick="checkAnswer(this, true)">Un sistema postale a staffetta</button>
+        <button onclick="checkAnswer(this, false)">Un tipo di tenda mongola</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">4. Quale tecnologia arrivò in Europa grazie ai mongoli?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, true)">La carta</button>
+        <button onclick="checkAnswer(this, false)">Il microscopio</button>
+        <button onclick="checkAnswer(this, false)">La macchina a vapore</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Scoperte Geografiche - Progetto scolastico</p>
+</footer>
+<button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

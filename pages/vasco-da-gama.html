@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vasco da Gama - Scoperte Geografiche</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <button id="theme-slider" class="theme-slider" aria-label="Cambia tema">
+    <span class="slider-sun">☀️</span>
+    <span class="slider-moon">🌙</span>
+  </button>
+  <h1>SCOPERTE GEOGRAFICHE</h1>
+  <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <ul class="nav-menu" id="nav-menu">
+    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="../faq.html" class="nav-link">FAQ</a></li>
+    <li class="nav-item"><a href="../chi-siamo.html" class="nav-link">Chi siamo</a></li>
+    <li class="nav-item"><a href="vasco-da-gama.html" class="nav-link">Vasco da Gama</a></li>
+    <li class="nav-item"><a href="bartolomeu-dias.html" class="nav-link">Bartolomeo Diaz</a></li>
+    <li class="nav-item"><a href="enrico-il-navigatore.html" class="nav-link">Enrico il Navigatore</a></li>
+    <li class="nav-item"><a href="pedro-alvares-cabral.html" class="nav-link">Pedro Álvares Cabral</a></li>
+    <li class="nav-item"><a href="marco-polo.html" class="nav-link">Marco Polo</a></li>
+    <li class="nav-item"><a href="mongoli.html" class="nav-link">Mongoli</a></li>
+  </ul>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Vasco da Gama</h1>
+    <p class="hero-subtitle">Il primo europeo a raggiungere l'India via mare</p>
+    <div class="hero-portrait">
+      <img src="../images/vascodagama.jpg" alt="Ritratto di Vasco da Gama">
+    </div>
+    <p class="hero-dates">1469 - 1524 | Esploratore portoghese che aprì la rotta delle spezie</p>
+  </section>
+
+  <!-- STATISTICHE -->
+  <div class="section reveal">
+    <h2>I Numeri dell'Impresa</h2>
+    <div class="stats-grid">
+      <div class="stat-card" onclick="alert('4 navi: São Gabriel, São Rafael, Berrio e nave di rifornimento')">
+        <span class="stat-number">4</span>
+        <span class="stat-label">Navi nel primo viaggio</span>
+      </div>
+      <div class="stat-card" onclick="alert('Circa 150 uomini tra marinai, soldati e sacerdoti')">
+        <span class="stat-number">150</span>
+        <span class="stat-label">Uomini dell'equipaggio</span>
+      </div>
+      <div class="stat-card" onclick="alert('Il viaggio durò circa 2 anni: 1497-1499')">
+        <span class="stat-number">2</span>
+        <span class="stat-label">Anni per il primo viaggio</span>
+      </div>
+      <div class="stat-card" onclick="alert('Solo 54 uomini sopravvissero. Molti morirono di scorbuto!')">
+        <span class="stat-number">54</span>
+        <span class="stat-label">Sopravvissuti al ritorno</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- I TRE GRANDI VIAGGI -->
+  <div class="section reveal">
+    <h2>I Tre Grandi Viaggi</h2>
+
+    <div class="journey-card">
+      <span class="year-badge">1497-1499</span>
+      <h3>🚢 La Scoperta della Rotta</h3>
+      <p>Partenza dal Portogallo con 4 navi e 150 uomini. Dopo aver superato il pericoloso <strong>Capo di Buona Speranza</strong>, arrivò nel 1498 a Calicut (India).</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <h4>Perché il Capo di Buona Speranza era pericoloso?</h4>
+        <ul>
+          <li><strong>Tempeste violente:</strong> venti fortissimi e onde alte</li>
+          <li><strong>Correnti pericolose:</strong> mareggiate imprevedibili</li>
+          <li><strong>Scogli affioranti:</strong> molte navi affondate</li>
+        </ul>
+        <p><strong>Obiettivo:</strong> Controllo del commercio delle spezie senza intermediari.</p>
+        <p><strong>Rajà:</strong> Titolo nobiliare indiano che significa "re" o "principe".</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1502</span>
+      <h3>⚔️ La Conquista Commerciale</h3>
+      <p>Tornò con una flotta armata di cannoni. Impose la presenza portoghese con la forza, sconfiggendo il rajà Samudri in battaglia navale.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <p>Portò 20 navi armate, bombardò Calicut e fondò basi commerciali fortificate. Rientrò con un enorme carico di spezie.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1524</span>
+      <h3>👑 L'Ultimo Viaggio</h3>
+      <p>Partì come <strong>Viceré</strong> per riorganizzare i territori portoghesi, ma morì poco dopo l'arrivo a Cochin.</p>
+      <button class="deep-btn" onclick="toggleDeepDive(this)">🔍 Approfondisci</button>
+      <div class="deep-content">
+        <p>Morì probabilmente di malaria dopo 3 mesi. Le sue spoglie furono riportate in Portogallo nel 1539.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAPPA -->
+  <div class="section reveal">
+    <div class="map-box">
+      <h2>🗺️ La Rotta Scoperta</h2>
+      <img src="../images/vascotravel.jpg" alt="Mappa della rotta di Vasco da Gama">
+      <div class="highlight">
+        <h3>Come fu scoperta?</h3>
+        <p>Vasco da Gama completò il lavoro di Bartolomeo Diaz attraversando l'Oceano Indiano direttamente dall'Africa all'India. La rotta permetteva di commerciare spezie <em>senza intermediari</em> arabi e veneziani, rendendo il Portogallo una potenza.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB -->
+  <div class="section reveal">
+    <h2>Curiosità</h2>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="openTab(event, 'curiosita')">Curiosità</button>
+      <button class="tab-btn" onclick="openTab(event, 'personaggi')">Personaggi</button>
+      <button class="tab-btn" onclick="openTab(event, 'eredita')">Eredità</button>
+    </div>
+    <div id="curiosita" class="tab-content active">
+      <ul>
+        <li>La sua nave ammiraglia si chiamava São Gabriel</li>
+        <li>Per attraversare l'Oceano Indiano impiegò 23 giorni</li>
+        <li>Al ritorno, solo 2 delle 4 navi sopravvissero</li>
+      </ul>
+    </div>
+    <div id="personaggi" class="tab-content">
+      <p><strong>Paulo da Gama:</strong> Fratello di Vasco, comandava la São Rafael.</p>
+      <p><strong>Zamorin:</strong> Il potente sovrano di Calicut.</p>
+    </div>
+    <div id="eredita" class="tab-content">
+      <p>L'impresa cambiò il mondo: iniziò l'era del colonialismo europeo in Asia e spostò il centro del commercio dal Mediterraneo all'Atlantico.</p>
+    </div>
+  </div>
+
+  <!-- SEZIONE RIPASSO -->
+  <div class="section reveal">
+    <h2>📖 Ripassa Prima del Quiz!</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 30px;">Leggi attentamente queste informazioni e prova a rispondere alle domande</p>
+
+    <div class="journey-card">
+      <span class="year-badge">BIOGRAFIA</span>
+      <h3>👤 Chi era Vasco da Gama?</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 1: Quando e dove nacque?</h4>
+        <p><strong>Risposta:</strong> Vasco da Gama nacque tra il <strong>1460 e il 1469</strong> a <strong>Sines, in Portogallo</strong>.</p>
+        <h4>📍 Domanda 2: Che famiglia aveva?</h4>
+        <p><strong>Risposta:</strong> Proveniva da una <strong>famiglia nobile legata alla navigazione</strong>.</p>
+        <h4>📍 Domanda 3: Quale missione gli affidò il re?</h4>
+        <p><strong>Risposta:</strong> <strong>Trovare una via marittima diretta per l'India</strong>.</p>
+        <h4>📍 Domanda 4: Quando e dove morì?</h4>
+        <p><strong>Risposta:</strong> Morì nel <strong>1524 a Cochin (India)</strong> come <strong>viceré</strong>.</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1497-1499</span>
+      <h3>🚢 Il Primo Viaggio</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 5: Quando partì e con quante navi?</h4>
+        <p><strong>Risposta:</strong> Nel <strong>1497</strong> con <strong>4 navi e 150 uomini</strong>.</p>
+        <h4>📍 Domanda 6: Quando arrivò a Calicut?</h4>
+        <p><strong>Risposta:</strong> Nel <strong>1498</strong>.</p>
+        <h4>📍 Domanda 7: Quali difficoltà incontrò?</h4>
+        <p><strong>Risposta:</strong> Malattie (<strong>scorbuto</strong>), perdite umane (solo 54 sopravvissuti).</p>
+      </div>
+    </div>
+
+    <div class="journey-card">
+      <span class="year-badge">1502</span>
+      <h3>⚔️ Il Secondo Viaggio</h3>
+      <div class="deep-content open" style="max-height: none;">
+        <h4>📍 Domanda 8: Quali erano le caratteristiche?</h4>
+        <p><strong>Risposta:</strong> Flotta di <strong>20 navi armate di cannoni</strong>.</p>
+        <h4>📍 Domanda 9: Cosa fece in India?</h4>
+        <p><strong>Risposta:</strong> Sconfisse il rajà, bombardò Calicut, fondò basi commerciali.</p>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <h3>📚 Fonti Consultate</h3>
+      <ul>
+        <li><strong>Treccani</strong> - Enciclopedia Italiana</li>
+        <li><strong>Geopop</strong> - Approfondimenti</li>
+        <li><strong>Focus Junior</strong> - Spiegazioni per ragazzi</li>
+        <li><strong>Libro di storia</strong> - Contesto storico</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="section reveal">
+    <div class="quiz">
+      <h2>🎯 Mettiti alla Prova!</h2>
+      <div class="quiz-question">1. Qual era l'obiettivo principale di Vasco da Gama?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">Scoprire nuove terre</button>
+        <button onclick="checkAnswer(this, true)">Trovare una rotta per le spezie</button>
+        <button onclick="checkAnswer(this, false)">Convertire gli indiani</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">2. Cosa significa "Rajà"?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">Una spezia</button>
+        <button onclick="checkAnswer(this, true)">Un titolo nobiliare (re)</button>
+        <button onclick="checkAnswer(this, false)">Una nave</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">3. Di quanti uomini era composto l'equipaggio di Vasco da Gama?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, true)">150</button>
+        <button onclick="checkAnswer(this, false)">125</button>
+        <button onclick="checkAnswer(this, false)">130</button>
+      </div>
+      <div class="quiz-feedback"></div>
+
+      <div class="quiz-question" style="margin-top: 25px;">4. Quale malattia ha decimato l'equipaggio?</div>
+      <div class="quiz-options">
+        <button onclick="checkAnswer(this, false)">Peste</button>
+        <button onclick="checkAnswer(this, false)">Tetano</button>
+        <button onclick="checkAnswer(this, true)">Scorbuto</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Scoperte Geografiche - Progetto scolastico</p>
+</footer>
+<button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

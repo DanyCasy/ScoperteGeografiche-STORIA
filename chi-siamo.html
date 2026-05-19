@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Siamo - Scoperte Geografiche</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Stili specifici per la griglia del team (usa le variabili del tema) */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .team-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 6px 15px var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .team-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--accent);
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px var(--shadow);
+    }
+    .team-icon {
+      font-size: 46px;
+      margin-bottom: 14px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .team-card:hover .team-icon {
+      transform: scale(1.1) rotate(-5deg);
+    }
+    .team-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .team-role {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .team-desc {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <button id="theme-slider" class="theme-slider" aria-label="Cambia tema">
+    <span class="slider-sun">☀️</span>
+    <span class="slider-moon">🌙</span>
+  </button>
+  <h1>SCOPERTE GEOGRAFICHE</h1>
+  <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <ul class="nav-menu" id="nav-menu">
+    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+    <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi siamo</a></li>
+    <li class="nav-item"><a href="pages/vasco-da-gama.html" class="nav-link">Vasco da Gama</a></li>
+    <li class="nav-item"><a href="pages/bartolomeu-dias.html" class="nav-link">Bartolomeo Diaz</a></li>
+    <li class="nav-item"><a href="pages/enrico-il-navigatore.html" class="nav-link">Enrico il Navigatore</a></li>
+    <li class="nav-item"><a href="pages/pedro-alvares-cabral.html" class="nav-link">Pedro Álvares Cabral</a></li>
+    <li class="nav-item"><a href="pages/marco-polo.html" class="nav-link">Marco Polo</a></li>
+    <li class="nav-item"><a href="pages/mongoli.html" class="nav-link">Mongoli</a></li>
+  </ul>
+</header>
+
+<main>
+  <section class="section reveal">
+    <h2>👥 Chi Siamo</h2>
+    <p style="text-align: center; margin-bottom: 30px; color: var(--text-secondary); max-width: 800px; margin-left: auto; margin-right: auto;">
+      Questo progetto è stato realizzato dal <strong>Gruppo 2</strong>. Ogni membro si è occupato di ricerche, testi e organizzazione dei contenuti per le pagine dedicate.
+    </p>
+
+    <div class="team-grid">
+      <!-- Daniele Casillo -->
+      <div class="team-card">
+        <span class="team-icon">🧭</span>
+        <h3 class="team-name">Daniele Casillo</h3>
+        <span class="team-role">Navigazione & Colonie</span>
+        <p class="team-desc">
+          Ha curato le pagine su <strong>Enrico il Navigatore</strong> e <strong>Pedro Álvares Cabral</strong>, analizzando le basi dell'esplorazione portoghese e la scoperta del Brasile.
+        </p>
+      </div>
+      <!-- Daniele Mereu -->
+      <div class="team-card">
+        <span class="team-icon">⚓</span>
+        <h3 class="team-name">Daniele Mereu</h3>
+        <span class="team-role">Rotte Oceaniche</span>
+        <p class="team-desc">
+          Si è occupato di <strong>Vasco da Gama</strong> e <strong>Bartolomeu Dias</strong>, documentando il superamento del Capo di Buona Speranza e l'apertura della via marittima per l'India.
+        </p>
+      </div>
+      <!-- Francesco Consiglio -->
+      <div class="team-card">
+        <span class="team-icon">🏹</span>
+        <h3 class="team-name">Francesco Consiglio</h3>
+        <span class="team-role">Imperi & Commerci</span>
+        <p class="team-desc">
+          Ha realizzato la sezione sui <strong>Mongoli</strong>, con focus sulla nascita dell'impero, la <strong>pace mongolica</strong> e il suo impatto sulle rotte commerciali asiatiche.
+        </p>
+      </div>
+      <!-- Gregory Grossato -->
+      <div class="team-card">
+        <span class="team-icon">📜</span>
+        <h3 class="team-name">Gregory Grossato</h3>
+        <span class="team-role">Viaggi & Letteratura</span>
+        <p class="team-desc">
+          Ha approfondito la figura di <strong>Marco Polo</strong> e la stesura de <strong>Il Milione</strong>, analizzando l'impatto culturale e cartografico dell'opera in Europa.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Gruppo 2 - Scoperte Geografiche | Progetto didattico</p>
+</footer>
+<button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>

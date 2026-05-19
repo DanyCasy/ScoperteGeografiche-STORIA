@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scoperte Geografiche - Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Stili extra per la home page - TIMELINE MODERNA */
+    .hero-home {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      margin-bottom: 50px;
+      border-radius: 0 0 40px 40px;
+    }
+    .hero-home h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+    .hero-home p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+    .hero-home small {
+      display: block;
+      margin-top: 15px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    /* Timeline migliorata */
+    .timeline-modern {
+      position: relative;
+      padding-left: 40px;
+      margin: 40px 0;
+    }
+    .timeline-modern::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      bottom: 10px;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent-dark));
+      border-radius: 3px;
+    }
+    .timeline-item-modern {
+      position: relative;
+      margin-bottom: 35px;
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 20px 25px;
+      box-shadow: 0 5px 20px var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .timeline-item-modern:hover {
+      transform: translateX(5px);
+      box-shadow: 0 10px 30px var(--shadow);
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -34px;
+      top: 25px;
+      width: 16px;
+      height: 16px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid var(--bg-card);
+      box-shadow: 0 0 0 3px var(--accent);
+      transition: transform 0.3s;
+    }
+    .timeline-item-modern:hover .timeline-dot {
+      transform: scale(1.3);
+    }
+    .timeline-year {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .timeline-item-modern h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .timeline-item-modern p {
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    .timeline-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: gap 0.3s;
+    }
+    .timeline-link:hover {
+      gap: 12px;
+      color: var(--accent-dark);
+    }
+    
+    /* Statistiche in home */
+    .stats-home {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin: 40px auto;
+      text-align: center;
+    }
+    .stat-home-item {
+      background: var(--bg-card);
+      padding: 20px 30px;
+      border-radius: 20px;
+      min-width: 140px;
+      box-shadow: 0 4px 15px var(--shadow);
+      transition: transform 0.3s;
+    }
+    .stat-home-item:hover {
+      transform: translateY(-5px);
+    }
+    .stat-home-number {
+      font-size: 34px;
+      font-weight: bold;
+      color: var(--accent);
+      display: block;
+    }
+    .stat-home-label {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    
+    @media (max-width: 768px) {
+      .timeline-modern {
+        padding-left: 30px;
+      }
+      .timeline-modern::before {
+        left: 8px;
+      }
+      .timeline-dot {
+        left: -27px;
+      }
+      .hero-home h1 {
+        font-size: 32px;
+      }
+      .stats-home {
+        gap: 15px;
+      }
+      .stat-home-item {
+        padding: 15px 20px;
+        min-width: 110px;
+      }
+      .stat-home-number {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <button id="theme-slider" class="theme-slider" aria-label="Cambia tema">
+    <span class="slider-sun">☀️</span>
+    <span class="slider-moon">🌙</span>
+  </button>
+  <h1>SCOPERTE GEOGRAFICHE</h1>
+  <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <ul class="nav-menu" id="nav-menu">
+    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+    <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi siamo</a></li>
+    <li class="nav-item"><a href="pages/vasco-da-gama.html" class="nav-link">Vasco da Gama</a></li>
+    <li class="nav-item"><a href="pages/bartolomeu-dias.html" class="nav-link">Bartolomeo Diaz</a></li>
+    <li class="nav-item"><a href="pages/enrico-il-navigatore.html" class="nav-link">Enrico il Navigatore</a></li>
+    <li class="nav-item"><a href="pages/pedro-alvares-cabral.html" class="nav-link">Pedro Álvares Cabral</a></li>
+    <li class="nav-item"><a href="pages/marco-polo.html" class="nav-link">Marco Polo</a></li>
+    <li class="nav-item"><a href="pages/mongoli.html" class="nav-link">Mongoli</a></li>
+  </ul>
+</header>
+
+<main>
+  <!-- HERO SECTION -->
+  <section class="hero-home reveal">
+    <h1>🗺️ Scoperte Geografiche</h1>
+    <p>Un viaggio attraverso le grandi esplorazioni che hanno cambiato per sempre la storia dell'umanità</p>
+    <small>⬇ Scopri la timeline qui sotto ⬇</small>
+  </section>
+
+  <!-- STATISTICHE IN EVIDENZA -->
+  <div class="section reveal">
+    <div class="stats-home">
+      <div class="stat-home-item">
+        <span class="stat-home-number">XIII-XVI</span>
+        <span class="stat-home-label">Secoli d'oro</span>
+      </div>
+      <div class="stat-home-item">
+        <span class="stat-home-number">6</span>
+        <span class="stat-home-label">Protagonisti</span>
+      </div>
+      <div class="stat-home-item">
+        <span class="stat-home-number">3</span>
+        <span class="stat-home-label">Continenti</span>
+      </div>
+      <div class="stat-home-item">
+        <span class="stat-home-number">24.000</span>
+        <span class="stat-home-label">Km percorsi</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE VERTICALE -->
+  <div class="section reveal">
+    <h2>📅 La Linea del Tempo</h2>
+    <p style="text-align: center; margin-bottom: 30px; color: var(--text-secondary);">
+      Dal XIII al XVI secolo, i grandi protagonisti delle esplorazioni
+    </p>
+
+    <div class="timeline-modern">
+      
+      <!-- I Mongoli -->
+      <div class="timeline-item-modern">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">🏹 1206 - 1368</span>
+        <h3>I Mongoli: L'Impero che unificò le Steppe</h3>
+        <p>Da Gengis Khan alla Pax Mongolica: l'impero più vasto della storia rese sicura la Via della Seta, collegando Oriente e Occidente come mai prima.</p>
+        <a href="pages/mongoli.html" class="timeline-link">Scopri di più →</a>
+      </div>
+
+      <!-- Marco Polo -->
+      <div class="timeline-item-modern">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">📜 1271 - 1295</span>
+        <h3>Marco Polo: Il Milione</h3>
+        <p>Il mercante veneziano che viaggiò per 24 anni lungo la Via della Seta, raccontando le meraviglie dell'Oriente in un'opera che ispirò generazioni di esploratori.</p>
+        <a href="pages/marco-polo.html" class="timeline-link">Scopri di più →</a>
+      </div>
+
+      <!-- Enrico il Navigatore -->
+      <div class="timeline-item-modern">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">⚓ 1415 - 1460</span>
+        <h3>Enrico il Navigatore</h3>
+        <p>Il principe portoghese che, senza mai salpare, organizzò le prime grandi esplorazioni oceaniche, creando la scuola di navigazione di Sagres.</p>
+        <a href="pages/enrico-il-navigatore.html" class="timeline-link">Scopri di più →</a>
+      </div>
+
+      <!-- Bartolomeu Dias -->
+      <div class="timeline-item-modern">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">🌊 1488</span>
+        <h3>Bartolomeu Dias: Il Capo delle Tempeste</h3>
+        <p>Il primo europeo a doppiare la punta meridionale dell'Africa, dimostrando che Atlantico e Indiano erano collegati. Aprì la strada a Vasco da Gama.</p>
+        <a href="pages/bartolomeu-dias.html" class="timeline-link">Scopri di più →</a>
+      </div>
+
+      <!-- Vasco da Gama -->
+      <div class="timeline-item-modern">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">🗺️ 1497 - 1498</span>
+        <h3>Vasco da Gama: La Rotta per l'India</h3>
+        <p>Il primo europeo a raggiungere l'India via mare, aprendo la leggendaria rotta delle spezie che rese il Portogallo una superpotenza commerciale.</p>
+        <a href="pages/vasco-da-gama.html" class="timeline-link">Scopri di più →</a>
+      </div>
+
+      <!-- Pedro Álvares Cabral -->
+      <div class="timeline-item-modern">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">🌎 1500</span>
+        <h3>Pedro Álvares Cabral: Il Brasile</h3>
+        <p>Lo scopritore del Brasile nel 1500, che aprì la strada alla colonizzazione portoghese in Sud America, creando un ponte tra Europa e Nuovo Mondo.</p>
+        <a href="pages/pedro-alvares-cabral.html" class="timeline-link">Scopri di più →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CITAZIONE FINALE -->
+  <div class="section reveal">
+    <div class="highlight" style="text-align: center;">
+      <h3>🌏 Pronto a viaggiare nella storia?</h3>
+      <p style="margin-bottom: 0;">Clicca su ogni evento della timeline per scoprire approfondimenti, quiz e curiosità su ogni protagonista.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Gruppo Scolastico - Scoperte Geografiche | Progetto didattico</p>
+</footer>
+<button id="back-to-top" class="back-btn" aria-label="Torna su">↑</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
