@@ -1,25 +1,96 @@
-# STORIA - Sito Web SCOPERTE GEOGRAFICHE 
+# STORIA - Sito Web SCOPERTE GEOGRAFICHE
 
-Sito web di: Casillo, Mereu, Grossato e Consiglio
- link repository: https://github.com/DanyCasy/ScoperteGeografiche-STORIA
+Sito web realizzato da: Casillo, Mereu, Grossato e Consiglio
 
- divisione sito:
- Mereu:faq,Bartolomeo Diaz, index, Vasco Da Gama, css
- Casillo:aggiustamenti grafici, Enrico Il Navigatore, Pedro Alvarez, Cabral, css
- Gregory:Marco Polo, css
- Consiglio:Mongoli, css
+Link repository: https://danycasy.github.io/ScoperteGeografiche-STORIA/
 
- Siti consultati e supporti utilizzati:
- Wikibedia;
- Focus Junior;
- Treccani;
- Libro di storia;
- Geopop;
- ai (per rendere il codice più pulito e leggibile e per mettere alcuni commenti);
 
-Descrizione progetto:
-progetto commisionato dal professore di storia Andrea Demarchi e dal professore Di Maria Christian, svolto su html, css e javascript.
-Sito sulle scoperte geografiche rotta delle indie con capo delle Tempeste e Capo di buona speranza, sviluppo economico con i principali, ma non unici esploratori e navigatori con un approfondimento ai Mongoli, ogni argomento ha una pagina dedicata, anche ledomande frequenti che potrebbero nascere nella visione del codice e del sito e una sezione per le cose che ognuno ha scritto e ha cercato, il testo è stato scritto in modo schematico per agevolare l'esposizione, durante essa per favore l'utente è invitato ad esprimere le domande e le cose che vorrebbe cambiare.
+## Divisione del lavoro
 
-Accedere:
-Copiare il link alla repository e incollarla nella barra degli indirizzi e visualizzare il lavoro tramite uno spazio di lavoro nuovo oppure scaricare la cartella allegata e visualizzarla su visual studio code.
+Mereu: FAQ, Bartolomeo Diaz, index, Vasco da Gama, CSS
+
+Casillo: aggiustamenti grafici, Enrico il Navigatore, Pedro Álvares Cabral, CSS
+
+Gregory: Marco Polo, CSS
+
+Consiglio: Mongoli, CSS
+
+
+## Fonti e supporti utilizzati
+
+- Wikipedia
+- Focus Junior
+- Treccani
+- Libro di storia
+- Geopop
+- AI (per rendere il codice più pulito e leggibile e per inserire alcuni commenti)
+
+
+## Descrizione del progetto
+
+Progetto commissionato dal professor di storia Andrea Demarchi e dal professor Di Maria Christian, realizzato con HTML, CSS e JavaScript.
+
+Il sito tratta le scoperte geografiche, con focus sulla rotta delle Indie, il Capo delle Tempeste e il Capo di Buona Speranza. Vengono approfonditi i principali esploratori e navigatori portoghesi, con una sezione dedicata anche ai Mongoli.
+
+Ogni argomento ha una pagina dedicata. Sono presenti anche una sezione FAQ e una pagina "Chi siamo" che descrive il contributo di ogni membro del gruppo.
+
+I testi sono scritti in modo schematico per agevolare lo studio e l'esposizione. Durante la presentazione, l'utente è invitato a fare domande e a suggerire eventuali modifiche.
+
+
+## Struttura del sito
+
+progetto-scoperte/
+│
+├── index.html
+├── faq.html
+├── chi-siamo.html
+│
+├── pages/
+│   ├── bartolomeu-dias.html
+│   ├── vasco-da-gama.html
+│   ├── enrico-il-navigatore.html
+│   ├── pedro-alvares-cabral.html
+│   ├── marco-polo.html
+│   └── mongoli.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── main.js
+│
+├── images/
+│
+└── README.md
+
+
+## Funzionalità del sito
+
+Tutte le pagine condividono lo stesso header con:
+
+- Slider per la modalità chiara/scura (con emoji sole e luna)
+- Menu hamburger che si apre lateralmente da sinistra
+- Titolo centrato
+
+Ogni pagina dedicata a un esploratore contiene:
+
+- Hero con ritratto, titolo e date
+- Quattro card statistiche cliccabili con alert informativo
+- Card dei viaggi con pulsanti "Approfondisci" espandibili
+- Mappa della rotta
+- Tabs interattivi (Curiosità, Personaggi, Eredità)
+- Sezione di ripasso con domande e risposte
+- Quiz a risposta multipla con feedback visivo
+
+Sono presenti anche:
+
+- Pagina FAQ con domande frequenti organizzate per categoria
+- Pagina Chi siamo con la presentazione del team
+- Home page con timeline verticale e statistiche in evidenza
+
+Funzionalità tecniche:
+
+- Dark mode con salvataggio della preferenza
+- Effetto "reveal" allo scroll
+- Pulsante "Torna su"
+- Design responsive
