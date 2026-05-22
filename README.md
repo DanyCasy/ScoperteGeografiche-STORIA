@@ -2,7 +2,7 @@
 
 Sito web realizzato da: Casillo, Mereu, Grossato e Consiglio
 
-Link repository: https://danycasy.github.io/ScoperteGeografiche-STORIA/
+Link Sito: https://danycasy.github.io/ScoperteGeografiche-STORIA/
 
 
 ## Divisione del lavoro
